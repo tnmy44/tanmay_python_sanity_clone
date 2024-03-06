@@ -1,0 +1,12 @@
+{
+  "c_string" : "PYTHON_BASIC - DEV ONE",
+  "c_int" : 2,
+  "c_struct" : {
+    "c_array1" : [ "4", "5" ],
+    "c_struct_another" : {
+      "csa_boolean" : false
+    },
+    "c_string" : "asdasdasdasdasd"
+  },
+  "Subgraph_1" : { }
+}

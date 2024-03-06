@@ -1,0 +1,622 @@
+{
+  "fabric_id" : "46",
+  "components" : [ {
+    "ScriptComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/Staging_PYTHON_SINGLE_CLUSTER_JOB/Script_3--342935073.py",
+      "nodeName" : "Script_3",
+      "id" : "BqtvhE7mT9OmjcCsXzX6m",
+      "language" : "python",
+      "content" : "print(\"hello\")"
+    }
+  }, {
+    "PipelineComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_BASIC-1.0-py3-none-any.whl",
+      "nodeName" : "PythonBasic1",
+      "id" : "piC6-VBZUShbiRHUA46V5",
+      "language" : "python",
+      "pipelineId" : "pipelines/PYTHON_BASIC"
+    }
+  }, {
+    "PipelineComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SamplingMode_IO_All-1.0-py3-none-any.whl",
+      "nodeName" : "EM_IO",
+      "id" : "XN75fEayv1t73hscEi5kQ",
+      "language" : "python",
+      "pipelineId" : "pipelines/IO_PYTHON_BASIC"
+    }
+  }, {
+    "PipelineComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SamplingModel_DisabledAll-1.0-py3-none-any.whl",
+      "nodeName" : "SamplingDisabledAll",
+      "id" : "3xosyvFhVyO97-kzKjBfI",
+      "language" : "python",
+      "pipelineId" : "pipelines/EM_DISABLED_PYTHON_BASIC"
+    }
+  }, {
+    "PipelineComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_BASIC-1.0-py3-none-any.whl",
+      "nodeName" : "Python_Basic4",
+      "id" : "VvuwQAiJMqPEajiLlsTTD$$ItH204GaFtb2fsvskySFd",
+      "language" : "python",
+      "pipelineId" : "pipelines/PYTHON_BASIC"
+    }
+  }, {
+    "DBTComponent" : {
+      "profilePath" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/SQL_ParentDatabricks/v3.3.1-2/Staging_PYTHON_SINGLE_CLUSTER_JOB/DBT_1-64849352/profiles.yml",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/SQL_ParentDatabricks/v3.3.1-2/Staging_PYTHON_SINGLE_CLUSTER_JOB/DBT_1-64849352/dbt_script.py",
+      "nodeName" : "DBT_1",
+      "projectId" : "66",
+      "id" : "HJ8-wH9zZgsDakbE1fMCC$$2N_4SmyJLpJp8okzRowov",
+      "language" : "sql",
+      "componentFilesDirectory" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/SQL_ParentDatabricks/v3.3.1-2/Staging_PYTHON_SINGLE_CLUSTER_JOB/DBT_1-64849352",
+      "sqlFabricId" : "7",
+      "releaseVersion" : "SQL_ParentDatabricks/v3.3.1-2",
+      "content" : "\nimport subprocess\nimport sys\nimport os\nimport tempfile\nimport shlex\nimport re\n\ngit_clone_command = \"git clone https://github.com/abhisheks-prophecy/sql_databricks_public_parent --branch main_staging --single-branch /tmp/DBT_1/d7f924a4-18ac-4e70-a071-c48aa1cf0813\"\ndbt_working_dir = \"/tmp/DBT_1/d7f924a4-18ac-4e70-a071-c48aa1cf0813\"\ndbt_commands = ['''dbt  deps --profile run_profile''','''dbt  seed --profile run_profile --full-refresh''','''dbt  run --select env_uitesting_main_model_databricks_1 --profile run_profile --full-refresh''']\ngit_update_cmds = ['add-apt-repository -y ppa:git-core/ppa', 'apt update', 'apt install -y git']\n\ndef run_dbt():\n\n    def run_cmd(cmd, cwd, env, shell = False, split=True):\n        try:\n            cmds = shlex.split(cmd) if split else cmd\n            result = subprocess.run(cmds, capture_output=True, cwd=cwd, env=env, check=True, text=True, shell=shell)\n            print(result.stdout)\n            return result.stdout\n        except subprocess.CalledProcessError as error:\n            print(error.output)\n            print(f\"The command failed with exit status {error.returncode}\")\n            error_stderr = error.stderr\n            if len(error_stderr) != 0 and not error_stderr.isspace():\n                print(f\"Error message: {error_stderr}\")\n            sys.exit(1)\n\n\n    def update_git():\n        with tempfile.NamedTemporaryFile(mode='w', delete=False) as f:\n            f.write('''\n#!/bin/bash\n\ntarget_version=\"2.33.1\"\n\n# Get the Git version\ngit_version=$(git --version | awk '{print $3}')\n\n# Compare versions using 'sort' command\nif [[ \"$(echo -e \"$git_version\\n$target_version\" | sort -V | head -n1)\" == \"$target_version\" ]]; then\n  echo \"Git version is $git_version\"\nelse\n  echo \"Git version is $git_version, needs an upgrade\"\n  add-apt-repository -y ppa:git-core/ppa\n  apt update\n  apt install -y git\n  echo \"Git version upgraded to $(git --version | awk '{print $3}')\"\nfi\n\n''')\n            os.chmod(f.name, 0o700)\n\n        cmd = f'bash {f.name}'\n        run_cmd(cmd, \".\", os.environ)\n\n        os.unlink(f.name)\n\n\n    def get_secret():\n        try:\n            return dbutils.secrets.get(\"prophecy_jobs_3\", \"Staging_PYTHON_SINGLE_CLUSTER_JOB-48-DBT_1-64849352\")\n        except Exception as e:\n            print(\"Couldn't get secret\")\n            return \"\"\n\n\n    secret = get_secret()\n    db_token = \"\"\n    git_token = \"\"\n    semi_colon_hit = False\n\n\n    for ch in secret:\n        if (ch == ';'):\n            semi_colon_hit = True\n        elif (semi_colon_hit):\n            git_token = git_token + ch\n        else:\n            db_token = db_token + ch\n\n    secret = \"\"\n\n    def move_profiles_to_current_dir():\n        dbutils.fs.cp(\"dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/SQL_ParentDatabricks/v3.3.1-2/Staging_PYTHON_SINGLE_CLUSTER_JOB/DBT_1-64849352/profiles.yml\", \"file:/tmp/DBT_1/d7f924a4-18ac-4e70-a071-c48aa1cf0813/profiles.yml\")\n\n    def add_token_to_profile():\n        with open(\"/tmp/DBT_1/d7f924a4-18ac-4e70-a071-c48aa1cf0813/profiles.yml\", \"r+\") as f:\n            data = f.read()\n            data = data.replace(f'{{{{ TOKEN }}}}', db_token)\n            f.seek(0)\n            f.write(data)\n            f.truncate()\n\n\n    def remove_profile():\n        try:\n            os.remove(\"/tmp/DBT_1/d7f924a4-18ac-4e70-a071-c48aa1cf0813/profiles.yml\")\n            print(f'Successfully deleted generated profile')\n        except OSError as e:\n            print(f'Could not delete generated profile {e}')\n\n\n    def prophecy_exec():\n        # Update git to latest version, 2.25.1 in Databricks doesn't support sparse clone\n        update_git()\n\n        # Create a temporary script to output the token\n        with tempfile.NamedTemporaryFile(mode='w', delete=False) as f:\n            f.write(f'#!/bin/sh\\necho {git_token}\\n')\n            os.chmod(f.name, 0o700)\n\n        # Set the GIT_ASKPASS environment variable to the path of the script\n        env = os.environ.copy()\n        env['GIT_ASKPASS'] = f.name\n\n        # Clone the repository\n        print(git_clone_command)\n        run_cmd(git_clone_command, cwd=\".\", env=env)\n        print(\"Repository clone complete\")\n\n        move_profiles_to_current_dir()\n        add_token_to_profile()\n\n        print(\"Running dbt commands\")\n\n        for cmd in dbt_commands:\n            run_cmd(cmd, cwd=dbt_working_dir, env=env)\n\n        # Clean up the temporary script\n        os.unlink(f.name)\n\n    prophecy_exec()\n    git_token = \"\"\n    db_token = \"\"\n\nrun_dbt()\n",
+      "profileContent" : "run_profile:\n  target: profile_target\n  outputs:\n    profile_target:\n      type: databricks\n      schema: qa_db_warehouse\n      host: dbc-ac0e9adb-13fb.cloud.databricks.com\n      http_path: /sql/1.0/warehouses/2dc4d06bcada6a51\n      token: {{ TOKEN }}\n      catalog: hive_metastore\n",
+      "secretKey" : "Staging_PYTHON_SINGLE_CLUSTER_JOB-48-DBT_1-64849352"
+    }
+  }, {
+    "PipelineComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SamplingModel_DisabledAll-1.0-py3-none-any.whl",
+      "nodeName" : "EM_Disabled",
+      "id" : "b-9zycXTcrrue-ztrMAVc",
+      "language" : "python",
+      "pipelineId" : "pipelines/EM_DISABLED_PYTHON_BASIC"
+    }
+  }, {
+    "PipelineComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_DEP_MGMT_ALL-1.0-py3-none-any.whl",
+      "nodeName" : "REL_PY_PIP_DEP_MGMT_ALL",
+      "id" : "ocijfeWFa9S85tNTerdTM$$9AOzo7vXMwKDikHSJKcXS",
+      "language" : "python",
+      "pipelineId" : "pipelines/PYTHON_DEP_MGMT_ALL"
+    }
+  }, {
+    "ScriptComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/Staging_PYTHON_SINGLE_CLUSTER_JOB/Script_2--342935074.py",
+      "nodeName" : "Script_2",
+      "id" : "rdqvpn73n-BqBR1G2fake",
+      "language" : "python",
+      "content" : "print(\"hello\")"
+    }
+  }, {
+    "DLTPipelineComponent" : {
+      "id" : "rkUHbzJv4286o1_FUwBho$$hWiIVpMvQEBKhtQnEKWHB",
+      "nodeName" : "DLT_PYTHON",
+      "language" : "python",
+      "content" : ""
+    }
+  }, {
+    "PipelineComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_DONOT_OPEN-1.0-py3-none-any.whl",
+      "nodeName" : "DonotOpen",
+      "id" : "u-2dZO67bZZeV_JaAizWA$$tgvBarCGH6CZnSkPY-Jth",
+      "language" : "python",
+      "pipelineId" : "pipelines/DONOT_OPEN_PYTHON"
+    }
+  }, {
+    "ScriptComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/Staging_PYTHON_SINGLE_CLUSTER_JOB/Script_5--342935071.py",
+      "nodeName" : "Script_5",
+      "id" : "4RfLepzgTBxgR7XeARQhs$$sH2X1kYod6KizexlPXaHy",
+      "language" : "python",
+      "content" : "print(\"hello\")"
+    }
+  }, {
+    "ScriptComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/Staging_PYTHON_SINGLE_CLUSTER_JOB/Script_4--342935072.py",
+      "nodeName" : "Script_4",
+      "id" : "NTGTNvk4v6a6_uDyp8r1S",
+      "language" : "python",
+      "content" : "print(\"hello\")"
+    }
+  }, {
+    "ScriptComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/Staging_PYTHON_SINGLE_CLUSTER_JOB/Script_1--342935075.py",
+      "nodeName" : "Script_1",
+      "id" : "t5tlrRN0coqhaPFvCYaV7",
+      "language" : "python",
+      "content" : "print(\"hello\")"
+    }
+  } ],
+  "request" : {
+    "format" : "MULTI_TASK",
+    "name" : "Staging_PYTHON_SINGLE_CLUSTER_JOB",
+    "job_clusters" : [ {
+      "job_cluster_key" : "Staging_PYTHON_SINGLE_CLUSTER_JOB_default_medium_multi_single_user",
+      "new_cluster" : {
+        "ssh_public_keys" : [ ],
+        "spark_version" : "13.3.x-scala2.12",
+        "node_type_id" : "i3.2xlarge",
+        "driver_node_type_id" : "i3.xlarge",
+        "num_workers" : 2,
+        "custom_tags" : {
+          "billing" : "qa",
+          "qa_usage_type" : "sanity"
+        },
+        "init_scripts" : [ ],
+        "spark_conf" : {
+          "spark.prophecy.metadata.fabric.id" : "46",
+          "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/PYTHON_SINGLE_CLUSTER_JOB",
+          "spark.prophecy.metadata.is.interactive.run" : "false",
+          "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
+          "spark.prophecy.metadata.user.id" : "3",
+          "spark.prophecy.tasks" : "{\"SamplingDisabledAll\":\"pipelines/EM_DISABLED_PYTHON_BASIC\",\"PythonBasic1\":\"pipelines/PYTHON_BASIC\",\"EM_Disabled\":\"pipelines/EM_DISABLED_PYTHON_BASIC\",\"EM_IO\":\"pipelines/IO_PYTHON_BASIC\",\"DonotOpen\":\"pipelines/DONOT_OPEN_PYTHON\",\"Python_Basic4\":\"pipelines/PYTHON_BASIC\",\"REL_PY_PIP_DEP_MGMT_ALL\":\"pipelines/PYTHON_DEP_MGMT_ALL\"}",
+          "spark.prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
+          "spark.prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
+          "spark.prophecy.execution.metrics.disabled" : "false",
+          "spark.prophecy.execution.service.url" : "wss://execution.staging.prophecy.io/eventws"
+        },
+        "spark_env_vars" : {
+          "PYSPARK_PYTHON" : "/databricks/python3/bin/python3"
+        },
+        "runtime_engine" : "STANDARD",
+        "aws_attributes" : {
+          "first_on_demand" : 3,
+          "availability" : "SPOT",
+          "zone_id" : "auto",
+          "spot_bid_price_percent" : 100
+        },
+        "data_security_mode" : "SINGLE_USER"
+      }
+    }, {
+      "job_cluster_key" : "Cluster_2",
+      "new_cluster" : {
+        "ssh_public_keys" : [ ],
+        "spark_version" : "13.3.x-scala2.12",
+        "node_type_id" : "i3.xlarge",
+        "num_workers" : 1,
+        "custom_tags" : {
+          "billing" : "qa",
+          "qa_usage_type" : "sanity"
+        },
+        "init_scripts" : [ ],
+        "spark_conf" : {
+          "spark.prophecy.metadata.fabric.id" : "46",
+          "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/PYTHON_SINGLE_CLUSTER_JOB",
+          "spark.prophecy.metadata.is.interactive.run" : "false",
+          "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
+          "spark.prophecy.metadata.user.id" : "3",
+          "spark.prophecy.tasks" : "{\"SamplingDisabledAll\":\"pipelines/EM_DISABLED_PYTHON_BASIC\",\"PythonBasic1\":\"pipelines/PYTHON_BASIC\",\"EM_Disabled\":\"pipelines/EM_DISABLED_PYTHON_BASIC\",\"EM_IO\":\"pipelines/IO_PYTHON_BASIC\",\"DonotOpen\":\"pipelines/DONOT_OPEN_PYTHON\",\"Python_Basic4\":\"pipelines/PYTHON_BASIC\",\"REL_PY_PIP_DEP_MGMT_ALL\":\"pipelines/PYTHON_DEP_MGMT_ALL\"}",
+          "spark.prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
+          "spark.prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
+          "spark.prophecy.execution.metrics.disabled" : "false",
+          "spark.prophecy.execution.service.url" : "wss://execution.staging.prophecy.io/eventws"
+        },
+        "spark_env_vars" : {
+          "PYSPARK_PYTHON" : "/databricks/python3/bin/python3"
+        },
+        "runtime_engine" : "STANDARD",
+        "aws_attributes" : {
+          "first_on_demand" : 1,
+          "availability" : "SPOT_WITH_FALLBACK",
+          "zone_id" : "auto",
+          "spot_bid_price_percent" : 100
+        },
+        "data_security_mode" : "SINGLE_USER"
+      }
+    }, {
+      "job_cluster_key" : "Cluster_1",
+      "new_cluster" : {
+        "ssh_public_keys" : [ ],
+        "spark_version" : "13.3.x-scala2.12",
+        "node_type_id" : "i3.2xlarge",
+        "driver_node_type_id" : "i3.xlarge",
+        "num_workers" : 2,
+        "custom_tags" : {
+          "billing" : "qa",
+          "qa_usage_type" : "sanity"
+        },
+        "init_scripts" : [ ],
+        "spark_conf" : {
+          "spark.prophecy.metadata.fabric.id" : "46",
+          "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/PYTHON_SINGLE_CLUSTER_JOB",
+          "spark.prophecy.metadata.is.interactive.run" : "false",
+          "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
+          "spark.prophecy.metadata.user.id" : "3",
+          "spark.prophecy.tasks" : "{\"SamplingDisabledAll\":\"pipelines/EM_DISABLED_PYTHON_BASIC\",\"PythonBasic1\":\"pipelines/PYTHON_BASIC\",\"EM_Disabled\":\"pipelines/EM_DISABLED_PYTHON_BASIC\",\"EM_IO\":\"pipelines/IO_PYTHON_BASIC\",\"DonotOpen\":\"pipelines/DONOT_OPEN_PYTHON\",\"Python_Basic4\":\"pipelines/PYTHON_BASIC\",\"REL_PY_PIP_DEP_MGMT_ALL\":\"pipelines/PYTHON_DEP_MGMT_ALL\"}",
+          "spark.prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
+          "spark.prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
+          "spark.prophecy.execution.metrics.disabled" : "false",
+          "spark.prophecy.execution.service.url" : "wss://execution.staging.prophecy.io/eventws"
+        },
+        "spark_env_vars" : {
+          "PYSPARK_PYTHON" : "/databricks/python3/bin/python3"
+        },
+        "runtime_engine" : "STANDARD",
+        "aws_attributes" : {
+          "first_on_demand" : 3,
+          "availability" : "SPOT",
+          "zone_id" : "auto",
+          "spot_bid_price_percent" : 100
+        },
+        "data_security_mode" : "SINGLE_USER"
+      }
+    } ],
+    "email_notifications" : { },
+    "tasks" : [ {
+      "task_key" : "Script_3",
+      "job_cluster_key" : "Cluster_1",
+      "spark_python_task" : {
+        "python_file" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/Staging_PYTHON_SINGLE_CLUSTER_JOB/Script_3--342935073.py"
+      },
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "PythonBasic1",
+      "depends_on" : [ {
+        "task_key" : "Script_3"
+      } ],
+      "job_cluster_key" : "Cluster_1",
+      "python_wheel_task" : {
+        "package_name" : "PYTHON_BASIC",
+        "entry_point" : "main",
+        "parameters" : [ "-i", "default", "-O", "{}" ]
+      },
+      "libraries" : [ {
+        "maven" : {
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.4.0-7.1.78"
+        }
+      }, {
+        "pypi" : {
+          "package" : "prophecy-libs==1.8.8"
+        }
+      }, {
+        "whl" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_BASIC-1.0-py3-none-any.whl"
+      }, {
+        "maven" : {
+          "coordinates" : "mysql:mysql-connector-java:8.0.29",
+          "exclusions" : [ ]
+        }
+      }, {
+        "pypi" : {
+          "package" : "Theano==1.0.5"
+        }
+      }, {
+        "pypi" : {
+          "package" : "scipy>=1.6.3,<=1.8.1"
+        }
+      } ],
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "EM_IO",
+      "job_cluster_key" : "Staging_PYTHON_SINGLE_CLUSTER_JOB_default_medium_multi_single_user",
+      "python_wheel_task" : {
+        "package_name" : "SamplingMode_IO_All",
+        "entry_point" : "main",
+        "parameters" : [ "-i", "dev_11rt", "-O", "{\"c_string\":\"this is another son\"}" ]
+      },
+      "libraries" : [ {
+        "maven" : {
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.4.0-7.1.78"
+        }
+      }, {
+        "pypi" : {
+          "package" : "prophecy-libs==1.8.8"
+        }
+      }, {
+        "whl" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SamplingMode_IO_All-1.0-py3-none-any.whl"
+      }, {
+        "maven" : {
+          "coordinates" : "mysql:mysql-connector-java:8.0.29",
+          "exclusions" : [ ]
+        }
+      }, {
+        "pypi" : {
+          "package" : "Theano==1.0.5"
+        }
+      }, {
+        "pypi" : {
+          "package" : "scipy>=1.6.3,<=1.8.1"
+        }
+      } ],
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "SamplingDisabledAll",
+      "depends_on" : [ {
+        "task_key" : "EM_IO"
+      } ],
+      "job_cluster_key" : "Staging_PYTHON_SINGLE_CLUSTER_JOB_default_medium_multi_single_user",
+      "python_wheel_task" : {
+        "package_name" : "SamplingModel_DisabledAll",
+        "entry_point" : "main",
+        "parameters" : [ "-i", "default", "-O", "{}" ]
+      },
+      "libraries" : [ {
+        "maven" : {
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.4.0-7.1.78"
+        }
+      }, {
+        "pypi" : {
+          "package" : "prophecy-libs==1.8.8"
+        }
+      }, {
+        "whl" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SamplingModel_DisabledAll-1.0-py3-none-any.whl"
+      }, {
+        "maven" : {
+          "coordinates" : "mysql:mysql-connector-java:8.0.29",
+          "exclusions" : [ ]
+        }
+      }, {
+        "pypi" : {
+          "package" : "Theano==1.0.5"
+        }
+      }, {
+        "pypi" : {
+          "package" : "scipy>=1.6.3,<=1.8.1"
+        }
+      } ],
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "Python_Basic4",
+      "depends_on" : [ {
+        "task_key" : "SamplingDisabledAll"
+      } ],
+      "job_cluster_key" : "Cluster_2",
+      "python_wheel_task" : {
+        "package_name" : "PYTHON_BASIC",
+        "entry_point" : "main",
+        "parameters" : [ "-i", "default", "-O", "{}" ]
+      },
+      "libraries" : [ {
+        "maven" : {
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.4.0-7.1.78"
+        }
+      }, {
+        "pypi" : {
+          "package" : "prophecy-libs==1.8.8"
+        }
+      }, {
+        "whl" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_BASIC-1.0-py3-none-any.whl"
+      }, {
+        "maven" : {
+          "coordinates" : "mysql:mysql-connector-java:8.0.29",
+          "exclusions" : [ ]
+        }
+      }, {
+        "pypi" : {
+          "package" : "Theano==1.0.5"
+        }
+      }, {
+        "pypi" : {
+          "package" : "scipy>=1.6.3,<=1.8.1"
+        }
+      } ],
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "DBT_1",
+      "job_cluster_key" : "Staging_PYTHON_SINGLE_CLUSTER_JOB_default_medium_multi_single_user",
+      "spark_python_task" : {
+        "python_file" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/SQL_ParentDatabricks/v3.3.1-2/Staging_PYTHON_SINGLE_CLUSTER_JOB/DBT_1-64849352/dbt_script.py"
+      },
+      "libraries" : [ {
+        "pypi" : {
+          "package" : "dbt-databricks>=1.5.0,<2.0.0"
+        }
+      } ],
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "EM_Disabled",
+      "depends_on" : [ {
+        "task_key" : "EM_IO"
+      } ],
+      "job_cluster_key" : "Cluster_1",
+      "python_wheel_task" : {
+        "package_name" : "SamplingModel_DisabledAll",
+        "entry_point" : "main",
+        "parameters" : [ "-i", "default", "-O", "{}" ]
+      },
+      "libraries" : [ {
+        "maven" : {
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.4.0-7.1.78"
+        }
+      }, {
+        "pypi" : {
+          "package" : "prophecy-libs==1.8.8"
+        }
+      }, {
+        "whl" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SamplingModel_DisabledAll-1.0-py3-none-any.whl"
+      }, {
+        "maven" : {
+          "coordinates" : "mysql:mysql-connector-java:8.0.29",
+          "exclusions" : [ ]
+        }
+      }, {
+        "pypi" : {
+          "package" : "Theano==1.0.5"
+        }
+      }, {
+        "pypi" : {
+          "package" : "scipy>=1.6.3,<=1.8.1"
+        }
+      } ],
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "REL_PY_PIP_DEP_MGMT_ALL",
+      "job_cluster_key" : "Cluster_2",
+      "python_wheel_task" : {
+        "package_name" : "REL_PY_PIP_DEP_MGMT_ALL",
+        "entry_point" : "main",
+        "parameters" : [ "-i", "test-instance5", "-O", "{}" ]
+      },
+      "libraries" : [ {
+        "maven" : {
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.4.0-7.1.78"
+        }
+      }, {
+        "pypi" : {
+          "package" : "prophecy-libs==1.8.8"
+        }
+      }, {
+        "whl" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_DEP_MGMT_ALL-1.0-py3-none-any.whl"
+      }, {
+        "maven" : {
+          "coordinates" : "mysql:mysql-connector-java:8.0.29",
+          "exclusions" : [ ]
+        }
+      }, {
+        "pypi" : {
+          "package" : "pandas>=1.4.2"
+        }
+      }, {
+        "pypi" : {
+          "package" : "scipy>=1.6.3,<=1.8.1"
+        }
+      }, {
+        "pypi" : {
+          "package" : "matplotlib==3.5.2"
+        }
+      }, {
+        "pypi" : {
+          "package" : "requests~=2.28.0"
+        }
+      }, {
+        "maven" : {
+          "coordinates" : "com.crealytics:spark-excel_2.12:3.4.1_0.19.0",
+          "exclusions" : [ ]
+        }
+      }, {
+        "pypi" : {
+          "package" : "Theano==1.0.5"
+        }
+      }, {
+        "maven" : {
+          "coordinates" : "org.mongodb:mongodb-driver-sync:4.11.1",
+          "exclusions" : [ ]
+        }
+      }, {
+        "maven" : {
+          "coordinates" : "org.mongodb.spark:mongo-spark-connector_2.12:10.2.0",
+          "exclusions" : [ ]
+        }
+      }, {
+        "pypi" : {
+          "package" : "gensim==4.3.2"
+        }
+      }, {
+        "pypi" : {
+          "package" : "numerizer==0.2.3"
+        }
+      }, {
+        "pypi" : {
+          "package" : "pendulum==2.1.2"
+        }
+      } ],
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "Script_2",
+      "depends_on" : [ {
+        "task_key" : "EM_IO"
+      } ],
+      "job_cluster_key" : "Staging_PYTHON_SINGLE_CLUSTER_JOB_default_medium_multi_single_user",
+      "spark_python_task" : {
+        "python_file" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/Staging_PYTHON_SINGLE_CLUSTER_JOB/Script_2--342935074.py"
+      },
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "DLT_PYTHON",
+      "depends_on" : [ {
+        "task_key" : "Script_2"
+      } ],
+      "pipeline_task" : {
+        "pipeline_id" : "f1998ae5-0afe-4a4c-b13f-dce2dbe88ee2"
+      },
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "DonotOpen",
+      "depends_on" : [ {
+        "task_key" : "Script_2"
+      } ],
+      "job_cluster_key" : "Staging_PYTHON_SINGLE_CLUSTER_JOB_default_medium_multi_single_user",
+      "python_wheel_task" : {
+        "package_name" : "REL_PY_DONOT_OPEN",
+        "entry_point" : "main",
+        "parameters" : [ "-i", "default", "-O", "{}" ]
+      },
+      "libraries" : [ {
+        "maven" : {
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.4.0-7.1.78"
+        }
+      }, {
+        "pypi" : {
+          "package" : "prophecy-libs==1.8.8"
+        }
+      }, {
+        "whl" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_DONOT_OPEN-1.0-py3-none-any.whl"
+      }, {
+        "maven" : {
+          "coordinates" : "mysql:mysql-connector-java:8.0.29",
+          "exclusions" : [ ]
+        }
+      }, {
+        "pypi" : {
+          "package" : "Theano==1.0.5"
+        }
+      }, {
+        "pypi" : {
+          "package" : "scipy>=1.6.3,<=1.8.1"
+        }
+      } ],
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "Script_5",
+      "depends_on" : [ {
+        "task_key" : "PythonBasic1"
+      } ],
+      "job_cluster_key" : "Staging_PYTHON_SINGLE_CLUSTER_JOB_default_medium_multi_single_user",
+      "spark_python_task" : {
+        "python_file" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/Staging_PYTHON_SINGLE_CLUSTER_JOB/Script_5--342935071.py"
+      },
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "Script_4",
+      "depends_on" : [ {
+        "task_key" : "REL_PY_PIP_DEP_MGMT_ALL"
+      } ],
+      "job_cluster_key" : "Cluster_2",
+      "spark_python_task" : {
+        "python_file" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/Staging_PYTHON_SINGLE_CLUSTER_JOB/Script_4--342935072.py"
+      },
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "Script_1",
+      "depends_on" : [ {
+        "task_key" : "Script_2"
+      } ],
+      "job_cluster_key" : "Cluster_2",
+      "spark_python_task" : {
+        "python_file" : "dbfs:/FileStore/prophecy/artifacts/staging/cp/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/Staging_PYTHON_SINGLE_CLUSTER_JOB/Script_1--342935075.py"
+      },
+      "email_notifications" : { },
+      "max_retries" : 0
+    } ],
+    "schedule" : {
+      "quartz_cron_expression" : "0 0 0 9 * ? 2090",
+      "timezone_id" : "GMT",
+      "pause_status" : "UNPAUSED"
+    },
+    "access_control_list" : [ ],
+    "git_source" : {
+      "git_url" : "https://github.com/abhisheks-prophecy/sql_databricks_public_parent",
+      "git_provider" : "gitHub",
+      "git_branch" : "main_staging"
+    }
+  },
+  "cluster_mode" : {
+    "clusterMode" : "Single"
+  },
+  "secret_scope" : "prophecy_jobs_3",
+  "sorted_processes" : [ "BqtvhE7mT9OmjcCsXzX6m", "piC6-VBZUShbiRHUA46V5", "XN75fEayv1t73hscEi5kQ", "3xosyvFhVyO97-kzKjBfI", "VvuwQAiJMqPEajiLlsTTD$$ItH204GaFtb2fsvskySFd", "HJ8-wH9zZgsDakbE1fMCC$$2N_4SmyJLpJp8okzRowov", "b-9zycXTcrrue-ztrMAVc", "ocijfeWFa9S85tNTerdTM$$9AOzo7vXMwKDikHSJKcXS", "rdqvpn73n-BqBR1G2fake", "rkUHbzJv4286o1_FUwBho$$hWiIVpMvQEBKhtQnEKWHB", "u-2dZO67bZZeV_JaAizWA$$tgvBarCGH6CZnSkPY-Jth", "4RfLepzgTBxgR7XeARQhs$$sH2X1kYod6KizexlPXaHy", "NTGTNvk4v6a6_uDyp8r1S", "t5tlrRN0coqhaPFvCYaV7" ]
+}

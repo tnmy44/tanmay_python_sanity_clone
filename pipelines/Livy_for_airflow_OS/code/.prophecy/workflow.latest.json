@@ -1,0 +1,576 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "codeGenConfiguration" : {
+      "editableConfig" : true
+    },
+    "id" : "1",
+    "uri" : "pipelines/Livy_for_airflow_OS",
+    "language" : "python",
+    "fabricId" : "2448",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "abhishekse2etestsprophecyio_team.pythonproject.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.webapp.functions", "prophecy.streaming.functions", "sumitpaulprophecyioteam.prophecysparkmachinelearningpython.functions", "prophecy.warehouse.functions", "prophecy.spark_abi.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "c1",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "c2",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "c3_arr",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "c4",
+                        "kind" : {
+                          "type" : "array",
+                          "elementType" : {
+                            "type" : "record",
+                            "fields" : [ {
+                              "name" : "stry1",
+                              "kind" : {
+                                "type" : "string",
+                                "value" : null
+                              },
+                              "optional" : false,
+                              "isWorkflowNodeConfiguration" : false,
+                              "isReferenced" : false
+                            } ]
+                          },
+                          "value" : null
+                        },
+                        "optional" : false,
+                        "isWorkflowNodeConfiguration" : false,
+                        "isReferenced" : false
+                      } ]
+                    },
+                    "value" : [ {
+                      "c4" : [ {
+                        "stry1" : "def value"
+                      } ]
+                    } ]
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false,
+                  "isReferenced" : false
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "ins1",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "42",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "45",
+      "projectName" : "ProphecyWebAppPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "44",
+      "projectName" : "ProphecyStreamingPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "8813",
+      "projectName" : "ProphecySparkMachineLearningPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "43",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "10040",
+      "projectName" : "ProphecySparkAbinitioPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "livy_for_airflow_os",
+    "configurationVersion" : "v1"
+  },
+  "connections" : [ {
+    "id" : "SsCZdTflkg4i4hzkrXzRZ$$8VucRaYsDI-EZ1706fAUM",
+    "source" : "IPnKLTz6APrwKtawkNO8T$$b_r8140CcK2jehHUJv_A9",
+    "sourcePort" : "lF4nSVF9QlWinzGIa1qGl$$BTNk3LQMNe-iWJ8KRqPsH",
+    "target" : "PXGys__sEI2snGqDK6cIb$$H_MKgY8_iQa2MVL0vgxJX",
+    "targetPort" : "1boVQ4IJiv0O3XWLM7cGz$$0wnmjDK13BwgOdng6xWef"
+  }, {
+    "id" : "xBpTMW-t4foyMYXgHajaQ$$HMLcZoa5kYtPw-c7aj7mJ",
+    "source" : "PXGys__sEI2snGqDK6cIb$$H_MKgY8_iQa2MVL0vgxJX",
+    "sourcePort" : "gXQCozwjMvknF8ujN2QGk$$bIfvzqFw8o5980b22K-m_",
+    "target" : "Q_UMBL1vdh0usXD36zVmM$$oFIBooGzOIDicwHYsHeQO",
+    "targetPort" : "SAsQFK_ISOnufpIDML-FM$$bdZYlVVFW4LYLNf7WQBZ_"
+  } ],
+  "processes" : {
+    "IPnKLTz6APrwKtawkNO8T$$b_r8140CcK2jehHUJv_A9" : {
+      "id" : "IPnKLTz6APrwKtawkNO8T$$b_r8140CcK2jehHUJv_A9",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "livy_os_dataset",
+        "slug" : "livy_os_dataset",
+        "x" : -660,
+        "y" : -260,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "lF4nSVF9QlWinzGIa1qGl$$BTNk3LQMNe-iWJ8KRqPsH",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/livy_os_dataset"
+      }
+    },
+    "PXGys__sEI2snGqDK6cIb$$H_MKgY8_iQa2MVL0vgxJX" : {
+      "id" : "PXGys__sEI2snGqDK6cIb$$H_MKgY8_iQa2MVL0vgxJX",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "select_sector",
+        "slug" : "select_sector",
+        "x" : -420,
+        "y" : -260,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "1boVQ4IJiv0O3XWLM7cGz$$0wnmjDK13BwgOdng6xWef",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "Sector",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Month",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Cereal and Products",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Pulses and Pulse Products",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Oils and Fats",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Meat - Fish etc",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Milk and Milk Products",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Spices and Condiments",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Vegetables",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Fruits",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Sugar - Honey etc",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Non Alcoholic Beverages",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Prepared Meals",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Pan - Supari etc",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Food - beverages and tobacco ",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Fuel and Lighting",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Housing",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Clothing and Bedding",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Footwear",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Clothing - bedding and footwear",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Medical Care",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Education",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Recreation and Amusement",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Transport and Communication",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Personal Care Items",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Household Requisites",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Others",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Miscellaneous",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "General index",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "_c30",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "gXQCozwjMvknF8ujN2QGk$$bIfvzqFw8o5980b22K-m_",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "Sector",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "'$c1.c2.c3_arr[0].c4[0].stry1'"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "Q_UMBL1vdh0usXD36zVmM$$oFIBooGzOIDicwHYsHeQO" : {
+      "id" : "Q_UMBL1vdh0usXD36zVmM$$oFIBooGzOIDicwHYsHeQO",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "print_sector",
+        "slug" : "print_sector",
+        "x" : -240,
+        "y" : -260,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SAsQFK_ISOnufpIDML-FM$$bdZYlVVFW4LYLNf7WQBZ_",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "Sector",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "GqxmyN45i8eIE7VIGvrH-$$N2NW4d4zf4SGy6TrRsJJV",
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "Sector",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : true
+      },
+      "properties" : {
+        "script" : "print(col(\"Sector\"))\nout0=in0",
+        "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
+        "scriptMethodFooter" : "    return out0"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

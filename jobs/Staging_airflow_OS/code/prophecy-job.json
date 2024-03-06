@@ -1,0 +1,1067 @@
+{
+  "metainfo" : {
+    "type" : "OpenSource",
+    "fabricId" : "2447",
+    "jobId" : "jobs/Staging_airflow_OS",
+    "name" : "Staging_airflow_OS",
+    "dagName" : "staging_abhisheks_e2etests_Python_Sanity_Project_Staging_airflow_OS",
+    "schedule" : "None",
+    "enabled" : false,
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "ignore_first_depends_on_past" : true,
+      "do_xcom_push" : true
+    },
+    "availableFabrics" : [ {
+      "id" : "22",
+      "name" : "dev_airflow_prophecy_managed",
+      "trialStartDate" : 1695736560346
+    }, {
+      "id" : "25",
+      "name" : "dev_airflow_mwaa"
+    }, {
+      "id" : "1013",
+      "name" : "dev_airflow_253"
+    }, {
+      "id" : "24",
+      "name" : "dev_airflow"
+    }, {
+      "id" : "2393",
+      "name" : "dev_airflow_263"
+    }, {
+      "id" : "2418",
+      "name" : "dev_aiflow_open_source",
+      "artifactsLocation" : "/mnt/airflow/artifacts"
+    }, {
+      "id" : "2442",
+      "name" : "Automation_python_AirflowOpenSource",
+      "artifactsLocation" : "/mnt/airflow/test/artifacts"
+    }, {
+      "id" : "2447",
+      "name" : "sanity_airflow_os",
+      "artifactsLocation" : "/mnt/airflow/artifacts"
+    } ],
+    "catchup" : true,
+    "scheduleTimeZone" : "UTC",
+    "dagParams" : {
+      "instances" : {
+        "default" : { }
+      },
+      "params" : { },
+      "selected" : "default"
+    },
+    "airflowFunctions" : [ {
+      "id" : "48/functions/airflowFunctions/squared_numbers",
+      "name" : "squared_numbers",
+      "code" : "def squared_numbers(number):\n    print('hello')\n    return (number*number)/d",
+      "initCode" : "d=10",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    }, {
+      "id" : "48/functions/airflowFunctions/join_2_strings",
+      "name" : "join_2_strings",
+      "code" : "def join_2_strings(d1, d2):\n    return f\"{d1}{separator}{d2}\"",
+      "initCode" : "separator=' '",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    }, {
+      "id" : "48/functions/airflowFunctions/delete_me",
+      "name" : "delete_me",
+      "code" : "def delete_me(d1, d2):\n    return f\"{d1}{separator}{d2}\"",
+      "initCode" : "separator=' '",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    }, {
+      "id" : "48/functions/airflowFunctions/load_resource",
+      "name" : "load_resource",
+      "code" : "def load_resource(dag_dir, dag_id, relative_filepath):\n    import os\n    import zipfile\n    import tempfile\n\n    res = \"\"\n    zip_file_found = None\n    for filename in os.listdir(dag_dir):\n        if filename.startswith(dag_id) and filename.endswith('.zip'):\n            zip_file_found = os.path.join(dag_dir, filename)\n            break\n\n    if not zip_file_found:\n        print(f\"Zip for dag: {dag_id} not found\")\n        return res\n\n    with tempfile.TemporaryDirectory() as tmpdirname:\n        with zipfile.ZipFile(zip_file_found, 'r') as zip_ref:\n            zip_ref.extractall(tmpdirname)\n\n\n        target_file_path = os.path.join(tmpdirname, dag_id.lower() , 'resources', relative_filepath)\n        if os.path.exists(target_file_path):\n            with open(target_file_path, 'r') as file:\n                res = file.read()\n        return res",
+      "initCode" : "",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    }, {
+      "id" : "48/functions/airflowFunctions/get_feed_config",
+      "name" : "get_feed_config",
+      "code" : "def get_feed_config(file_contents, search_keys):\n    for line in file_contents.splitlines():\n        # Split the line by commas and strip to remove leading/trailing whitespaces\n        fields = [field.strip() for field in line.split(',')]\n\n        # Check if there are enough fields\n        if len(fields) < 32:\n            continue\n\n        # Extract the first 5 fields as keys\n        keys = fields[:5]\n\n        # Check if the current keys match the search keys\n        if keys == search_keys:\n            # Extract and return the remaining 27 fields as values\n            return tuple(fields[5:])\n\n    # Return an empty tuple if the key is not found or if the value is empty\n    return ()",
+      "initCode" : "",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    } ],
+    "dynamicPipelineStatus" : {
+      "databricks" : false,
+      "dataproc" : false,
+      "emr" : false
+    }
+  },
+  "processes" : {
+    "paZO-tKnEh_Me8p4QMSmm" : {
+      "id" : "paZO-tKnEh_Me8p4QMSmm",
+      "component" : "Email",
+      "metadata" : {
+        "label" : "Email_1",
+        "slug" : "Email_1",
+        "x" : -1220,
+        "y" : -80
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "JEBa1LhCueLK12jnvzDHv",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "QU3v1CusaRu1SkHqeWpIg",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "emailCC" : null,
+        "subject" : "sdfsdf",
+        "emailBCC" : null,
+        "emailTo" : "sdsd@propheyc.io",
+        "emailConnectionId" : "email_default",
+        "htmlContent" : "sdfsdf",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "mqoaohuMa2vqWE6hmWDMe" : {
+      "id" : "mqoaohuMa2vqWE6hmWDMe",
+      "component" : "Python",
+      "metadata" : {
+        "label" : "Python_1_1",
+        "slug" : "Python_1_1",
+        "x" : -980,
+        "y" : -300
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "kD01t7QNc6H60fv_ZjEI4",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "aqFUbA7Do2DsVhNazRgFh",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "templatesExts" : null,
+        "code" : "def python123():\n    return \"staging_sony_airflow_sc_air_os_1_adhoc_aGvS\"",
+        "valueInLogs" : true,
+        "opArgs" : null,
+        "templatesDict" : null,
+        "taskId" : null,
+        "opKwargs" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "S5XrcJfqw5UtSOgxbYYpY$$lL7jNGltaTMpalEp4WDQG" : {
+      "id" : "S5XrcJfqw5UtSOgxbYYpY$$lL7jNGltaTMpalEp4WDQG",
+      "component" : "SparkSubmit",
+      "metadata" : {
+        "label" : "SparkSubmit_4",
+        "slug" : "SparkSubmit_4",
+        "x" : -1660,
+        "y" : -260
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "5BczPaGNqx1_IS8A7Zika$$EL5oy4eb8LKBEi3eGtej3",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "IFhErw1DPbreJLO3llVBz$$-crFjpRMeudhew8JC2pLd",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "jobName" : null,
+        "keytab" : null,
+        "application" : null,
+        "jars" : null,
+        "executorMemory" : null,
+        "deployMode" : "cluster",
+        "proxyUser" : null,
+        "actionOnFailure" : "CONTINUE",
+        "files" : null,
+        "conf" : null,
+        "pyFiles" : null,
+        "clusterSize" : "2448/small",
+        "executorCores" : null,
+        "principal" : null,
+        "driverMemory" : null,
+        "configurations" : {
+          "schema" : [ {
+            "name" : "c1",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "c2",
+                "optional" : false,
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "c3_arr",
+                    "optional" : false,
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "record",
+                        "fields" : [ {
+                          "name" : "c4",
+                          "optional" : false,
+                          "kind" : {
+                            "type" : "array",
+                            "elementType" : {
+                              "type" : "record",
+                              "fields" : [ {
+                                "name" : "stry1",
+                                "optional" : false,
+                                "kind" : {
+                                  "type" : "string",
+                                  "value" : null
+                                },
+                                "isReferenced" : false,
+                                "isWorkflowNodeConfiguration" : false
+                              } ]
+                            },
+                            "value" : null
+                          },
+                          "isReferenced" : false,
+                          "isWorkflowNodeConfiguration" : false
+                        } ]
+                      },
+                      "value" : [ {
+                        "c4" : [ {
+                          "stry1" : "override"
+                        }, {
+                          "stry1" : "again"
+                        } ]
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "Python_Sanity_Project" : [ "default", "ins1" ]
+          },
+          "overrides" : {
+            "c1" : {
+              "c2" : {
+                "c3_arr" : [ {
+                  "c4" : [ {
+                    "stry1" : {
+                      "type" : "literal",
+                      "value" : "asd"
+                    }
+                  }, {
+                    "stry1" : {
+                      "type" : "literal",
+                      "value" : "abc"
+                    }
+                  } ]
+                } ]
+              }
+            }
+          },
+          "selectedInstance" : {
+            "type" : "literal",
+            "value" : "ins1"
+          }
+        },
+        "numExecutors" : null,
+        "taskId" : null,
+        "packages" : null,
+        "javaClass" : null,
+        "pipelineId" : "pipelines/Livy_for_airflow_OS"
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "YPhy6ML4lmmLbfRKJj99C" : {
+      "id" : "YPhy6ML4lmmLbfRKJj99C",
+      "component" : "Python",
+      "metadata" : {
+        "label" : "Python_1",
+        "slug" : "Python_1",
+        "x" : -1400,
+        "y" : 180
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "nXTFT1vt4QbGyulNKHyeR",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "KayA-GUsHEYfuAw8p76yw",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "templatesExts" : null,
+        "code" : "def python123():\n    return [\"ins1\"]",
+        "valueInLogs" : true,
+        "opArgs" : null,
+        "templatesDict" : null,
+        "taskId" : null,
+        "opKwargs" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "v2gZVRLK9PQMAmewBXkwO" : {
+      "id" : "v2gZVRLK9PQMAmewBXkwO",
+      "component" : "Slack",
+      "metadata" : {
+        "label" : "Slack_1",
+        "slug" : "Slack_1",
+        "x" : -1640,
+        "y" : -680
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "XdsP8W3KrZdbKHm4J6SMX",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "m8Vy7KZcZHjvwYHZcqwAG",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "channel" : "sonytest",
+        "text" : "check python",
+        "token" : null,
+        "slackConnectionId" : "slack_default",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "Pq4nEfZlJpo94VGr_TOkd" : {
+      "id" : "Pq4nEfZlJpo94VGr_TOkd",
+      "component" : "S3FileSensor",
+      "metadata" : {
+        "label" : "S3FileSensor_1",
+        "slug" : "S3FileSensor_1",
+        "x" : -1820,
+        "y" : -480
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "7kfZ6vEj4v5d65I7Db6ML",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "hXfpIeLVDPMYpUuQRqjsO",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "awsConnectionId" : "aws_default",
+        "wildCardMatch" : false,
+        "responseCheck" : null,
+        "verifySslCertificates" : true,
+        "s3Paths" : "s3://prophecy-airflow-251/setup_mwaa.sh",
+        "bucketName" : null,
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "B4DoiukIyO-tYPYRX7JyE" : {
+      "id" : "B4DoiukIyO-tYPYRX7JyE",
+      "component" : "TaskGroup",
+      "metadata" : {
+        "label" : "TaskGroup_1",
+        "slug" : "TaskGroup_1",
+        "x" : -840,
+        "y" : 20
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "BBWNgR905R8FbCKeOfIvr",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "H6Kp3ky6Rt-wZk7uTFEiJ",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "taskId" : null
+      },
+      "connections" : [ {
+        "id" : "zAhM2fKdMPtUsi24KEbNR",
+        "source" : "SU6S59iM3uy8HuPQPv7Cf",
+        "target" : "IjUEQ0gfPTjCWaBIGYUUi",
+        "sourcePort" : "bZTKMKRqiS-pomrKjpmyD",
+        "targetPort" : "oILPy7MLEH-S1oHzSgEL0"
+      } ],
+      "processes" : {
+        "IjUEQ0gfPTjCWaBIGYUUi" : {
+          "id" : "IjUEQ0gfPTjCWaBIGYUUi",
+          "component" : "SparkSubmit",
+          "metadata" : {
+            "label" : "SparkSubmit_1",
+            "slug" : "SparkSubmit_1",
+            "x" : -160,
+            "y" : -320
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "oILPy7MLEH-S1oHzSgEL0",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "wjx8HRqEeXt2ahUcaLbBy",
+              "slug" : ""
+            } ]
+          },
+          "settings" : {
+            "retries" : 1
+          },
+          "properties" : {
+            "jobName" : null,
+            "keytab" : null,
+            "application" : null,
+            "jars" : null,
+            "executorMemory" : null,
+            "deployMode" : "cluster",
+            "proxyUser" : null,
+            "actionOnFailure" : "CONTINUE",
+            "files" : null,
+            "conf" : null,
+            "pyFiles" : null,
+            "clusterSize" : "2420/small",
+            "executorCores" : null,
+            "principal" : null,
+            "driverMemory" : null,
+            "configurations" : {
+              "schema" : [ {
+                "name" : "c1",
+                "optional" : false,
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "c2",
+                    "optional" : false,
+                    "kind" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "c3_arr",
+                        "optional" : false,
+                        "kind" : {
+                          "type" : "array",
+                          "elementType" : {
+                            "type" : "record",
+                            "fields" : [ {
+                              "name" : "c4",
+                              "optional" : false,
+                              "kind" : {
+                                "type" : "array",
+                                "elementType" : {
+                                  "type" : "record",
+                                  "fields" : [ {
+                                    "name" : "stry1",
+                                    "optional" : false,
+                                    "kind" : {
+                                      "type" : "string",
+                                      "value" : null
+                                    },
+                                    "isReferenced" : false,
+                                    "isWorkflowNodeConfiguration" : false
+                                  } ]
+                                },
+                                "value" : null
+                              },
+                              "isReferenced" : false,
+                              "isWorkflowNodeConfiguration" : false
+                            } ]
+                          },
+                          "value" : [ {
+                            "c4" : [ {
+                              "stry1" : "def value"
+                            } ]
+                          } ]
+                        },
+                        "isReferenced" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              } ],
+              "instances" : {
+                "Python_Sanity_Project" : [ "default", "ins1" ]
+              },
+              "overrides" : { },
+              "selectedInstance" : {
+                "value" : "default",
+                "type" : "literal"
+              }
+            },
+            "numExecutors" : null,
+            "taskId" : null,
+            "packages" : null,
+            "javaClass" : null,
+            "pipelineId" : "pipelines/Livy_for_airflow_OS"
+          },
+          "connections" : [ ],
+          "processes" : { }
+        },
+        "SU6S59iM3uy8HuPQPv7Cf" : {
+          "id" : "SU6S59iM3uy8HuPQPv7Cf",
+          "component" : "Python",
+          "metadata" : {
+            "label" : "Python_1_2",
+            "slug" : "Python_1_2",
+            "x" : -500,
+            "y" : -260
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "z79OIRQFbClPUyZLbwlq-",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "bZTKMKRqiS-pomrKjpmyD",
+              "slug" : ""
+            } ]
+          },
+          "settings" : { },
+          "properties" : {
+            "templatesExts" : null,
+            "code" : "def python123():\n    return \"ins1\"",
+            "valueInLogs" : true,
+            "opArgs" : null,
+            "templatesDict" : null,
+            "taskId" : null,
+            "opKwargs" : null
+          },
+          "connections" : [ ],
+          "processes" : { }
+        }
+      }
+    },
+    "pSPEQ2MSxqqpHYI8cJJb3" : {
+      "id" : "pSPEQ2MSxqqpHYI8cJJb3",
+      "component" : "ForEachLoop",
+      "metadata" : {
+        "label" : "ForEachLoop_1",
+        "slug" : "ForEachLoop_1",
+        "x" : -840,
+        "y" : 200
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "bbCYg4QGBfpLaXfbjFrCw",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "ToOvPwAnPeH_3edJUW4ys",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "loopVariables" : null,
+        "taskId" : null,
+        "loopSources" : [ {
+          "type" : "xcom",
+          "taskId" : "Python_1",
+          "key" : "return_value",
+          "loopVariables" : [ {
+            "name" : "val1",
+            "type" : "string",
+            "expression" : "value",
+            "enabled" : true
+          } ]
+        } ]
+      },
+      "connections" : [ ],
+      "processes" : {
+        "StSBPW25GIwZJlk_OGaJt" : {
+          "id" : "StSBPW25GIwZJlk_OGaJt",
+          "component" : "SparkSubmit",
+          "metadata" : {
+            "label" : "SparkSubmit_2",
+            "slug" : "SparkSubmit_2",
+            "x" : -320,
+            "y" : -280
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "OYhmx0gy69-wOMCZ56MPP",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "0L5vBDcD1MXCo9pJsmqon",
+              "slug" : ""
+            } ]
+          },
+          "settings" : { },
+          "properties" : {
+            "jobName" : null,
+            "keytab" : null,
+            "application" : null,
+            "jars" : null,
+            "executorMemory" : null,
+            "deployMode" : "cluster",
+            "proxyUser" : null,
+            "actionOnFailure" : "CONTINUE",
+            "files" : null,
+            "conf" : null,
+            "pyFiles" : null,
+            "clusterSize" : "2420/small",
+            "executorCores" : null,
+            "principal" : null,
+            "driverMemory" : null,
+            "configurations" : {
+              "schema" : [ {
+                "name" : "c1",
+                "optional" : false,
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "c2",
+                    "optional" : false,
+                    "kind" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "c3_arr",
+                        "optional" : false,
+                        "kind" : {
+                          "type" : "array",
+                          "elementType" : {
+                            "type" : "record",
+                            "fields" : [ {
+                              "name" : "c4",
+                              "optional" : false,
+                              "kind" : {
+                                "type" : "array",
+                                "elementType" : {
+                                  "type" : "record",
+                                  "fields" : [ {
+                                    "name" : "stry1",
+                                    "optional" : false,
+                                    "kind" : {
+                                      "type" : "string",
+                                      "value" : null
+                                    },
+                                    "isReferenced" : false,
+                                    "isWorkflowNodeConfiguration" : false
+                                  } ]
+                                },
+                                "value" : null
+                              },
+                              "isReferenced" : false,
+                              "isWorkflowNodeConfiguration" : false
+                            } ]
+                          },
+                          "value" : [ {
+                            "c4" : [ {
+                              "stry1" : "def value"
+                            } ]
+                          } ]
+                        },
+                        "isReferenced" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              } ],
+              "instances" : {
+                "Python_Sanity_Project" : [ "default", "ins1" ]
+              },
+              "overrides" : { },
+              "selectedInstance" : {
+                "value" : "default",
+                "type" : "literal"
+              }
+            },
+            "numExecutors" : null,
+            "taskId" : null,
+            "packages" : null,
+            "javaClass" : null,
+            "pipelineId" : "pipelines/Livy_for_airflow_OS"
+          },
+          "connections" : [ ],
+          "processes" : { }
+        }
+      }
+    },
+    "-f7L4BXFgd2qGKpHSUlq1" : {
+      "id" : "-f7L4BXFgd2qGKpHSUlq1",
+      "component" : "HTTPSensor",
+      "metadata" : {
+        "label" : "HTTPSensor_1",
+        "slug" : "HTTPSensor_1",
+        "x" : -1640,
+        "y" : -500
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "uTh-gh40mKwfKN2juxbr2",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "4nKESrDuUvbMhli4BnlOC",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "pokeInterval" : 60,
+        "httpConnectionId" : "http_default",
+        "responseCheck" : null,
+        "endpoint" : "/webhp",
+        "requestParams" : null,
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "5PTyE_AGbtarSJm6EhlBe$$lk9PXvP4wzoqPNLcQmkcF" : {
+      "id" : "5PTyE_AGbtarSJm6EhlBe$$lk9PXvP4wzoqPNLcQmkcF",
+      "component" : "SparkSubmit",
+      "metadata" : {
+        "label" : "SparkSubmit_3",
+        "slug" : "SparkSubmit_3",
+        "x" : -1660,
+        "y" : -120
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "zfkB-t3FHjTTcvRxXvbvI$$Nmh4inrhJRwWB5SuiVDmN",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "gqdZlWmkFmL4UdovcfpCA$$1T3TOHhGt9MfuzJWkjbaV",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "jobName" : null,
+        "keytab" : null,
+        "application" : null,
+        "jars" : null,
+        "executorMemory" : null,
+        "deployMode" : "cluster",
+        "proxyUser" : null,
+        "actionOnFailure" : "CONTINUE",
+        "files" : null,
+        "conf" : null,
+        "pyFiles" : null,
+        "clusterSize" : "2448/small",
+        "executorCores" : null,
+        "principal" : null,
+        "driverMemory" : null,
+        "configurations" : {
+          "schema" : [ {
+            "name" : "c1",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "c2",
+                "optional" : false,
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "c3_arr",
+                    "optional" : false,
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "record",
+                        "fields" : [ {
+                          "name" : "c4",
+                          "optional" : false,
+                          "kind" : {
+                            "type" : "array",
+                            "elementType" : {
+                              "type" : "record",
+                              "fields" : [ {
+                                "name" : "stry1",
+                                "optional" : false,
+                                "kind" : {
+                                  "type" : "string",
+                                  "value" : null
+                                },
+                                "isReferenced" : false,
+                                "isWorkflowNodeConfiguration" : false
+                              } ]
+                            },
+                            "value" : null
+                          },
+                          "isReferenced" : false,
+                          "isWorkflowNodeConfiguration" : false
+                        } ]
+                      },
+                      "value" : [ {
+                        "c4" : [ {
+                          "stry1" : "def value"
+                        } ]
+                      } ]
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "Python_Sanity_Project" : [ "default", "ins1" ]
+          },
+          "overrides" : {
+            "c1" : {
+              "c2" : {
+                "c3_arr" : [ {
+                  "c4" : [ null, {
+                    "stry1" : {
+                      "type" : "literal",
+                      "value" : "sfgfg"
+                    }
+                  } ]
+                } ]
+              }
+            }
+          },
+          "selectedInstance" : {
+            "type" : "xcom",
+            "taskId" : "Python_3",
+            "key" : "return_value"
+          }
+        },
+        "numExecutors" : null,
+        "taskId" : null,
+        "packages" : null,
+        "javaClass" : null,
+        "pipelineId" : "pipelines/Livy_for_airflow_OS"
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "kUq_CetC2I7M8QPqdA5ZW" : {
+      "id" : "kUq_CetC2I7M8QPqdA5ZW",
+      "component" : "Python",
+      "metadata" : {
+        "label" : "Python_3",
+        "slug" : "Python_3",
+        "x" : -1820,
+        "y" : -180
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "uikEznpMRuajOK9n6i63P",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "_JTbtKvMQfpLBYU-f70EN",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "templatesExts" : null,
+        "code" : "def pppp():\n    return \"ins1\"",
+        "valueInLogs" : true,
+        "opArgs" : null,
+        "templatesDict" : null,
+        "taskId" : null,
+        "opKwargs" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "akpPvB2VNcSZsySoSLPb8" : {
+      "id" : "akpPvB2VNcSZsySoSLPb8",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_0",
+        "slug" : "Script_0",
+        "x" : -1340,
+        "y" : -480
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "10ryklRQB1Ppu03BsD_GW",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "UP8UaTWtZOwyfVUVQrs9z",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "code" : "echo \"sdafasdf\"",
+        "language" : "bash",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "O0uxiskfBkE39kVw-FhqA" : {
+      "id" : "O0uxiskfBkE39kVw-FhqA",
+      "component" : "TriggerDag",
+      "metadata" : {
+        "label" : "TriggerDag_1",
+        "slug" : "TriggerDag_1",
+        "x" : -540,
+        "y" : -180
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ASU01HfaUpuCmeuy7WVbx",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "gwiMpbcU7j6H7RfN0hp2_",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "pokeInterval" : null,
+        "resetDagRun" : false,
+        "executionDate" : null,
+        "dagId" : {
+          "type" : "code",
+          "code" : "ti.xcom_pull('Python_1_1')"
+        },
+        "selectionType" : "dag",
+        "conf" : {
+          "type" : "literal",
+          "value" : "{\"test1\":\"tyty\"}"
+        },
+        "jobId" : null,
+        "waitForCompletion" : false,
+        "runId" : null,
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "vl9wf02nHud0FJHogF422" : {
+      "id" : "vl9wf02nHud0FJHogF422",
+      "component" : "Branch",
+      "metadata" : {
+        "label" : "Branch_1",
+        "slug" : "Branch_1",
+        "x" : -1820,
+        "y" : 40
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "B0jIUo4f4_zHeW17hz1Ij",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "Y2KdnQS0ujlBUqEo4E3Sx",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "callback" : "def branchcheck():\n    return \"Python_1\"",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    }
+  },
+  "connections" : [ {
+    "id" : "RsTv0fe0Yn-BNKKdJahdg",
+    "source" : "Pq4nEfZlJpo94VGr_TOkd",
+    "target" : "-f7L4BXFgd2qGKpHSUlq1",
+    "sourcePort" : "hXfpIeLVDPMYpUuQRqjsO",
+    "targetPort" : "uTh-gh40mKwfKN2juxbr2"
+  }, {
+    "id" : "dr4-CNCvVhpdzOdSOjUmd",
+    "source" : "vl9wf02nHud0FJHogF422",
+    "target" : "YPhy6ML4lmmLbfRKJj99C",
+    "sourcePort" : "Y2KdnQS0ujlBUqEo4E3Sx",
+    "targetPort" : "nXTFT1vt4QbGyulNKHyeR"
+  }, {
+    "id" : "Lfq13zwCyrGw2ON_QuaVz",
+    "source" : "YPhy6ML4lmmLbfRKJj99C",
+    "target" : "B4DoiukIyO-tYPYRX7JyE",
+    "sourcePort" : "KayA-GUsHEYfuAw8p76yw",
+    "targetPort" : "BBWNgR905R8FbCKeOfIvr"
+  }, {
+    "id" : "IPY-Nw2Fa6i4FGtOJ_5rQ",
+    "source" : "vl9wf02nHud0FJHogF422",
+    "target" : "paZO-tKnEh_Me8p4QMSmm",
+    "sourcePort" : "Y2KdnQS0ujlBUqEo4E3Sx",
+    "targetPort" : "JEBa1LhCueLK12jnvzDHv"
+  }, {
+    "id" : "6A0lrR6FaKZ0wUwv8VyND",
+    "source" : "mqoaohuMa2vqWE6hmWDMe",
+    "target" : "O0uxiskfBkE39kVw-FhqA",
+    "sourcePort" : "aqFUbA7Do2DsVhNazRgFh",
+    "targetPort" : "ASU01HfaUpuCmeuy7WVbx"
+  }, {
+    "id" : "nfzMx8MWy7PfhSxS24D0k",
+    "source" : "YPhy6ML4lmmLbfRKJj99C",
+    "target" : "pSPEQ2MSxqqpHYI8cJJb3",
+    "sourcePort" : "KayA-GUsHEYfuAw8p76yw",
+    "targetPort" : "bbCYg4QGBfpLaXfbjFrCw"
+  }, {
+    "id" : "25-5mlK-LQtrCmU1MK1hG",
+    "source" : "-f7L4BXFgd2qGKpHSUlq1",
+    "target" : "akpPvB2VNcSZsySoSLPb8",
+    "sourcePort" : "4nKESrDuUvbMhli4BnlOC",
+    "targetPort" : "10ryklRQB1Ppu03BsD_GW"
+  }, {
+    "id" : "Dt3GvxJMPxAY_-h78pOYg",
+    "source" : "kUq_CetC2I7M8QPqdA5ZW",
+    "target" : "S5XrcJfqw5UtSOgxbYYpY$$lL7jNGltaTMpalEp4WDQG",
+    "sourcePort" : "_JTbtKvMQfpLBYU-f70EN",
+    "targetPort" : "5BczPaGNqx1_IS8A7Zika$$EL5oy4eb8LKBEi3eGtej3"
+  }, {
+    "id" : "3zCzK9Ty1ryYwOAeESZ3Q",
+    "source" : "kUq_CetC2I7M8QPqdA5ZW",
+    "target" : "5PTyE_AGbtarSJm6EhlBe$$lk9PXvP4wzoqPNLcQmkcF",
+    "sourcePort" : "_JTbtKvMQfpLBYU-f70EN",
+    "targetPort" : "zfkB-t3FHjTTcvRxXvbvI$$Nmh4inrhJRwWB5SuiVDmN"
+  } ]
+}

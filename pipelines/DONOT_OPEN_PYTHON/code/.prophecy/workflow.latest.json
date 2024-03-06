@@ -1,0 +1,1942 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "id" : "1",
+    "uri" : "pipelines/DONOT_OPEN_PYTHON",
+    "language" : "python",
+    "fabricId" : "1",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "abhishekse2etestsprophecyio_team.pythonproject.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.webapp.functions", "prophecy.streaming.functions", "sumitpaulprophecyioteam.prophecysparkmachinelearningpython.functions", "prophecy.warehouse.functions", "prophecy.spark_abi.functions" ],
+      "initialCode" : "initial=10"
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "JDBC_URL",
+          "kind" : {
+            "type" : "string",
+            "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "JDBC_SOURCE_TABLE",
+          "kind" : {
+            "type" : "string",
+            "value" : "test_table"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "CONFIG_STR",
+          "kind" : {
+            "type" : "string",
+            "value" : "jdbc_url-${JDBC_URL}"
+          },
+          "optional" : true,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "CONFIG_BOOLEAN",
+          "kind" : {
+            "type" : "boolean",
+            "value" : true
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "CONFIG_DOUBLE",
+          "kind" : {
+            "type" : "double",
+            "value" : 10012321.1232
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "CONFIG_INT",
+          "kind" : {
+            "type" : "int",
+            "value" : 97987
+          },
+          "optional" : true,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "CONFIG_FLOAT",
+          "kind" : {
+            "type" : "float",
+            "value" : 4567546.34543
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "CONFIG_SHORT",
+          "kind" : {
+            "type" : "short",
+            "value" : 120
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "CONFIG_DB_SECRETS",
+          "kind" : {
+            "type" : "databricks_secret",
+            "value" : "qasecrets:mysql_user"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "c_int",
+          "kind" : {
+            "type" : "int",
+            "value" : 22
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "c_string",
+          "kind" : {
+            "type" : "string",
+            "value" : "hello sir"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ {
+      "name" : "spark_config1",
+      "value" : "spark_config1 value"
+    }, {
+      "name" : "spark_config2",
+      "value" : "spark_config2 value"
+    } ],
+    "hadoopConf" : [ {
+      "name" : "hadoop_config1",
+      "value" : "hadoop_config1 value"
+    }, {
+      "name" : "hadoop_config2",
+      "value" : "hadoop_config2 value"
+    } ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "42",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "45",
+      "projectName" : "ProphecyWebAppPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "44",
+      "projectName" : "ProphecyStreamingPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "8813",
+      "projectName" : "ProphecySparkMachineLearningPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "43",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "10040",
+      "projectName" : "ProphecySparkAbinitioPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 155
+    },
+    "topLevelPackage" : "pythonorganization.donot.openme12",
+    "configurationVersion" : "v1"
+  },
+  "connections" : [ {
+    "id" : "tHn5L9EH4HHEKUpbuaFBm",
+    "source" : "3l23qePqLJgjyYtxy0qno$$7NyQNaQlfisHyeEzJfM6U",
+    "sourcePort" : "a6tW0hDhJBitWcs54DDPX$$vW54tGZPEukPJ6yM2SnJ0",
+    "target" : "NMUh2xYLAuXcZli72IVN-$$CipzfFtI3_NxEv4mDt6dA",
+    "targetPort" : "__kiHe_nmhl06NZCmvYkc$$nSeiTiuk38xLl-X8GrO4f"
+  }, {
+    "id" : "1qM5E1F8EZgVPpmu-vAPo",
+    "source" : "3l23qePqLJgjyYtxy0qno$$7NyQNaQlfisHyeEzJfM6U",
+    "sourcePort" : "a6tW0hDhJBitWcs54DDPX$$vW54tGZPEukPJ6yM2SnJ0",
+    "target" : "zSBXj1d4OE10Q6TFs5ckL$$m1LssIGrUOx6qP_4wvuSk",
+    "targetPort" : "ln2MXb59F_FproFIeuwEN$$uEYACkwubeb54os9EGbqV"
+  }, {
+    "id" : "rKxZLIbWnERVyMvWP6pll",
+    "source" : "HRYUVZWnKwzLdXfyz5Sbc$$rNIssf8_3Gw7FyL45RNyM",
+    "sourcePort" : "6EOfefcO2012mmO49qOLs$$eeFMvrb2MA_5f56THPQVW",
+    "target" : "gP_I2iL-CLJXVL8wxN4u8$$sMFb8ypiG6d6qSzVeBbDv",
+    "targetPort" : "KCqNJ98mXm71-MdPShX9H$$8fVlVXJ-SuyDRKkJfni6p"
+  }, {
+    "id" : "TEf6YUm-pclzpSD6c45T-",
+    "source" : "3l23qePqLJgjyYtxy0qno$$7NyQNaQlfisHyeEzJfM6U",
+    "sourcePort" : "a6tW0hDhJBitWcs54DDPX$$vW54tGZPEukPJ6yM2SnJ0",
+    "target" : "4ZtrXhC0sbuWR9I3CsEIs$$0XUUapM7E0ZrpIigj8ZXt",
+    "targetPort" : "lZsq-LVmC-G5IZmmDvyNM$$HJRbKFetrb55R05neAd-b"
+  }, {
+    "id" : "1N8Pen0BKG6xxhrQlFxfh",
+    "source" : "DiWYANUTzgCg7Nj9b_I3p$$kVuNWYARpKOQaJW3P1Uy6",
+    "sourcePort" : "JIudo_6_mU2LX7r4AevxZ$$3RhZbY9iUOjMU5gDolm2r",
+    "target" : "ELMa4CfjucAewftrtjx2Q$$c-vWZYGd2CduoUl2QWZAz",
+    "targetPort" : "ZRra9a1M-2ErynCntye5Z$$SnIA8Qgu7w4-ZXuIcFfyU"
+  }, {
+    "id" : "V83qBdOmpDqqbSIHbIP-8",
+    "source" : "NMUh2xYLAuXcZli72IVN-$$CipzfFtI3_NxEv4mDt6dA",
+    "sourcePort" : "clcg03qn1jBxCzStpNrr8$$r65Gdk1kWAP2rSk2dc43O",
+    "target" : "DiWYANUTzgCg7Nj9b_I3p$$kVuNWYARpKOQaJW3P1Uy6",
+    "targetPort" : "mXSz5OAGTvq2c8zd2EpxJ$$LBjY5iailFg8kiRu9wYUx"
+  }, {
+    "id" : "GMWkpgHA4tNsYjGt4rQ3S",
+    "source" : "4ZtrXhC0sbuWR9I3CsEIs$$0XUUapM7E0ZrpIigj8ZXt",
+    "sourcePort" : "aOuhZD9tRoiCwIfkLyDL0$$NeMF5Yqc1ZTbRLWfmMLh_",
+    "target" : "vdvWkgmHY3D_vcJOb9AUg$$oA3X8CQeLba2feC60ABJw",
+    "targetPort" : "FQpi2JwEnjXCX_jNwjZbW$$UtS4YnVw1NgfxdMoFWR-9"
+  }, {
+    "id" : "Ahoh5Es3JBFipx8pPAl5q",
+    "source" : "3l23qePqLJgjyYtxy0qno$$7NyQNaQlfisHyeEzJfM6U",
+    "sourcePort" : "a6tW0hDhJBitWcs54DDPX$$vW54tGZPEukPJ6yM2SnJ0",
+    "target" : "Myw5_W3UfR30YAjAllwto$$GmkTsJ1smWDBHIg7KxS1K",
+    "targetPort" : "_yzi-PXZfyDTZutJXNDOn$$Y3rQl_8Qt8V_Cxue2djVg"
+  }, {
+    "id" : "GHCZxwJ_A3pvuEg9VEFQN",
+    "source" : "4ZtrXhC0sbuWR9I3CsEIs$$0XUUapM7E0ZrpIigj8ZXt",
+    "sourcePort" : "aOuhZD9tRoiCwIfkLyDL0$$NeMF5Yqc1ZTbRLWfmMLh_",
+    "target" : "ibmYP69N1Mi3Wkm6nH-E8$$su1YGhZgqPIyBXYxgQLOL",
+    "targetPort" : "wne_8PujmcNq3VdjAdyVH$$dBj6llU7hlH-hKNbOPbQ-"
+  }, {
+    "id" : "tc0gjfIgGYi2wOxm5b7k7",
+    "source" : "aapEbZJ7mURxV_QTTHtA3$$uFGmbdxliArHFsCGprGs5",
+    "sourcePort" : "mAt3b4UHTguif0xmJPyLT$$WHrANRK9zHyB9ge0IfRKb",
+    "target" : "ibmYP69N1Mi3Wkm6nH-E8$$su1YGhZgqPIyBXYxgQLOL",
+    "targetPort" : "XGojvhwV-A4N9FtElDWpi$$Hf9JsJ-St94f6IHdD4GJ3"
+  }, {
+    "id" : "Sa4cuW1mbYG6uS2w9vxst",
+    "source" : "4ZtrXhC0sbuWR9I3CsEIs$$0XUUapM7E0ZrpIigj8ZXt",
+    "sourcePort" : "aOuhZD9tRoiCwIfkLyDL0$$NeMF5Yqc1ZTbRLWfmMLh_",
+    "target" : "aapEbZJ7mURxV_QTTHtA3$$uFGmbdxliArHFsCGprGs5",
+    "targetPort" : "Rd2ts5NXhMg7_2SWUkG2T$$gncdSORh1FXzGBPvxFixG"
+  }, {
+    "id" : "K_5OiJeYTA7nKEssc4QxQ",
+    "source" : "j9GI3udiJoPTDxpaUvqQg$$Iv1GN0Hy-XWCI7Ux8j-Jf",
+    "sourcePort" : "u4cBN9TavDvWvMWvJVVlC$$fiOvToppqgICI-EJrst1R",
+    "target" : "a1Xm5FXel0UOwe6dTF_0t$$PuplZ6yIm9q7tkkHGdLjs",
+    "targetPort" : "bVJUG-If74dFlyod2aqg_$$o_L5HMX5nt_yzZI3f3_1p"
+  }, {
+    "id" : "kg53qtfSqWnDRXaVtZvVv",
+    "source" : "NMUh2xYLAuXcZli72IVN-$$CipzfFtI3_NxEv4mDt6dA",
+    "sourcePort" : "clcg03qn1jBxCzStpNrr8$$r65Gdk1kWAP2rSk2dc43O",
+    "target" : "j9GI3udiJoPTDxpaUvqQg$$Iv1GN0Hy-XWCI7Ux8j-Jf",
+    "targetPort" : "KWnNYFG7qKQ-xwR4taHfe$$-UeCvFbi8k7MFv7dsfCEN"
+  } ],
+  "processes" : {
+    "HRYUVZWnKwzLdXfyz5Sbc$$rNIssf8_3Gw7FyL45RNyM" : {
+      "id" : "HRYUVZWnKwzLdXfyz5Sbc$$rNIssf8_3Gw7FyL45RNyM",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_avro_CustsDatasetInput_1",
+        "slug" : "src_avro_CustsDatasetInput_1",
+        "x" : -820,
+        "y" : -360,
+        "phase" : -1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "6EOfefcO2012mmO49qOLs$$eeFMvrb2MA_5f56THPQVW",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_avro_CustsDatasetInput"
+      }
+    },
+    "j9GI3udiJoPTDxpaUvqQg$$Iv1GN0Hy-XWCI7Ux8j-Jf" : {
+      "id" : "j9GI3udiJoPTDxpaUvqQg$$Iv1GN0Hy-XWCI7Ux8j-Jf",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Removethisbuddy",
+        "slug" : "Removethisbuddy",
+        "x" : -220,
+        "y" : 340,
+        "phase" : 0,
+        "cache" : true,
+        "detailedStats" : false,
+        "isImported" : false,
+        "passThrough" : "Config.c_int < -100",
+        "removalCondition" : "Config.c_int < -100"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "KWnNYFG7qKQ-xwR4taHfe$$-UeCvFbi8k7MFv7dsfCEN",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each customer. It stores numerical values in integer data type, providing a way to distinguish between different customers in the dataset. This column is used as a primary key for the CustomersOrders dataset.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The first name of each customer is stored in this column. It stores values of string data type and provides a way to identify each customer by their first name.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The last name of each customer is stored in this column. It stores string values and provides a way to identify individuals based on their family name. This column is part of the src_avro_CustsDatasetInput dataset schema.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the phone number of each customer. The values in this column are of string data type and provide a way to contact each customer. It is recommended to format the phone numbers consistently to ensure accurate communication with customers.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the email address of each customer. It is a string data type column that contains the email address of each customer. This column provides a way to contact customers and send them promotional offers or updates related to their account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Represents the country code of the customer's location. It stores values in string data type and provides information about the country where the customer resides. This column can be used for segmentation and analysis based on geographic location.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the date when the customer's account was opened. The values in this column are of string data type and follow the format YYYY-MM-DD. This column provides information about the length of time a customer has been associated with the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "This column stores information about the account status of each customer. It contains string values that indicate whether the account is active or inactive, and whether there are any flags associated with the account. This information can be used to identify customers who may require special attention or assistance.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "u4cBN9TavDvWvMWvJVVlC$$fiOvToppqgICI-EJrst1R",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "c1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "concat('a', 'b')"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "3l23qePqLJgjyYtxy0qno$$7NyQNaQlfisHyeEzJfM6U" : {
+      "id" : "3l23qePqLJgjyYtxy0qno$$7NyQNaQlfisHyeEzJfM6U",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_avro_CustsDatasetInput",
+        "slug" : "src_avro_CustsDatasetInput",
+        "x" : -1120,
+        "y" : 0,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "a6tW0hDhJBitWcs54DDPX$$vW54tGZPEukPJ6yM2SnJ0",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_avro_CustsDatasetInput"
+      }
+    },
+    "4ZtrXhC0sbuWR9I3CsEIs$$0XUUapM7E0ZrpIigj8ZXt" : {
+      "id" : "4ZtrXhC0sbuWR9I3CsEIs$$0XUUapM7E0ZrpIigj8ZXt",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "SchemaTransform_1",
+        "slug" : "SchemaTransform_1",
+        "x" : -20,
+        "y" : -260,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "passThrough" : "Config.c_int > -100",
+        "removalCondition" : "Config.c_int > -100"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "lZsq-LVmC-G5IZmmDvyNM$$HJRbKFetrb55R05neAd-b",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each customer. It stores numerical values in integer data type, providing a way to distinguish between different customers in the dataset. This column is used as a primary key for the CustomersOrders dataset.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The first name of each customer is stored in this column. It stores values of string data type and provides a way to identify each customer by their first name.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The last name of each customer is stored in this column. It stores string values and provides a way to identify individuals based on their family name. This column is part of the src_avro_CustsDatasetInput dataset schema.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the phone number of each customer. The values in this column are of string data type and provide a way to contact each customer. It is recommended to format the phone numbers consistently to ensure accurate communication with customers.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the email address of each customer. It is a string data type column that contains the email address of each customer. This column provides a way to contact customers and send them promotional offers or updates related to their account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Represents the country code of the customer's location. It stores values in string data type and provides information about the country where the customer resides. This column can be used for segmentation and analysis based on geographic location.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the date when the customer's account was opened. The values in this column are of string data type and follow the format YYYY-MM-DD. This column provides information about the length of time a customer has been associated with the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "This column stores information about the account status of each customer. It contains string values that indicate whether the account is active or inactive, and whether there are any flags associated with the account. This information can be used to identify customers who may require special attention or assistance.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "aOuhZD9tRoiCwIfkLyDL0$$NeMF5Yqc1ZTbRLWfmMLh_",
+          "slug" : "out",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email_main",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "full_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "sql",
+        "importString" : "addrep,full_name,``concat(first_name, last_name)``\ndrop,account_flags\ndrop,account_open_date\ndrop,phone\nrename,email,email_main\nmissing,customer_id,10",
+        "transformations" : [ {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddReplaceColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "full_name",
+            "expression" : {
+              "format" : "sql",
+              "expression" : "concat(first_name, last_name)"
+            }
+          }
+        }, {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : "account_flags"
+          },
+          "kind" : "DropColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "",
+            "expression" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          }
+        }, {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : "account_open_date"
+          },
+          "kind" : "DropColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "",
+            "expression" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          }
+        }, {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : "phone"
+          },
+          "kind" : "DropColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "",
+            "expression" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          }
+        }, {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "RenameColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "email",
+            "targetColumn" : "email_main"
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "",
+            "expression" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          }
+        }, {
+          "MissingColumn" : {
+            "sourceColumn" : "customer_id",
+            "defaultValue" : {
+              "format" : "sql",
+              "expression" : "10"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "MissingColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "",
+            "expression" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          }
+        } ],
+        "activeTab" : "advanced",
+        "columnsSelector" : [ "x-ZwDDe3tGegzRTvHbcxK$$D4t0eIHIPw-7i4cXwnebE##phone", "x-ZwDDe3tGegzRTvHbcxK$$D4t0eIHIPw-7i4cXwnebE##first_name", "x-ZwDDe3tGegzRTvHbcxK$$D4t0eIHIPw-7i4cXwnebE##account_flags", "x-ZwDDe3tGegzRTvHbcxK$$D4t0eIHIPw-7i4cXwnebE##email", "x-ZwDDe3tGegzRTvHbcxK$$D4t0eIHIPw-7i4cXwnebE##account_open_date", "x-ZwDDe3tGegzRTvHbcxK$$D4t0eIHIPw-7i4cXwnebE##customer_id", "x-ZwDDe3tGegzRTvHbcxK$$D4t0eIHIPw-7i4cXwnebE##last_name" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/SchemaTransform",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "DiWYANUTzgCg7Nj9b_I3p$$kVuNWYARpKOQaJW3P1Uy6" : {
+      "id" : "DiWYANUTzgCg7Nj9b_I3p$$kVuNWYARpKOQaJW3P1Uy6",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "PassthisBuddy",
+        "slug" : "PassthisBuddy",
+        "x" : -140,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : true,
+        "detailedStats" : false,
+        "isImported" : false,
+        "passThrough" : "Config.c_int < -100"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mXSz5OAGTvq2c8zd2EpxJ$$LBjY5iailFg8kiRu9wYUx",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each customer. It stores numerical values in integer data type, providing a way to distinguish between different customers in the dataset. This column is used as a primary key for the CustomersOrders dataset.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The first name of each customer is stored in this column. It stores values of string data type and provides a way to identify each customer by their first name.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The last name of each customer is stored in this column. It stores string values and provides a way to identify individuals based on their family name. This column is part of the src_avro_CustsDatasetInput dataset schema.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the phone number of each customer. The values in this column are of string data type and provide a way to contact each customer. It is recommended to format the phone numbers consistently to ensure accurate communication with customers.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the email address of each customer. It is a string data type column that contains the email address of each customer. This column provides a way to contact customers and send them promotional offers or updates related to their account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Represents the country code of the customer's location. It stores values in string data type and provides information about the country where the customer resides. This column can be used for segmentation and analysis based on geographic location.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the date when the customer's account was opened. The values in this column are of string data type and follow the format YYYY-MM-DD. This column provides information about the length of time a customer has been associated with the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "This column stores information about the account status of each customer. It contains string values that indicate whether the account is active or inactive, and whether there are any flags associated with the account. This information can be used to identify customers who may require special attention or assistance.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "JIudo_6_mU2LX7r4AevxZ$$3RhZbY9iUOjMU5gDolm2r",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "c1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "concat('a', 'b')"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "ibmYP69N1Mi3Wkm6nH-E8$$su1YGhZgqPIyBXYxgQLOL" : {
+      "id" : "ibmYP69N1Mi3Wkm6nH-E8$$su1YGhZgqPIyBXYxgQLOL",
+      "component" : "CompareColumns",
+      "metadata" : {
+        "label" : "CompareColumns_1",
+        "slug" : "CompareColumns_1",
+        "x" : 520,
+        "y" : -240,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wne_8PujmcNq3VdjAdyVH$$dBj6llU7hlH-hKNbOPbQ-",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email_main",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "full_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "XGojvhwV-A4N9FtElDWpi$$Hf9JsJ-St94f6IHdD4GJ3",
+          "slug" : "in1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email_main",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "full_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "g8e9nQKeLUCfGrnh6Uv68$$70yE421Pjsbip2swaT0hd",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnName" : "column_name",
+        "mismatchExampleLeft" : "mismatch_example_left",
+        "idColumns" : [ {
+          "format" : "sql",
+          "expression" : "customer_id"
+        } ],
+        "activeTab" : "id_columns",
+        "columnsSelector" : [ "in0##customer_id", "in1##customer_id" ],
+        "mismatchIdColumnPrefix" : "mismatch_example_",
+        "matchCount" : "match_count",
+        "mismatchCount" : "mismatch_count",
+        "mismatchExampleRight" : "mismatch_example_right"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/CompareColumns",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "aapEbZJ7mURxV_QTTHtA3$$uFGmbdxliArHFsCGprGs5" : {
+      "id" : "aapEbZJ7mURxV_QTTHtA3$$uFGmbdxliArHFsCGprGs5",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_4",
+        "slug" : "Reformat_4",
+        "x" : 260,
+        "y" : -120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Rd2ts5NXhMg7_2SWUkG2T$$gncdSORh1FXzGBPvxFixG",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email_main",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "full_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "mAt3b4UHTguif0xmJPyLT$$WHrANRK9zHyB9ge0IfRKb",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "customer_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "customer_id"
+          },
+          "description" : ""
+        }, {
+          "target" : "first_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CASE WHEN first_name LIKE '%a%' THEN 'amar' WHEN first_name LIKE '%b%' THEN 'abhiimanyu' ELSE first_name END"
+          },
+          "description" : ""
+        }, {
+          "target" : "last_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "'last'"
+          },
+          "description" : ""
+        }, {
+          "target" : "email_main",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "email_main"
+          },
+          "description" : ""
+        }, {
+          "target" : "country_code",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "'invalid'"
+          },
+          "description" : ""
+        }, {
+          "target" : "full_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "full_name"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "krYFObj5FhJwwLsR_nL3s$$v1uzU8-h7D7Juf41fnN2m##customer_id", "krYFObj5FhJwwLsR_nL3s$$v1uzU8-h7D7Juf41fnN2m##email_main", "krYFObj5FhJwwLsR_nL3s$$v1uzU8-h7D7Juf41fnN2m##first_name", "krYFObj5FhJwwLsR_nL3s$$v1uzU8-h7D7Juf41fnN2m##full_name" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "Myw5_W3UfR30YAjAllwto$$GmkTsJ1smWDBHIg7KxS1K" : {
+      "id" : "Myw5_W3UfR30YAjAllwto$$GmkTsJ1smWDBHIg7KxS1K",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "DONOT_DELETE",
+        "slug" : "DONOT_DELETE",
+        "x" : -620,
+        "y" : -220,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "_yzi-PXZfyDTZutJXNDOn$$Y3rQl_8Qt8V_Cxue2djVg",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each customer. It stores numerical values in integer data type, providing a way to distinguish between different customers in the dataset. This column is used as a primary key for the CustomersOrders dataset.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The first name of each customer is stored in this column. It stores values of string data type and provides a way to identify each customer by their first name.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The last name of each customer is stored in this column. It stores string values and provides a way to identify individuals based on their family name. This column is part of the src_avro_CustsDatasetInput dataset schema.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the phone number of each customer. The values in this column are of string data type and provide a way to contact each customer. It is recommended to format the phone numbers consistently to ensure accurate communication with customers.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the email address of each customer. It is a string data type column that contains the email address of each customer. This column provides a way to contact customers and send them promotional offers or updates related to their account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Represents the country code of the customer's location. It stores values in string data type and provides information about the country where the customer resides. This column can be used for segmentation and analysis based on geographic location.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the date when the customer's account was opened. The values in this column are of string data type and follow the format YYYY-MM-DD. This column provides information about the length of time a customer has been associated with the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "This column stores information about the account status of each customer. It contains string values that indicate whether the account is active or inactive, and whether there are any flags associated with the account. This information can be used to identify customers who may require special attention or assistance.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "Jx5Yzatjndu8qhDY35AP6$$c8UZ76xyKvWKGd1pRtSKq",
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "script" : "print(f\"String: {Config.c_string}, Int: ${Config.c_int}\")\nout0=in0",
+        "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
+        "scriptMethodFooter" : "    return out0"
+      }
+    },
+    "vdvWkgmHY3D_vcJOb9AUg$$oA3X8CQeLba2feC60ABJw" : {
+      "id" : "vdvWkgmHY3D_vcJOb9AUg$$oA3X8CQeLba2feC60ABJw",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_3",
+        "slug" : "Reformat_3",
+        "x" : 260,
+        "y" : -340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "FQpi2JwEnjXCX_jNwjZbW$$UtS4YnVw1NgfxdMoFWR-9",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email_main",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "full_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "qR86_uAFnx2aQOod02Tzc$$m6yZ9_VWGbNBOI5iE64DY",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "customer_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "customer_id"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "QiHXwZ8yLO1yNy0AALVTO$$zg-7FiqqU3tDU55H6pGGo##customer_id" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "NMUh2xYLAuXcZli72IVN-$$CipzfFtI3_NxEv4mDt6dA" : {
+      "id" : "NMUh2xYLAuXcZli72IVN-$$CipzfFtI3_NxEv4mDt6dA",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_1",
+        "slug" : "Limit_1",
+        "x" : -620,
+        "y" : 240,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "__kiHe_nmhl06NZCmvYkc$$nSeiTiuk38xLl-X8GrO4f",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each customer. It stores numerical values in integer data type, providing a way to distinguish between different customers in the dataset. This column is used as a primary key for the CustomersOrders dataset.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The first name of each customer is stored in this column. It stores values of string data type and provides a way to identify each customer by their first name.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The last name of each customer is stored in this column. It stores string values and provides a way to identify individuals based on their family name. This column is part of the src_avro_CustsDatasetInput dataset schema.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the phone number of each customer. The values in this column are of string data type and provide a way to contact each customer. It is recommended to format the phone numbers consistently to ensure accurate communication with customers.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the email address of each customer. It is a string data type column that contains the email address of each customer. This column provides a way to contact customers and send them promotional offers or updates related to their account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Represents the country code of the customer's location. It stores values in string data type and provides information about the country where the customer resides. This column can be used for segmentation and analysis based on geographic location.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the date when the customer's account was opened. The values in this column are of string data type and follow the format YYYY-MM-DD. This column provides information about the length of time a customer has been associated with the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "This column stores information about the account status of each customer. It contains string values that indicate whether the account is active or inactive, and whether there are any flags associated with the account. This information can be used to identify customers who may require special attention or assistance.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "clcg03qn1jBxCzStpNrr8$$r65Gdk1kWAP2rSk2dc43O",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "10"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Limit",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "ELMa4CfjucAewftrtjx2Q$$c-vWZYGd2CduoUl2QWZAz" : {
+      "id" : "ELMa4CfjucAewftrtjx2Q$$c-vWZYGd2CduoUl2QWZAz",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "Deduplicate_1",
+        "slug" : "Deduplicate_1",
+        "x" : 260,
+        "y" : 140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ZRra9a1M-2ErynCntye5Z$$SnIA8Qgu7w4-ZXuIcFfyU",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c1",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "JgConInYyywzAMUXEj2gy$$dkkN3lXI79z5xSn16Wm5g",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "dedupColumns" : [ ],
+        "dedupType" : "distinct",
+        "columnsSelector" : [ ],
+        "orders" : [ ],
+        "useOrderBy" : false
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Deduplicate",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "zSBXj1d4OE10Q6TFs5ckL$$m1LssIGrUOx6qP_4wvuSk" : {
+      "id" : "zSBXj1d4OE10Q6TFs5ckL$$m1LssIGrUOx6qP_4wvuSk",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_1",
+        "slug" : "Script_1",
+        "x" : -60,
+        "y" : -440,
+        "phase" : 0,
+        "cache" : true,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ln2MXb59F_FproFIeuwEN$$uEYACkwubeb54os9EGbqV",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each customer. It stores numerical values in integer data type, providing a way to distinguish between different customers in the dataset. This column is used as a primary key for the CustomersOrders dataset.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The first name of each customer is stored in this column. It stores values of string data type and provides a way to identify each customer by their first name.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The last name of each customer is stored in this column. It stores string values and provides a way to identify individuals based on their family name. This column is part of the src_avro_CustsDatasetInput dataset schema.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the phone number of each customer. The values in this column are of string data type and provide a way to contact each customer. It is recommended to format the phone numbers consistently to ensure accurate communication with customers.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the email address of each customer. It is a string data type column that contains the email address of each customer. This column provides a way to contact customers and send them promotional offers or updates related to their account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Represents the country code of the customer's location. It stores values in string data type and provides information about the country where the customer resides. This column can be used for segmentation and analysis based on geographic location.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the date when the customer's account was opened. The values in this column are of string data type and follow the format YYYY-MM-DD. This column provides information about the length of time a customer has been associated with the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "This column stores information about the account status of each customer. It contains string values that indicate whether the account is active or inactive, and whether there are any flags associated with the account. This information can be used to identify customers who may require special attention or assistance.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "MKdBCH3KTGtCPR0ZIVerV$$5E0e1cASAlkWGv5V_uGtS",
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "script" : "import sys\n\nsys.stdout.write( \"Hello Standard Output!\\n\" )\nsys.stderr.write( \"Hello Standard Error!\\n\" )\n\nprint( \"Hello Standard Output!\" )\nprint( \"Hello Standard Error!\", file=sys.stderr )\n\nout0=in0",
+        "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
+        "scriptMethodFooter" : "    return out0"
+      }
+    },
+    "a1Xm5FXel0UOwe6dTF_0t$$PuplZ6yIm9q7tkkHGdLjs" : {
+      "id" : "a1Xm5FXel0UOwe6dTF_0t$$PuplZ6yIm9q7tkkHGdLjs",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "Deduplicate_1_1",
+        "slug" : "Deduplicate_1_1",
+        "x" : 300,
+        "y" : 360,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "bVJUG-If74dFlyod2aqg_$$o_L5HMX5nt_yzZI3f3_1p",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c1",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "oxkeVfZZvwQWaYBsQ-vPR$$MsrAE1BqAqbYenc6ykVer",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "dedupColumns" : [ ],
+        "dedupType" : "distinct",
+        "columnsSelector" : [ ],
+        "orders" : [ ],
+        "useOrderBy" : false
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Deduplicate",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "gP_I2iL-CLJXVL8wxN4u8$$sMFb8ypiG6d6qSzVeBbDv" : {
+      "id" : "gP_I2iL-CLJXVL8wxN4u8$$sMFb8ypiG6d6qSzVeBbDv",
+      "component" : "Lookup",
+      "metadata" : {
+        "label" : "Lookup_1",
+        "slug" : "Lookup_1",
+        "x" : -440,
+        "y" : -480,
+        "phase" : -1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "KCqNJ98mXm71-MdPShX9H$$8fVlVXJ-SuyDRKkJfni6p",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each customer. It stores numerical values in integer data type, providing a way to distinguish between different customers in the dataset. This column is used as a primary key for the CustomersOrders dataset.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The first name of each customer is stored in this column. It stores values of string data type and provides a way to identify each customer by their first name.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The last name of each customer is stored in this column. It stores string values and provides a way to identify individuals based on their family name. This column is part of the src_avro_CustsDatasetInput dataset schema.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the phone number of each customer. The values in this column are of string data type and provide a way to contact each customer. It is recommended to format the phone numbers consistently to ensure accurate communication with customers.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the email address of each customer. It is a string data type column that contains the email address of each customer. This column provides a way to contact customers and send them promotional offers or updates related to their account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Represents the country code of the customer's location. It stores values in string data type and provides information about the country where the customer resides. This column can be used for segmentation and analysis based on geographic location.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the date when the customer's account was opened. The values in this column are of string data type and follow the format YYYY-MM-DD. This column provides information about the length of time a customer has been associated with the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "This column stores information about the account status of each customer. It contains string values that indicate whether the account is active or inactive, and whether there are any flags associated with the account. This information can be used to identify customers who may require special attention or assistance.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "isRange" : false,
+        "processName" : "TestLookup",
+        "keyColumns" : [ "customer_id", "email" ],
+        "valueColumns" : [ "first_name", "last_name" ]
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.Myw5_W3UfR30YAjAllwto$$GmkTsJ1smWDBHIg7KxS1K.ports.outputs",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 3,
+    "message" : "Please infer output schema from the cluster as described [here](https://docs.prophecy.io/low-code-spark/gems/custom/script/)",
+    "tags" : [ ],
+    "relatedInformation" : [ ],
+    "diagnosticType" : 2
+  } ]
+}

@@ -1,0 +1,102 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: firstname
+    type: string
+    nullable: true
+    metadata:
+      description: Stores the first name of an individual. The values in this column
+        are of string data type and provide a way to uniquely identify each person.
+      mappings: []
+      tags: []
+  - name: middlename
+    type: string
+    nullable: true
+    metadata:
+      description: Middle name of an individual. It stores the middle name of each
+        person. The values in this column are of string data type and provide additional
+        information about the person's name.
+      mappings: []
+      tags: []
+  - name: lastname
+    type: string
+    nullable: true
+    metadata:
+      description: Stores the last name of an individual. The values in this column
+        are of string data type and provide a way to identify the family name of each
+        person in the dataset.
+      mappings: []
+      tags: []
+  - name: id
+    type: long
+    nullable: true
+    metadata:
+      description: Unique identifier for each record in the dataset. It stores numerical
+        values in long data type, providing a way to uniquely identify each record
+        in the dataset.
+      mappings: []
+      tags: []
+  - name: salary
+    type: integer
+    nullable: true
+    metadata:
+      description: Represents the salary of an individual. It stores numerical values
+        in integer data type, indicating the monetary compensation received by each
+        individual for their work.
+      mappings: []
+      tags: []
+  - name: processed
+    type: boolean
+    nullable: true
+    metadata:
+      description: Indicates whether the data entry has been processed or not. It
+        stores boolean values, where 'true' indicates that the data entry has been
+        processed and 'false' indicates that it has not been processed yet.
+      mappings: []
+      tags: []
+  - name: dob
+    type: date
+    nullable: true
+    metadata:
+      description: Represents the date of birth of an individual. It stores values
+        in the date data type, indicating the birth date of each person.
+      mappings: []
+      tags: []
+  - name: weight
+    type: double
+    nullable: true
+    metadata:
+      description: Stores the weight of an individual. It stores numerical values
+        in double data type, indicating the weight of each individual in the dataset.
+        The values in this column provide information about the physical characteristics
+        of each individual.
+      mappings: []
+      tags: []
+  - name: state
+    type: string
+    nullable: true
+    metadata:
+      description: Represents the state in which an individual resides. It stores
+        the name of the state as a string value. This column provides information
+        about the geographical location of each individual in the dataset.
+      mappings: []
+      tags: []
+  - name: city
+    type: string
+    nullable: true
+    metadata:
+      description: Represents the city where an individual resides. It stores the
+        name of the city as a string value. This column provides information about
+        the geographical location of each individual in the dataset.
+      mappings: []
+      tags: []
+  - name: gender
+    type: string
+    nullable: true
+    metadata:
+      description: Indicates the gender of an individual. It stores the gender of
+        each person as a string value, representing whether they are male or female.
+        This column provides information about the gender distribution in the dataset.
+      mappings: []
+      tags: []

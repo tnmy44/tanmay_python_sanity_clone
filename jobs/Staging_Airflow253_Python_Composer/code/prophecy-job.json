@@ -1,0 +1,778 @@
+{
+  "metainfo" : {
+    "type" : "Composer",
+    "fabricId" : "24",
+    "jobId" : "jobs/Staging_Airflow253_Python_Composer",
+    "name" : "Staging_Airflow253_Python_Composer",
+    "dagName" : "staging_abhisheks_e2etests_Python_Sanity_Project_Staging_Airflow253_Python_Composer",
+    "schedule" : "0 0 1 1 *",
+    "enabled" : false,
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "retries" : 0,
+      "retry_delay" : 1,
+      "ignore_first_depends_on_past" : true,
+      "do_xcom_push" : true
+    },
+    "availableFabrics" : [ {
+      "id" : "22",
+      "name" : "dev_airflow_prophecy_managed",
+      "trialStartDate" : 1695736560346
+    }, {
+      "id" : "25",
+      "name" : "dev_airflow_mwaa"
+    }, {
+      "id" : "1013",
+      "name" : "dev_airflow_253"
+    }, {
+      "id" : "24",
+      "name" : "dev_airflow"
+    }, {
+      "id" : "2393",
+      "name" : "dev_airflow_263"
+    }, {
+      "id" : "2418",
+      "name" : "dev_aiflow_open_source",
+      "artifactsLocation" : "/mnt/airflow/artifacts"
+    }, {
+      "id" : "2442",
+      "name" : "Automation_python_AirflowOpenSource",
+      "artifactsLocation" : "/mnt/airflow/test/artifacts"
+    }, {
+      "id" : "2447",
+      "name" : "sanity_airflow_os",
+      "artifactsLocation" : "/mnt/airflow/artifacts"
+    } ],
+    "catchup" : true,
+    "tags" : [ ],
+    "scheduleTimeZone" : "UTC",
+    "dagParams" : {
+      "instances" : {
+        "default" : { }
+      },
+      "params" : { },
+      "selected" : "default"
+    },
+    "airflowFunctions" : [ {
+      "id" : "48/functions/airflowFunctions/squared_numbers",
+      "name" : "squared_numbers",
+      "code" : "def squared_numbers(number):\n    print('hello')\n    return (number*number)/d",
+      "initCode" : "d=10",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    }, {
+      "id" : "48/functions/airflowFunctions/join_2_strings",
+      "name" : "join_2_strings",
+      "code" : "def join_2_strings(d1, d2):\n    return f\"{d1}{separator}{d2}\"",
+      "initCode" : "separator=' '",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    }, {
+      "id" : "48/functions/airflowFunctions/delete_me",
+      "name" : "delete_me",
+      "code" : "def delete_me(d1, d2):\n    return f\"{d1}{separator}{d2}\"",
+      "initCode" : "separator=' '",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    }, {
+      "id" : "48/functions/airflowFunctions/load_resource",
+      "name" : "load_resource",
+      "code" : "def load_resource(dag_dir, dag_id, relative_filepath):\n    import os\n    import zipfile\n    import tempfile\n\n    res = \"\"\n    zip_file_found = None\n    for filename in os.listdir(dag_dir):\n        if filename.startswith(dag_id) and filename.endswith('.zip'):\n            zip_file_found = os.path.join(dag_dir, filename)\n            break\n\n    if not zip_file_found:\n        print(f\"Zip for dag: {dag_id} not found\")\n        return res\n\n    with tempfile.TemporaryDirectory() as tmpdirname:\n        with zipfile.ZipFile(zip_file_found, 'r') as zip_ref:\n            zip_ref.extractall(tmpdirname)\n\n\n        target_file_path = os.path.join(tmpdirname, dag_id.lower() , 'resources', relative_filepath)\n        if os.path.exists(target_file_path):\n            with open(target_file_path, 'r') as file:\n                res = file.read()\n        return res",
+      "initCode" : "",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    }, {
+      "id" : "48/functions/airflowFunctions/get_feed_config",
+      "name" : "get_feed_config",
+      "code" : "def get_feed_config(file_contents, search_keys):\n    for line in file_contents.splitlines():\n        # Split the line by commas and strip to remove leading/trailing whitespaces\n        fields = [field.strip() for field in line.split(',')]\n\n        # Check if there are enough fields\n        if len(fields) < 32:\n            continue\n\n        # Extract the first 5 fields as keys\n        keys = fields[:5]\n\n        # Check if the current keys match the search keys\n        if keys == search_keys:\n            # Extract and return the remaining 27 fields as values\n            return tuple(fields[5:])\n\n    # Return an empty tuple if the key is not found or if the value is empty\n    return ()",
+      "initCode" : "",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    } ],
+    "dynamicPipelineStatus" : {
+      "databricks" : false,
+      "dataproc" : false,
+      "emr" : false
+    }
+  },
+  "processes" : {
+    "BoSL_gSLRBuvIX1ZCbm9j" : {
+      "id" : "BoSL_gSLRBuvIX1ZCbm9j",
+      "component" : "DBT",
+      "metadata" : {
+        "label" : "DBT_1",
+        "slug" : "DBT_1",
+        "x" : -60,
+        "y" : -300
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "0uvm1ow630dVMz71llsX0",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "XGYEwE48tckTXPrv57eny",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "retries" : 0
+      },
+      "properties" : {
+        "cacheSelectedOnly" : null,
+        "gitSubPath" : null,
+        "runModelWithParents" : false,
+        "defer" : null,
+        "noDefer" : null,
+        "runSeed" : true,
+        "gitEntity" : "branch",
+        "noPartialParse" : null,
+        "warnErrorOptions" : null,
+        "gitTokenSecret" : null,
+        "state" : null,
+        "useExperimentalParser" : null,
+        "gitSshUrl" : null,
+        "indirectSelection" : null,
+        "partialParse" : null,
+        "runRun" : true,
+        "vars" : null,
+        "noPrint" : null,
+        "quiet" : null,
+        "projectId" : "67",
+        "runOnlyModel" : false,
+        "favorState" : null,
+        "failFast" : null,
+        "noStaticParser" : null,
+        "runTest" : true,
+        "select" : null,
+        "recordTimingInfo" : null,
+        "fullRefresh" : true,
+        "noCacheSelectedOnly" : null,
+        "noFavorState" : null,
+        "isProphecyManaged" : false,
+        "profile" : null,
+        "noVersionCheck" : null,
+        "noWriteJson" : false,
+        "printerWidth" : null,
+        "sqlFabricId" : "6",
+        "gitEntityValue" : "main_staging",
+        "logFormat" : null,
+        "runModelWithChildren" : false,
+        "dbtProfileSecret" : null,
+        "models" : null,
+        "target" : null,
+        "exclude" : null,
+        "runDeps" : true,
+        "noAnonymousUsageStats" : null,
+        "selector" : null,
+        "targetPath" : null,
+        "threads" : null,
+        "warnError" : null,
+        "currentProjectModels" : [ {
+          "label" : "env_uitesting_main_model_snow_1",
+          "value" : "env_uitesting_main_model_snow_1",
+          "id" : "67/.prophecy/metadata/sqlmodels/env_uitesting_main_model_snow_1",
+          "name" : "env_uitesting_main_model_snow_1"
+        } ],
+        "profilesDir" : null,
+        "taskId" : null,
+        "logPath" : null,
+        "storeFailures" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "MQB3KriYyhj2TZrPi7DZR" : {
+      "id" : "MQB3KriYyhj2TZrPi7DZR",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_1",
+        "slug" : "Script_1",
+        "x" : -340,
+        "y" : -400
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "2_3UgbpIHSOiLsIvrKm-s",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "IYM46wHyTvK7tjIPaqt3n",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "code" : "echo \"test\"",
+        "language" : "bash",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "f0OSBL0B60-2o_CGg8XSm" : {
+      "id" : "f0OSBL0B60-2o_CGg8XSm",
+      "component" : "ForEachLoop",
+      "metadata" : {
+        "label" : "ForEachLoop_1",
+        "slug" : "ForEachLoop_1",
+        "x" : -460,
+        "y" : -540
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PiTrrHUaSxnbgicRkxiQy",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "8TfR4orrnduGT0Oj0vMxu",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "loopVariables" : null,
+        "taskId" : null,
+        "loopSources" : [ {
+          "type" : "xcom",
+          "taskId" : "Python_1",
+          "key" : "return_value",
+          "loopVariables" : [ {
+            "name" : "config_1",
+            "type" : "string",
+            "expression" : "value[\"c1_data\"][0][\"data\"]",
+            "enabled" : true
+          }, {
+            "name" : "config_2",
+            "type" : "boolean",
+            "expression" : "value[\"c2_data\"][0][\"data\"]",
+            "enabled" : true
+          }, {
+            "name" : "config_3",
+            "type" : "number",
+            "expression" : "value[\"c3_data\"]",
+            "enabled" : true
+          }, {
+            "name" : "config_4",
+            "type" : "number",
+            "expression" : "value[\"c3_data\"]",
+            "enabled" : true
+          } ]
+        } ]
+      },
+      "connections" : [ ],
+      "processes" : {
+        "H6svTCkPLTmnTP1c-9Bwl" : {
+          "id" : "H6svTCkPLTmnTP1c-9Bwl",
+          "component" : "Python",
+          "metadata" : {
+            "label" : "Python_2",
+            "slug" : "Python_2",
+            "x" : -244,
+            "y" : -247.60000610351562
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "xeZVUaeFL51Skda6zmO6g",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "jdH-W32ZL9oYlr9kQ3vmH",
+              "slug" : ""
+            } ]
+          },
+          "settings" : { },
+          "properties" : {
+            "templatesExts" : null,
+            "code" : "def return_method():\n    print(f\"{config_1},{config_2},{config_3}\")",
+            "valueInLogs" : true,
+            "opArgs" : null,
+            "templatesDict" : null,
+            "taskId" : null,
+            "opKwargs" : null
+          },
+          "connections" : [ ],
+          "processes" : { }
+        }
+      }
+    },
+    "wMM3oPRSeTKQopxANGjP4" : {
+      "id" : "wMM3oPRSeTKQopxANGjP4",
+      "component" : "Email",
+      "metadata" : {
+        "label" : "Email_2",
+        "slug" : "Email_2",
+        "x" : 160,
+        "y" : -120
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "QC8rKsYk_IkzjNaKXqn-X",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "VscSDad8K-WFxIlCtYvV7",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "emailCC" : null,
+        "subject" : "Hello sir real one",
+        "emailBCC" : null,
+        "emailTo" : "abhisheks@prophecy.io",
+        "emailConnectionId" : "email_default",
+        "htmlContent" : "This one is for python sanity email. Correct one buddy",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "PaNkHS63igFQdo7Dd-UL6" : {
+      "id" : "PaNkHS63igFQdo7Dd-UL6",
+      "component" : "Email",
+      "metadata" : {
+        "label" : "Email_1_1",
+        "slug" : "Email_1_1",
+        "x" : 240,
+        "y" : 0
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "2st19m3FbFOuJZ0Ov26dc",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "lXKf5pflPpSF6quIaKOV2",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "emailCC" : null,
+        "subject" : "Hello abhisheks",
+        "emailBCC" : null,
+        "emailTo" : "abhisheks@prophecy.io",
+        "emailConnectionId" : "email_default",
+        "htmlContent" : "Python sanity job run buddy",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "ZeglK4ov8HIirtRC6paei" : {
+      "id" : "ZeglK4ov8HIirtRC6paei",
+      "component" : "TaskGroup",
+      "metadata" : {
+        "label" : "TaskGroup_1",
+        "slug" : "TaskGroup_1",
+        "x" : -420,
+        "y" : -680
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "gKBLgQZHVh_eAFQIpSYJT",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "VlSfEI_soCCay4sXDzdC_",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "taskId" : null
+      },
+      "connections" : [ {
+        "id" : "XapSJ2uLJOtQNSfKf0PA9",
+        "source" : "zHfZ3kIfSWhrtLTS7bZ4L",
+        "target" : "8BjtpyaC4FvtmQvm02ObZ",
+        "sourcePort" : "gvZ3ZjOD8UY_eeaJQl9_-",
+        "targetPort" : "81AZcuFFStwGWceCHMjU4"
+      }, {
+        "id" : "5NlSTbUkXw2aDV0WQy7f9",
+        "source" : "8BjtpyaC4FvtmQvm02ObZ",
+        "target" : "8AOU5nxAsixzFurdwNbXu",
+        "sourcePort" : "rXQe10ueguazFksfznPfm",
+        "targetPort" : "N5_CDg3ZE0wheA5S7CBPD"
+      } ],
+      "processes" : {
+        "8BjtpyaC4FvtmQvm02ObZ" : {
+          "id" : "8BjtpyaC4FvtmQvm02ObZ",
+          "component" : "S3FileSensor",
+          "metadata" : {
+            "label" : "S3FileSensor_1_1",
+            "slug" : "S3FileSensor_1_1",
+            "x" : -284,
+            "y" : -307.6000061035156
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "81AZcuFFStwGWceCHMjU4",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "rXQe10ueguazFksfznPfm",
+              "slug" : ""
+            } ]
+          },
+          "settings" : { },
+          "properties" : {
+            "awsConnectionId" : "aws_default",
+            "wildCardMatch" : false,
+            "responseCheck" : null,
+            "verifySslCertificates" : false,
+            "s3Paths" : "test/validation_data/test_source.json",
+            "bucketName" : "qa-prophecy",
+            "taskId" : null
+          },
+          "connections" : [ ],
+          "processes" : { }
+        },
+        "zHfZ3kIfSWhrtLTS7bZ4L" : {
+          "id" : "zHfZ3kIfSWhrtLTS7bZ4L",
+          "component" : "HTTPSensor",
+          "metadata" : {
+            "label" : "HTTPSensor_1_1",
+            "slug" : "HTTPSensor_1_1",
+            "x" : -464,
+            "y" : -347.6000061035156
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "n_5ywpDuGO3jVM6sd1apy",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "gvZ3ZjOD8UY_eeaJQl9_-",
+              "slug" : ""
+            } ]
+          },
+          "settings" : { },
+          "properties" : {
+            "pokeInterval" : 60,
+            "httpConnectionId" : "http_default",
+            "responseCheck" : null,
+            "endpoint" : "",
+            "requestParams" : null,
+            "taskId" : null
+          },
+          "connections" : [ ],
+          "processes" : { }
+        },
+        "8AOU5nxAsixzFurdwNbXu" : {
+          "id" : "8AOU5nxAsixzFurdwNbXu",
+          "component" : "Slack",
+          "metadata" : {
+            "label" : "Slack_1_1",
+            "slug" : "Slack_1_1",
+            "x" : -24.000015258789062,
+            "y" : -147.59999084472656
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "N5_CDg3ZE0wheA5S7CBPD",
+              "slug" : ""
+            } ],
+            "outputs" : [ {
+              "id" : "twszr319PKwVOYWdOW8VE",
+              "slug" : ""
+            } ]
+          },
+          "settings" : {
+            "retries" : 0
+          },
+          "properties" : {
+            "channel" : "abhyslackpub",
+            "text" : "Python Sanity Job Run",
+            "token" : null,
+            "slackConnectionId" : "slack_default",
+            "taskId" : null
+          },
+          "connections" : [ ],
+          "processes" : { }
+        }
+      }
+    },
+    "BILDq3dIS8N-IVwX9q1CC" : {
+      "id" : "BILDq3dIS8N-IVwX9q1CC",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "SM_IO_SCALA_BASIC",
+        "slug" : "SM_IO_SCALA_BASIC",
+        "x" : -760,
+        "y" : -320
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "OgyHTIPgsNMqO6F9OSYhk",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "zsRbzk2frrc2tTdDkoT5-",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "runJson" : null,
+        "databricksConnId" : "databricks_default",
+        "clusterSize" : "46/small_dev",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "c_string",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "test string"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "c_int",
+            "optional" : false,
+            "kind" : {
+              "type" : "int",
+              "value" : 1
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "Python_Sanity_Project" : [ "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "default", "captain_livy" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : {
+            "value" : "default",
+            "type" : "literal"
+          }
+        },
+        "taskId" : null,
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/EM_DISABLED_PYTHON_BASIC"
+        }
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "GqiH9uNlqQP9_A7Lzu_H7" : {
+      "id" : "GqiH9uNlqQP9_A7Lzu_H7",
+      "component" : "Branch",
+      "metadata" : {
+        "label" : "Branch_1_1",
+        "slug" : "Branch_1_1",
+        "x" : -340,
+        "y" : -40
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "bKBPHryKVIs-EfiGIsKcL",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "N816mgy7RdI3EIoYjC-SW",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "callback" : "def which_gem_to_run():\n    return \"Email_2\"",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "gMhlyRL-rOmN-E2rsUPBt" : {
+      "id" : "gMhlyRL-rOmN-E2rsUPBt",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "ShellScript",
+        "slug" : "ShellScript",
+        "x" : -740,
+        "y" : -60
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "8cMqEZsFsUP-67uQ81k3M",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "VCgShharJk5AGuCxznrds",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "code" : "ls -ltr",
+        "language" : "bash",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "_JDu17x67RuEt7QBO0mfO" : {
+      "id" : "_JDu17x67RuEt7QBO0mfO",
+      "component" : "TriggerDag",
+      "metadata" : {
+        "label" : "TriggerDag_1",
+        "slug" : "TriggerDag_1",
+        "x" : -500,
+        "y" : -220
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "gqE6GGkzvIE2dUZdlBnjs",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "MiSAgY8Z3fxP5eri1gyeG",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "pokeInterval" : null,
+        "resetDagRun" : false,
+        "executionDate" : null,
+        "dagId" : {
+          "type" : "literal",
+          "value" : "Staging_Shared_Airflow_Composer_Python_dag"
+        },
+        "selectionType" : "dag",
+        "conf" : null,
+        "jobId" : null,
+        "waitForCompletion" : false,
+        "runId" : null,
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "cVmXgP84Zq12U8-Qg4Bbc" : {
+      "id" : "cVmXgP84Zq12U8-Qg4Bbc",
+      "component" : "Python",
+      "metadata" : {
+        "label" : "Python_1",
+        "slug" : "Python_1",
+        "x" : -740,
+        "y" : -520
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "nGnz9UmaN0X37xT_a1JgU",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "VBlqwV8a_lQWiXR8c_o3P",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "templatesExts" : null,
+        "code" : "def return_method():\n    test_config1_iteration1 = join_2_strings(squared_numbers(2), \"test value\")\n    test_config1_iteration2 = join_2_strings(squared_numbers(4), \"test value iteration2\")\n    return [\n        {\n            \"c1_data\": [\n                {\n                    \"data\": test_config1_iteration1\n                }\n            ],\n            \"c2_data\": [\n                {\n                    \"data\": join_2_strings(squared_numbers(3), \"test value\") == \"hello\"\n                }\n            ],\n            \"c3_data\": 1\n        },\n        {\n            \"c1_data\": [\n                {\n                    \"data\": test_config1_iteration2\n                }\n            ],\n            \"c2_data\": [\n                {\n                    \"data\": join_2_strings(squared_numbers(5), \"test value\") != \"hello\"\n                }\n            ],\n            \"c3_data\": 2\n        }\n    ]",
+        "valueInLogs" : true,
+        "opArgs" : null,
+        "templatesDict" : null,
+        "taskId" : null,
+        "opKwargs" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "nTqzXv48dWDc4ZdnX9tPZ" : {
+      "id" : "nTqzXv48dWDc4ZdnX9tPZ",
+      "component" : "S3FileSensor",
+      "metadata" : {
+        "label" : "S3FileSensor_1",
+        "slug" : "S3FileSensor_1",
+        "x" : -100,
+        "y" : -480
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "cRD2g_CCbT4GpMlYfd8_U",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "yaYQqTWd6FJ3T-jkHKhgR",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "awsConnectionId" : "aws_default",
+        "wildCardMatch" : true,
+        "responseCheck" : null,
+        "verifySslCertificates" : true,
+        "s3Paths" : "dags/*",
+        "bucketName" : "prophecy-mwaa-243",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    }
+  },
+  "connections" : [ {
+    "id" : "GvbTPES7SkcH1feH3Zd4o",
+    "source" : "BILDq3dIS8N-IVwX9q1CC",
+    "target" : "MQB3KriYyhj2TZrPi7DZR",
+    "sourcePort" : "zsRbzk2frrc2tTdDkoT5-",
+    "targetPort" : "2_3UgbpIHSOiLsIvrKm-s"
+  }, {
+    "id" : "uOx1xg4HZrM4J4vLkoCrp",
+    "source" : "MQB3KriYyhj2TZrPi7DZR",
+    "target" : "nTqzXv48dWDc4ZdnX9tPZ",
+    "sourcePort" : "IYM46wHyTvK7tjIPaqt3n",
+    "targetPort" : "cRD2g_CCbT4GpMlYfd8_U"
+  }, {
+    "id" : "t9bxlgUJL9r85Tsp_9boA",
+    "source" : "GqiH9uNlqQP9_A7Lzu_H7",
+    "target" : "wMM3oPRSeTKQopxANGjP4",
+    "sourcePort" : "N816mgy7RdI3EIoYjC-SW",
+    "targetPort" : "QC8rKsYk_IkzjNaKXqn-X"
+  }, {
+    "id" : "Q8BaNN0U2ME4rfoS9Dsdz",
+    "source" : "GqiH9uNlqQP9_A7Lzu_H7",
+    "target" : "PaNkHS63igFQdo7Dd-UL6",
+    "sourcePort" : "N816mgy7RdI3EIoYjC-SW",
+    "targetPort" : "2st19m3FbFOuJZ0Ov26dc"
+  }, {
+    "id" : "XOHeg9J4fF1P9B_AUmtVC",
+    "source" : "gMhlyRL-rOmN-E2rsUPBt",
+    "target" : "BoSL_gSLRBuvIX1ZCbm9j",
+    "sourcePort" : "VCgShharJk5AGuCxznrds",
+    "targetPort" : "0uvm1ow630dVMz71llsX0"
+  }, {
+    "id" : "0QxrXKaL2MqVRjL0AH3in",
+    "source" : "gMhlyRL-rOmN-E2rsUPBt",
+    "target" : "GqiH9uNlqQP9_A7Lzu_H7",
+    "sourcePort" : "VCgShharJk5AGuCxznrds",
+    "targetPort" : "bKBPHryKVIs-EfiGIsKcL"
+  }, {
+    "id" : "TbXLzP2fc-0zYzOiyj8WU",
+    "source" : "cVmXgP84Zq12U8-Qg4Bbc",
+    "target" : "ZeglK4ov8HIirtRC6paei",
+    "sourcePort" : "VBlqwV8a_lQWiXR8c_o3P",
+    "targetPort" : "gKBLgQZHVh_eAFQIpSYJT"
+  }, {
+    "id" : "BgBOCIYzEnNZ0cX1VTH3r",
+    "source" : "cVmXgP84Zq12U8-Qg4Bbc",
+    "target" : "f0OSBL0B60-2o_CGg8XSm",
+    "sourcePort" : "VBlqwV8a_lQWiXR8c_o3P",
+    "targetPort" : "PiTrrHUaSxnbgicRkxiQy"
+  }, {
+    "id" : "vMMq91HrW7EpDrEdspl1F",
+    "source" : "gMhlyRL-rOmN-E2rsUPBt",
+    "target" : "_JDu17x67RuEt7QBO0mfO",
+    "sourcePort" : "VCgShharJk5AGuCxznrds",
+    "targetPort" : "gqE6GGkzvIE2dUZdlBnjs"
+  } ]
+}

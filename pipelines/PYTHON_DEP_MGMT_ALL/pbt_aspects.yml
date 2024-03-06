@@ -1,0 +1,65 @@
+version: 1
+configurations:
+- test-instance7
+- test-instance2
+- test-instance3
+- test-instance6
+- test_instance_all
+- test-instance5
+- test-instance1
+- default
+- test-instance4
+- test-instance8
+dependencies:
+- type: workflow
+  id: '1658827323'
+  name: mysql
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: '410081255'
+  name: matplotlib
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: '171138274'
+  name: pandas
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: '211888696'
+  name: requests
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: '69834547'
+  name: scipy
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: x_rzG
+  name: sparkexcel
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: W6MbK
+  name: Theano==1.0.5
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: pSbXHuYxcdaCNnTRSCK9w
+  name: gensim==4.3.2
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: JC24jgKeRQxtNfgEK14W1
+  name: pendulum==2.1.2
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: 0ErcfR3xPE_hUsafSdiF_
+  name: numerizer==0.2.3
+  enabled: true
+  entity: Pipeline
+pipelineVersion:
+  version: '2'

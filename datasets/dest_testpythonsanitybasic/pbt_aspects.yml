@@ -1,0 +1,99 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: c_lookup_first_name
+    type: string
+    nullable: true
+    metadata:
+      description: The first name of each customer is stored in this column. It stores
+        values of string data type and provides a way to identify each customer by
+        their first name.
+      mappings: []
+      tags: []
+  - name: c_lookup_last_name
+    type: string
+    nullable: true
+    metadata:
+      description: The last name of each customer is stored in this column. It stores
+        string values and provides a way to identify individuals based on their family
+        name. This column is part of the src_avro_CustsDatasetInput dataset schema.
+      mappings: []
+      tags: []
+  - name: customer_id
+    type: string
+    nullable: true
+    metadata:
+      description: A unique identifier assigned to each customer. It stores numerical
+        values in integer data type, providing a way to distinguish between different
+        customers in the dataset. This column is used as a primary key for the CustomersOrders
+        dataset.
+      mappings: []
+      tags: []
+  - name: first_name
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: last_name
+    type: string
+    nullable: true
+    metadata:
+      description: The last name of each customer is stored in this column. It stores
+        string values and provides a way to identify individuals based on their family
+        name. This column is part of the src_avro_CustsDatasetInput dataset schema.
+      mappings: []
+      tags: []
+  - name: phone
+    type: string
+    nullable: true
+    metadata:
+      description: Stores the phone number of each customer. The values in this column
+        are of string data type and provide a way to contact each customer. It is
+        recommended to format the phone numbers consistently to ensure accurate communication
+        with customers.
+      mappings: []
+      tags: []
+  - name: email
+    type: string
+    nullable: true
+    metadata:
+      description: Stores the email address of each customer. It is a string data
+        type column that contains the email address of each customer. This column
+        provides a way to contact customers and send them promotional offers or updates
+        related to their account.
+      mappings: []
+      tags: []
+  - name: country_code
+    type: string
+    nullable: true
+    metadata:
+      description: Represents the country code of the customer's location. It stores
+        values in string data type and provides information about the country where
+        the customer resides. This column can be used for segmentation and analysis
+        based on geographic location.
+      mappings: []
+      tags: []
+  - name: account_open_date
+    type: string
+    nullable: true
+    metadata:
+      description: Stores the date when the customer's account was opened. The values
+        in this column are of string data type and follow the format YYYY-MM-DD. This
+        column provides information about the length of time a customer has been associated
+        with the company.
+      mappings: []
+      tags: []
+  - name: account_flags
+    type: string
+    nullable: true
+    metadata:
+      description: This column stores information about the account status of each
+        customer. It contains string values that indicate whether the account is active
+        or inactive, and whether there are any flags associated with the account.
+        This information can be used to identify customers who may require special
+        attention or assistance.
+      mappings: []
+      tags: []

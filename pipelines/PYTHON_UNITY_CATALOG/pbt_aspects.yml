@@ -1,0 +1,7 @@
+version: 1
+configurations:
+- default
+- test-config1
+dependencies: []
+pipelineVersion:
+  version: '2'

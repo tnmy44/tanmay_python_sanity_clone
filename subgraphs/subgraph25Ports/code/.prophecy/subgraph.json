@@ -1,0 +1,1239 @@
+{
+  "id" : "_RIz2ynzHIWqUerygN13C",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false,
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "Ae9Nomiz3dktCcVX_zbyi",
+      "slug" : "in0",
+      "isStreaming" : false
+    }, {
+      "id" : "uhrod-jUwqPRc2PdOysWB",
+      "slug" : "in1",
+      "isStreaming" : false
+    }, {
+      "id" : "b7Bqy0LH9BigofMqCCOzQ",
+      "slug" : "in2",
+      "isStreaming" : false
+    }, {
+      "id" : "EWTs3Kk0yw3Ff9aAVIXA8",
+      "slug" : "in3",
+      "isStreaming" : false
+    }, {
+      "id" : "bIr7AEbWZkgNJn4Zgw53n",
+      "slug" : "in4",
+      "isStreaming" : false
+    }, {
+      "id" : "Eh4IQQOFSTBrLWTBOyCLZ",
+      "slug" : "in5",
+      "isStreaming" : false
+    }, {
+      "id" : "Y8V1NIyYltsLZbKrIsnPd",
+      "slug" : "in6",
+      "isStreaming" : false
+    }, {
+      "id" : "scNexQwng-OS3G-sbYlWo",
+      "slug" : "in7",
+      "isStreaming" : false
+    }, {
+      "id" : "Bc9ONCdyCOmk8KIK6IbOA",
+      "slug" : "in8",
+      "isStreaming" : false
+    }, {
+      "id" : "FdZWMdvDZyux4LTFH3S2J",
+      "slug" : "in9",
+      "isStreaming" : false
+    }, {
+      "id" : "Tf32q6H76E-zH_05pnJQ3",
+      "slug" : "in10",
+      "isStreaming" : false
+    }, {
+      "id" : "9M7br-t-2SSdK7Z-pFDFy",
+      "slug" : "in11",
+      "isStreaming" : false
+    }, {
+      "id" : "JczPQN2dHLdrYmMi7tiJG",
+      "slug" : "in12",
+      "isStreaming" : false
+    }, {
+      "id" : "Xf6g2AGNagwmRFJwa9VvD",
+      "slug" : "in13",
+      "isStreaming" : false
+    }, {
+      "id" : "cMPmw8WPlw9y8cXYhg3Er",
+      "slug" : "in14",
+      "isStreaming" : false
+    }, {
+      "id" : "DzaH5p4qyF9yKIwItiv-A",
+      "slug" : "in15",
+      "isStreaming" : false
+    }, {
+      "id" : "NBKVdfxDn7iUX-4GG-vAx",
+      "slug" : "in16",
+      "isStreaming" : false
+    }, {
+      "id" : "-POXGcPcBk52epS29_Str",
+      "slug" : "in17",
+      "isStreaming" : false
+    }, {
+      "id" : "QCwy7dTnoGUtOk0_boZln",
+      "slug" : "in18",
+      "isStreaming" : false
+    }, {
+      "id" : "JG2rAE-lkQBhJwps3RivM",
+      "slug" : "in19",
+      "isStreaming" : false
+    }, {
+      "id" : "5kmDyWosA3zGJL1X23AEy",
+      "slug" : "in20",
+      "isStreaming" : false
+    }, {
+      "id" : "gbR_6nX6JkbypwzWMil36",
+      "slug" : "in21",
+      "isStreaming" : false
+    }, {
+      "id" : "TWFHWSasr_CgEIMcacNNg",
+      "slug" : "in22",
+      "isStreaming" : false
+    }, {
+      "id" : "c8DE7vBWqmyX7hyo_svz8",
+      "slug" : "in23",
+      "isStreaming" : false
+    }, {
+      "id" : "ZrZI9zp_1_A25phbXnG-V",
+      "slug" : "in24",
+      "isStreaming" : false
+    }, {
+      "id" : "KuIToEZ0ZxDpjXtzXrKND",
+      "slug" : "in25",
+      "isStreaming" : false
+    } ],
+    "outputs" : [ {
+      "id" : "l-HfdQNRX57qcvCn7PoD1",
+      "slug" : "out0",
+      "isStreaming" : false
+    }, {
+      "id" : "5nFXJ57J2-6RRX_9a2DVX",
+      "slug" : "out1",
+      "isStreaming" : false
+    }, {
+      "id" : "dSIth8RQ9IKQQ3rtnxxdP",
+      "slug" : "out2",
+      "isStreaming" : false
+    }, {
+      "id" : "5KHpzllkfWSM_j89c3iXT",
+      "slug" : "out3",
+      "isStreaming" : false
+    }, {
+      "id" : "keKaTFrlZB2elNWCg0134",
+      "slug" : "out4",
+      "isStreaming" : false
+    }, {
+      "id" : "SbuVBxEmVvPTGSSv2oeff",
+      "slug" : "out5",
+      "isStreaming" : false
+    }, {
+      "id" : "yAYJRdq8A9JRf_59A2EXJ",
+      "slug" : "out6",
+      "isStreaming" : false
+    }, {
+      "id" : "br4ouUzC9vkJnz3qC81de",
+      "slug" : "out7",
+      "isStreaming" : false
+    }, {
+      "id" : "n2mllvql0PJ4lSA5cosfk",
+      "slug" : "out8",
+      "isStreaming" : false
+    }, {
+      "id" : "FcNZfNa6hQN9NmAflgeQ7",
+      "slug" : "out9",
+      "isStreaming" : false
+    }, {
+      "id" : "CMKNcEITIcVfa8fiyDVIf",
+      "slug" : "out10",
+      "isStreaming" : false
+    }, {
+      "id" : "aLx9UbJ40JsB96fNN4t5L",
+      "slug" : "out11",
+      "isStreaming" : false
+    }, {
+      "id" : "ZZgyFrSmtDmyoQi8pY6eS",
+      "slug" : "out12",
+      "isStreaming" : false
+    }, {
+      "id" : "ZigXfFOV6JufhxgH7s9dw",
+      "slug" : "out13",
+      "isStreaming" : false
+    }, {
+      "id" : "9pVVPlKEggO4owGrtRnfi",
+      "slug" : "out14",
+      "isStreaming" : false
+    }, {
+      "id" : "w5y4rxQat4hJbCsu6kver",
+      "slug" : "out15",
+      "isStreaming" : false
+    }, {
+      "id" : "olKY4W9VMapq9CQqLjFAy",
+      "slug" : "out16",
+      "isStreaming" : false
+    }, {
+      "id" : "sXRbj0i-wb6KGHafc-KqX",
+      "slug" : "out17",
+      "isStreaming" : false
+    }, {
+      "id" : "gX17LGdcaxAaNW1uLjYp0",
+      "slug" : "out18",
+      "isStreaming" : false
+    }, {
+      "id" : "-wZ241XpiLSxt_5RM2YWP",
+      "slug" : "out19",
+      "isStreaming" : false
+    }, {
+      "id" : "vjNJ7mo8QahnwpKUkJPcL",
+      "slug" : "out20",
+      "isStreaming" : false
+    }, {
+      "id" : "KLthvXRqKr2NDaE85lhLz",
+      "slug" : "out21",
+      "isStreaming" : false
+    }, {
+      "id" : "Ico86WqIsM-EqEVZ_VLin",
+      "slug" : "out22",
+      "isStreaming" : false
+    }, {
+      "id" : "fUyEuFdRnmlPOoiFgjakH",
+      "slug" : "out23",
+      "isStreaming" : false
+    }, {
+      "id" : "blNnASOdGqvuTDcQR3Lgp",
+      "slug" : "out24",
+      "isStreaming" : false
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  },
+  "properties" : {
+    "packageName" : "sg.subgraph25Ports"
+  },
+  "connections" : [ {
+    "id" : "_He_Egi9rxezASgI2saW9",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "Ae9Nomiz3dktCcVX_zbyi",
+    "target" : "W8u1azZpfyqafOjfDfknD",
+    "targetPort" : "bh5CgwT5QSUjTcpcAA0dW"
+  }, {
+    "id" : "gqGlF8JrFhEyCJjgdm0vb",
+    "source" : "W8u1azZpfyqafOjfDfknD",
+    "sourcePort" : "ETh7RdNr_3SiufPB0b5I1",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "l-HfdQNRX57qcvCn7PoD1"
+  }, {
+    "id" : "BwnXtcvQdBXw_gAUU_kEn",
+    "source" : "W8u1azZpfyqafOjfDfknD",
+    "sourcePort" : "ETh7RdNr_3SiufPB0b5I1",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "5nFXJ57J2-6RRX_9a2DVX"
+  }, {
+    "id" : "vrwYOAcDyuaDDh242pAmI",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "uhrod-jUwqPRc2PdOysWB",
+    "target" : "dpwa_LcHd_SaEbMs4rjC0",
+    "targetPort" : "Yd7aNO0JTXbMzuT906Sqs"
+  }, {
+    "id" : "nnTJbFE81TjXX0XiaiVKP",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "dSIth8RQ9IKQQ3rtnxxdP"
+  }, {
+    "id" : "HVBVaKRT0r9jIYFsni1Ub",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "5KHpzllkfWSM_j89c3iXT"
+  }, {
+    "id" : "prrx2f6vFy5tmzUWf8A5u",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "keKaTFrlZB2elNWCg0134"
+  }, {
+    "id" : "9j2lAoi70f7zB_8sBL-nn",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "SbuVBxEmVvPTGSSv2oeff"
+  }, {
+    "id" : "mpGar2kAIVp9pVn-szpEy",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "yAYJRdq8A9JRf_59A2EXJ"
+  }, {
+    "id" : "knZIj2aiLT8YBDMRgb5vO",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "br4ouUzC9vkJnz3qC81de"
+  }, {
+    "id" : "DceU5iZrZ-tDuCFhwemE3",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "n2mllvql0PJ4lSA5cosfk"
+  }, {
+    "id" : "alSWrNSri8TLhVL0i3wQe",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "FcNZfNa6hQN9NmAflgeQ7"
+  }, {
+    "id" : "bFM_sXW5L2Tjbd3AA5MG2",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "CMKNcEITIcVfa8fiyDVIf"
+  }, {
+    "id" : "xT7VCZWe6dln9fFrZQ7A8",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "aLx9UbJ40JsB96fNN4t5L"
+  }, {
+    "id" : "Sr3S9FEsC8nI6XUSPYjBn",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "ZZgyFrSmtDmyoQi8pY6eS"
+  }, {
+    "id" : "jql8ko6-86BYKCX5kqrpg",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "ZigXfFOV6JufhxgH7s9dw"
+  }, {
+    "id" : "wu62ogp4OmJfRcLUEa5EG",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "9pVVPlKEggO4owGrtRnfi"
+  }, {
+    "id" : "fr1M3fUTYfcW4R9iwOKoh",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "w5y4rxQat4hJbCsu6kver"
+  }, {
+    "id" : "-kddED-SmIzmOYJHv7xoQ",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "olKY4W9VMapq9CQqLjFAy"
+  }, {
+    "id" : "sKHX0f9AcxX3RWXEnyNbH",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "sXRbj0i-wb6KGHafc-KqX"
+  }, {
+    "id" : "RUfBOWl6XZ8kPYAUYuq-U",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "gX17LGdcaxAaNW1uLjYp0"
+  }, {
+    "id" : "weQTqPdbUVK1ZvbeiP5Vq",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "-wZ241XpiLSxt_5RM2YWP"
+  }, {
+    "id" : "kdzsMoUjuHsgg1mFY6Mjf",
+    "source" : "dpwa_LcHd_SaEbMs4rjC0",
+    "sourcePort" : "LGrCjqp7eebNUUJHP1cwB",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "vjNJ7mo8QahnwpKUkJPcL"
+  }, {
+    "id" : "NTPlD9ggYq_7EYECNfADu",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "b7Bqy0LH9BigofMqCCOzQ",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "NggX8udc4woGNjFw-pfvs"
+  }, {
+    "id" : "KED8J9pEl0hyr1iNLayao",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "EWTs3Kk0yw3Ff9aAVIXA8",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "aRK_LsOZHvVuERgJKePtA"
+  }, {
+    "id" : "iS0PkgmEEp09DgA8rjdg1",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "bIr7AEbWZkgNJn4Zgw53n",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "p4lmM77wWtdq22r8oGPQ0"
+  }, {
+    "id" : "-72k4_R1IbmJIDBwU92MF",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "Eh4IQQOFSTBrLWTBOyCLZ",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "tw9icvOQ-jg7HLbaFkzTj"
+  }, {
+    "id" : "Z5Jnk7v2uHx5qIVF2FZnF",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "Y8V1NIyYltsLZbKrIsnPd",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "C0EK78DuVnp50qSRhO4UW"
+  }, {
+    "id" : "Ebsq37t8HBp12Yfnxr8GZ",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "scNexQwng-OS3G-sbYlWo",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "syUX6o4OUbP3BicOD9rkc"
+  }, {
+    "id" : "2Op21IMV1cFVG-oFo0-ue",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "Bc9ONCdyCOmk8KIK6IbOA",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "IUgMiEn8EeJAhGVjwM7mi"
+  }, {
+    "id" : "wFzM_JHYhbzV8tiDFsXrJ",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "FdZWMdvDZyux4LTFH3S2J",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "c6QOvAnIfvRvEPHPyKvrt"
+  }, {
+    "id" : "9uM3HespzA3mzxCrRJQD6",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "Tf32q6H76E-zH_05pnJQ3",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "zLkvRIxgM3NKMTfAVngsE"
+  }, {
+    "id" : "tbUTBELhSsUrNnzWuoHMn",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "9M7br-t-2SSdK7Z-pFDFy",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "rePSZjUBY4LFZtVLUS7iL"
+  }, {
+    "id" : "pKKd6_Q3p_4Rro0bSQT0Z",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "JczPQN2dHLdrYmMi7tiJG",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "gpCxbq0gQScL3YrpjeYRe"
+  }, {
+    "id" : "yz0hh91hIdCdtIWGWBb_S",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "Xf6g2AGNagwmRFJwa9VvD",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "VtGn8ajSxfc4VCk8m2vj1"
+  }, {
+    "id" : "eu9cEGXyeHStnmuY2V4tM",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "cMPmw8WPlw9y8cXYhg3Er",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "OWmHS1KxfsEonUOOJvtG7"
+  }, {
+    "id" : "cuolSS_ygWNh5RQ57Cizz",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "DzaH5p4qyF9yKIwItiv-A",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "eZJ_hwdJs7zn7pp5zmHXz"
+  }, {
+    "id" : "c2IdpsycXzBNvPxsAYxWo",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "NBKVdfxDn7iUX-4GG-vAx",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "hLW5xr7HoW0g3hiIZ2rXH"
+  }, {
+    "id" : "C67cDOGkrMIRjvt_T3d1a",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "-POXGcPcBk52epS29_Str",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "Iwc1eiNlCNMxMkPC_9nx7"
+  }, {
+    "id" : "DDnSTF5HbiEz4tG1YDQD7",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "QCwy7dTnoGUtOk0_boZln",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "-HVNn8XcIr8gdIo0Le97b"
+  }, {
+    "id" : "ji4a0UKa7xoARcUHzgXBo",
+    "source" : "E8f1cuhJNnXbn5EojIbtI",
+    "sourcePort" : "gHn1qMZneTyjBdhL4UTrU",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "KLthvXRqKr2NDaE85lhLz"
+  }, {
+    "id" : "5UauBC_5RfuzRJfV0DGS3",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "JG2rAE-lkQBhJwps3RivM",
+    "target" : "A0uHrfPXCIbL5JZks_hRW",
+    "targetPort" : "qmhpsHT3RDtu67DKkEKnG"
+  }, {
+    "id" : "gB9OdX1c_UOLP4gnpdBAq",
+    "source" : "A0uHrfPXCIbL5JZks_hRW",
+    "sourcePort" : "ftjj7HriL2elsJI6aveb2",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "Ico86WqIsM-EqEVZ_VLin"
+  }, {
+    "id" : "YmKGZGxOxlQ4Oj8692_zh",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "5kmDyWosA3zGJL1X23AEy",
+    "target" : "o8rlCNjYsz2903_N92bWP",
+    "targetPort" : "SYv3ASd4UBX0HnsSJnzmi"
+  }, {
+    "id" : "Wb40FX7vqOhGpCv5R4Qsw",
+    "source" : "o8rlCNjYsz2903_N92bWP",
+    "sourcePort" : "hJyO4QmujmViO_GQgdwdp",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "fUyEuFdRnmlPOoiFgjakH"
+  }, {
+    "id" : "UR45tJgfbYdaPgh42g0Ij",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "gbR_6nX6JkbypwzWMil36",
+    "target" : "_mslZIo6IsBU6arkBxbzX",
+    "targetPort" : "U1EthJhF8Le3MV7eYF2-F"
+  }, {
+    "id" : "9oovIr2kOP6xWDNzVwprf",
+    "source" : "_mslZIo6IsBU6arkBxbzX",
+    "sourcePort" : "jZuVHX26d3FWR_cmWFCVC",
+    "target" : "_RIz2ynzHIWqUerygN13C",
+    "targetPort" : "blNnASOdGqvuTDcQR3Lgp"
+  }, {
+    "id" : "CE88bIzieHgUPpdAiTHKt",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "TWFHWSasr_CgEIMcacNNg",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "lNy4iXGEqLwD9Uqi6l56S"
+  }, {
+    "id" : "Qm8HhBqpw1XuFagG_ELR6",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "c8DE7vBWqmyX7hyo_svz8",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "dxsOIULv8kJP5hT50zICs"
+  }, {
+    "id" : "cIbv4nYOSsddWQ_ahpbLR",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "ZrZI9zp_1_A25phbXnG-V",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "AYqtqLmR7iPCL9iXepZc2"
+  }, {
+    "id" : "t4_8-iTUF19AKITLpZPiy",
+    "source" : "_RIz2ynzHIWqUerygN13C",
+    "sourcePort" : "KuIToEZ0ZxDpjXtzXrKND",
+    "target" : "E8f1cuhJNnXbn5EojIbtI",
+    "targetPort" : "c7kW9hE1WbkgwHM3uGu3z"
+  } ],
+  "processes" : {
+    "o8rlCNjYsz2903_N92bWP" : {
+      "id" : "o8rlCNjYsz2903_N92bWP",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_2_2",
+        "slug" : "Reformat_2_2",
+        "x" : -780,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SYv3ASd4UBX0HnsSJnzmi",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "hJyO4QmujmViO_GQgdwdp",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Reformat",
+        "projectId" : "42",
+        "projectName" : "ProphecySparkBasicsPython",
+        "version" : "0.2.4"
+      }
+    },
+    "A0uHrfPXCIbL5JZks_hRW" : {
+      "id" : "A0uHrfPXCIbL5JZks_hRW",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_2",
+        "slug" : "Reformat_2",
+        "x" : -500,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "qmhpsHT3RDtu67DKkEKnG",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "ftjj7HriL2elsJI6aveb2",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Reformat",
+        "projectId" : "42",
+        "projectName" : "ProphecySparkBasicsPython",
+        "version" : "0.2.4"
+      }
+    },
+    "dpwa_LcHd_SaEbMs4rjC0" : {
+      "id" : "dpwa_LcHd_SaEbMs4rjC0",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1",
+        "slug" : "Reformat_1_1",
+        "x" : -140,
+        "y" : -260,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Yd7aNO0JTXbMzuT906Sqs",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "LGrCjqp7eebNUUJHP1cwB",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Reformat",
+        "projectId" : "42",
+        "projectName" : "ProphecySparkBasicsPython",
+        "version" : "0.2.4"
+      }
+    },
+    "W8u1azZpfyqafOjfDfknD" : {
+      "id" : "W8u1azZpfyqafOjfDfknD",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : -60,
+        "y" : -340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "bh5CgwT5QSUjTcpcAA0dW",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "ETh7RdNr_3SiufPB0b5I1",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Reformat",
+        "projectId" : "42",
+        "projectName" : "ProphecySparkBasicsPython",
+        "version" : "0.2.4"
+      }
+    },
+    "_mslZIo6IsBU6arkBxbzX" : {
+      "id" : "_mslZIo6IsBU6arkBxbzX",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_2_1",
+        "slug" : "Reformat_2_1",
+        "x" : -1100,
+        "y" : 200,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "U1EthJhF8Le3MV7eYF2-F",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "jZuVHX26d3FWR_cmWFCVC",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Reformat",
+        "projectId" : "42",
+        "projectName" : "ProphecySparkBasicsPython",
+        "version" : "0.2.4"
+      }
+    },
+    "E8f1cuhJNnXbn5EojIbtI" : {
+      "id" : "E8f1cuhJNnXbn5EojIbtI",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "script_1",
+        "slug" : "script_1",
+        "x" : -100,
+        "y" : -140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "NggX8udc4woGNjFw-pfvs",
+          "slug" : "in0"
+        }, {
+          "id" : "aRK_LsOZHvVuERgJKePtA",
+          "slug" : "in1"
+        }, {
+          "id" : "p4lmM77wWtdq22r8oGPQ0",
+          "slug" : "in2"
+        }, {
+          "id" : "tw9icvOQ-jg7HLbaFkzTj",
+          "slug" : "in3"
+        }, {
+          "id" : "C0EK78DuVnp50qSRhO4UW",
+          "slug" : "in4"
+        }, {
+          "id" : "syUX6o4OUbP3BicOD9rkc",
+          "slug" : "in5"
+        }, {
+          "id" : "IUgMiEn8EeJAhGVjwM7mi",
+          "slug" : "in6"
+        }, {
+          "id" : "c6QOvAnIfvRvEPHPyKvrt",
+          "slug" : "in7"
+        }, {
+          "id" : "zLkvRIxgM3NKMTfAVngsE",
+          "slug" : "in8"
+        }, {
+          "id" : "rePSZjUBY4LFZtVLUS7iL",
+          "slug" : "in9"
+        }, {
+          "id" : "gpCxbq0gQScL3YrpjeYRe",
+          "slug" : "in10"
+        }, {
+          "id" : "VtGn8ajSxfc4VCk8m2vj1",
+          "slug" : "in11"
+        }, {
+          "id" : "OWmHS1KxfsEonUOOJvtG7",
+          "slug" : "in12"
+        }, {
+          "id" : "eZJ_hwdJs7zn7pp5zmHXz",
+          "slug" : "in13"
+        }, {
+          "id" : "hLW5xr7HoW0g3hiIZ2rXH",
+          "slug" : "in14"
+        }, {
+          "id" : "Iwc1eiNlCNMxMkPC_9nx7",
+          "slug" : "in15"
+        }, {
+          "id" : "-HVNn8XcIr8gdIo0Le97b",
+          "slug" : "in16"
+        }, {
+          "id" : "lNy4iXGEqLwD9Uqi6l56S",
+          "slug" : "in17"
+        }, {
+          "id" : "dxsOIULv8kJP5hT50zICs",
+          "slug" : "in18"
+        }, {
+          "id" : "AYqtqLmR7iPCL9iXepZc2",
+          "slug" : "in19"
+        }, {
+          "id" : "c7kW9hE1WbkgwHM3uGu3z",
+          "slug" : "in20"
+        } ],
+        "outputs" : [ {
+          "id" : "gHn1qMZneTyjBdhL4UTrU",
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c- short",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  - int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "- c long",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal  -  ",
+              "type" : "decimal(10,0)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float-__  ",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c -  boolean _  ",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_date-for today",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp  __ for--today",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array-int  _ int",
+              "type" : {
+                "type" : "array",
+                "elementType" : "integer",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array-string  _ string",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array--long",
+              "type" : {
+                "type" : "array",
+                "elementType" : "long",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array-- boolean ",
+              "type" : {
+                "type" : "array",
+                "elementType" : "boolean",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c array- date __. ",
+              "type" : {
+                "type" : "array",
+                "elementType" : "date",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c_array_timestamp -- ",
+              "type" : {
+                "type" : "array",
+                "elementType" : "timestamp",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array -- float",
+              "type" : {
+                "type" : "array",
+                "elementType" : "float",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array -- decimal",
+              "type" : {
+                "type" : "array",
+                "elementType" : "decimal(15,2)",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_struct -- _  ",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c_short - of a struct",
+                  "type" : "short",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_int -- of a struct",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c-long-f-a-struct",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_decimal - of a struct",
+                  "type" : "decimal(22,3)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_float - of a struct - ",
+                  "type" : "float",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_boolean - of a struct  ",
+                  "type" : "boolean",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_double - of a struct _",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_string - of a struct -- _",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_date - of a struct _ ",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp - of a struct-",
+                  "type" : "timestamp",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array_int - of a struct ",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "integer",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "p_short",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "p_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "p_long",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "p_decimal",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "p_float",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "p_boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "p_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "p_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "p_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "p_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : true
+      },
+      "properties" : {
+        "script" : "in1.show(1)\nin2.show(1)\nin3.show(1)\nin4.show(1)\nin5.show(1)\nin6.show(1)\nin7.show(1)\nin8.show(1)\nin9.show(1)\nin10.show(1)\nin11.show(1)\nin12.show(1)\nin13.show(1)\nin14.show(1)\nin15.show(1)\nin16.show(1)\nin17.show(1)\nin17.show(1)\nin18.show(1)\nin19.show(1)\nin20.show(1)\nout0=in0",
+        "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame, in1: DataFrame, in2: DataFrame, in3: DataFrame, in4: DataFrame, in5: DataFrame, in6: DataFrame, in7: DataFrame, in8: DataFrame, in9: DataFrame, in10: DataFrame, in11: DataFrame, in12: DataFrame, in13: DataFrame, in14: DataFrame, in15: DataFrame, in16: DataFrame, in17: DataFrame, in18: DataFrame, in19: DataFrame, in20: DataFrame) -> DataFrame:",
+        "scriptMethodFooter" : "    return out0"
+      }
+    }
+  }
+}

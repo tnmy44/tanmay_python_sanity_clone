@@ -1,0 +1,411 @@
+{
+  "id" : "eVswCZHxPLx-evNTUsM5r",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false,
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "kMCspEa9QHJGMk9N5hdtE",
+      "slug" : "in0",
+      "isStreaming" : false
+    } ],
+    "outputs" : [ {
+      "id" : "lLZYNcIL-BLFO7phIp7VX",
+      "slug" : "out0",
+      "isStreaming" : false
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  },
+  "properties" : {
+    "packageName" : "test_expressions_sg"
+  },
+  "connections" : [ {
+    "id" : "OsiELyMCnf7oNiqJxg5Lc",
+    "source" : "eVswCZHxPLx-evNTUsM5r",
+    "sourcePort" : "kMCspEa9QHJGMk9N5hdtE",
+    "target" : "NlxGlP7tGJuEPZUgXCkMk",
+    "targetPort" : "mdNTVpqmRIYWc9mLu4RVX"
+  }, {
+    "id" : "Hr5RoLpWNAYE7UJwBxbLn",
+    "source" : "eVswCZHxPLx-evNTUsM5r",
+    "sourcePort" : "kMCspEa9QHJGMk9N5hdtE",
+    "target" : "e1ua5r_RHTBb9Ng-9xjqS",
+    "targetPort" : "4269m5OEd0FzdLr9Bqzwm"
+  }, {
+    "id" : "NFNn7qiFb17tyw0GJ_1Qn",
+    "source" : "NlxGlP7tGJuEPZUgXCkMk",
+    "sourcePort" : "pLdAQWkczGgYb2aFk4Adb",
+    "target" : "CKSvTnHnRP94AWrhBZpH_",
+    "targetPort" : "mmQl_Jbc-5cc5mnG-PPNA"
+  }, {
+    "id" : "qHs64tw2vP9VMDZhaH1DP",
+    "source" : "e1ua5r_RHTBb9Ng-9xjqS",
+    "sourcePort" : "jiUBqvoom9e8TQjSo-iX_",
+    "target" : "CKSvTnHnRP94AWrhBZpH_",
+    "targetPort" : "bWWLqmdcD4BXspZffYG3p"
+  }, {
+    "id" : "6fEpR64eWCtX9ETnmdiNo",
+    "source" : "CKSvTnHnRP94AWrhBZpH_",
+    "sourcePort" : "DcEf7E_gotp3wVZJrrVqq",
+    "target" : "v3jBkWwu5NmzKZKuNVf3O",
+    "targetPort" : "Wp3zfuMnVZyci_GSG1Orn"
+  }, {
+    "id" : "KPo2-zfhuuk2V7RVMsSdd",
+    "source" : "v3jBkWwu5NmzKZKuNVf3O",
+    "sourcePort" : "8xZiHBdgBl515w0dugZAv",
+    "target" : "eVswCZHxPLx-evNTUsM5r",
+    "targetPort" : "lLZYNcIL-BLFO7phIp7VX"
+  } ],
+  "processes" : {
+    "NlxGlP7tGJuEPZUgXCkMk" : {
+      "id" : "NlxGlP7tGJuEPZUgXCkMk",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : -360,
+        "y" : -120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mdNTVpqmRIYWc9mLu4RVX",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "pLdAQWkczGgYb2aFk4Adb",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "customer_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "customer_id"
+          },
+          "description" : "",
+          "_row_id" : "4685429526654214402"
+        }, {
+          "target" : "first_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first_name"
+          },
+          "description" : "",
+          "_row_id" : "5790987201897706595"
+        }, {
+          "target" : "last_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "last_name"
+          },
+          "description" : "",
+          "_row_id" : "5513682618674386859"
+        }, {
+          "target" : "phone",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "phone"
+          },
+          "description" : "",
+          "_row_id" : "7966158565681906441"
+        }, {
+          "target" : "email",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "email"
+          },
+          "description" : "",
+          "_row_id" : "6625198518446231389"
+        }, {
+          "target" : "country_code",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "country_code"
+          },
+          "description" : "",
+          "_row_id" : "1643201209695416762"
+        }, {
+          "target" : "account_open_date",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "account_open_date"
+          },
+          "description" : "",
+          "_row_id" : "6658791543853692588"
+        }, {
+          "target" : "account_flags",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "account_flags"
+          },
+          "description" : "",
+          "_row_id" : "3381670251485271261"
+        }, {
+          "target" : "c_expressions",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "cast(customer_id as int) > 5 and \ncast(customer_id as int)!=0 or \nfirst_name like '%A%' or \n((1 & 1) == 1) or \n((2 | 2) == 2) and \n10*cast(customer_id as int) == 20 and\nlast_name != first_name and \n(!(cast(customer_id as int) == 10)) and\n(cast(customer_id as int) between 10 and 20) and\n(array(10, 20, 30)[2] == 30) and\n(map(1, 'Hello', 2, 'World')[1] == 'Hello') and\n(10 ^ 20 == 50) and \n(map('three', 3).four == null) and\n(named_struct('a', 5, 'b', 'Spark').a == 5) and \n(1=2 and 1==2) and\n(1>=2 and 1<=2 and 1!=3 or 2>4 or 4<5) and\n(exists(array(1, NULL, 3), x -> x % 2 == 0)) or\nilike('Spark', '_PARK') or\n(named_struct('a', 1, 'b', 2) in(named_struct('a', 1, 'b', 1), named_struct('a', 1, 'b', 3))) and \n(1 is distinct from 5) and \n('invalid' is false) and \nisnull(1) and \n('t' is not true) and \n(1 <=> '1') and \n(1 <> cast(customer_id as int)) and \n(10-2+10 == 8) and\n(not true) and\n(false or true) and\n(2%0 == 0) and\n('Spark' || 'SQL' == 'SparkSQL') and\n(r'%SystemDrive%\\Users\\John' like r'%SystemDrive%\\\\Users%') and\n(r'%SystemDrive%\\Users\\John' rlike '%SystemDrive%\\\\\\\\Users.*') and \n(regexp_like('%SystemDrive%\\\\Users\\\\John', '%SystemDrive%\\\\\\\\Users.*')) and\n(2L / 2L == 10) and \n(~ 0 == -1) and\n(base64(aes_encrypt('Spark', 'abcdefghijklmnop')) == null) and\n(cast(aes_decrypt(unbase64('4A5jOAh9FNGwoMeuJukfllrLdHEZxA2DyuSQAWz77dfn'),'abcdefghijklmnop') AS STRING) == null)\nand (ascii('234') == 234) and (base64('Spark SQL') == null) and (bin(13)==null) and (binary('Spark SQL') == null) and \n(btrim('abcaabaSparkSQLabcaaba', 'abc') != null) and (char(65)!=null) and (char_length('Spark SQL ')==10) and (character_length('Spark SQL ')==10) and \n(concat(customer_id, 'hello')!=null) and (concat_ws(',', 'Spark', array('S', 'Q', NULL, 'L'), NULL)!=null) and contains('SparkSQL', 'Spork') and \n(crc32('Spark')>0) and chr(65)!=null and (3 ^ 5 == 6) and (hex(encode('Spark SQL', 'US-ASCII'))!=null) and\nendswith('SparkSQL', 'SQL') and \n(find_in_set('ab','abc,b,ab,c,def')==2) and \n(format_number(12332.123456, 4)==2) and \n(format_number(12332.123456, '#.###')==10) and \n(format_string('Hello World %d %s', 100, 'days')!=null) and \n(hex('Spark SQL')!=null) and \n(r'%SystemDrive%\\Users\\John' like '%SystemDrive%\\\\\\\\Users%') and \n(initcap('sPark sql')!=null) and \n(instr('SparkSQL', 'R')==2) and \n(lcase('LowerCase')!=null) and \n(left('Spark SQL', 3)!=null) and \n(length('Spark SQL ')>20) and \n(levenshtein('kitten', 'sitting')>10) and \n(locate('bar', 'abcbarbar')>2) and \n(locate('bar', 'abcbarbar', 5)>2) and \n(lower('LowerCase')!=null) and \n(lpad('hi', 1, '??')!=null) and \n(hex(lpad(x'1020', 5, x'05'))!=null) and \n(md5('Spark')!=null) and \n(octet_length('Spark SQL')!=null) and \n(parse_url('http://spark.apache.org/path?query=1', 'HOST')!=null) and \n(position('bar', 'abcbarbar')>10) and \n(position('bar', 'abcbarbar', 5)>5) and \n(printf('Hello World %d %s', 100, 'days')!=null) and \n(r'%SystemDrive%\\Users\\John' rlike r'%SystemDrive%\\\\Users.*') and \n(r'%SystemDrive%\\Users\\John' rlike '%SystemDrive%\\\\\\\\Users.*') and \n(regexp_like('%SystemDrive%\\\\Users\\\\John', '%SystemDrive%\\\\\\\\Users.*')) and \n(regexp_extract('100-200', '(\\\\d+)-(\\\\d+)', 1)>10) and \n(regexp_extract_all('100-200, 300-400', '(\\\\d+)-(\\\\d+)', 1)!=null) and \n(regexp_replace('100-200', '(\\\\d+)', 'num')!=null) and \n(repeat('123', 2)!=null) and \n(replace('ABCabc', 'abc', 'DEF')!=null) and \n(reverse('Spark SQL')!=null) and \n(right('Spark SQL', 3)!=null) and \n(rpad('hi', 5, 'ab')!=null) and \n(hex(rpad(x'1020', 5, x'05'))!=null) and \n(sentences('Hi there! Good morning.', 'en', 'US')!=null) and \n(sha('Spark')!=null) and \n(sha1('Spark')!=null) and \n(sha2('Spark', 256)!=null) and \n(soundex('Miller')!=null) and \n(concat('1', space(2), '1')!=null) and \n(('->' || split_part('Hello,world,!', ',', 1) || '<-')!=null) and \n(('->' || split_part('', ',', 1) || '<-')!=null) and \n(('->' || split_part('Hello,World,!', ',', 0) || '<-')!=null) and \n(startswith('SparkSQL', 'Spark')) and \n(startswith(NULL, 'Spark')) and \n(substr('Spark SQL', 5, 1)!=null) and \n(substring_index('www.apache.org', '.', 2)!=null) and \n(cast(to_binary('537061726B') AS STRING)!=null) and \n(cast(to_binary('537061726B', 'hex') AS STRING)!=null) and \n(cast(try_to_binary('U3Bhxcms=', 'base64') AS STRING)!=null) and \n(translate('AaBbCc', 'abc', '123')!=null) and \n(cast(try_to_binary('U3Bhxcms=', 'base64') AS STRING)!=null) and \n(ucase('SparkSql')!=null) and \n(cast(unbase64('U3BhcmsgU1FM') AS STRING)!=null) and \n(decode(unhex('537061726B2053514C'), 'UTF-8')!=null) and \n(upper('SparkSql')!=null) and \n(10/2==5) and \n((3 | 5)==2) and \n(10-2+2==4) and \n(2 % 1.8==2) and \n(3 ^ 5 == 3) and \n(3 & 5 == 2) and \n(3 * 2==2) and \n((INTERVAL '3' YEAR * 3)!=null) and \n(abs(-1)==1) and \n(acos(1)==1) and \n(acosh(1)==1) and \n(asin(0)==1) and \n(asinh(0)==1) and \n(atan(0)==1) and \n(atan2(0, 0)==1) and \n(atanh(0)==1) and \n(bigint(current_timestamp)>1) and \n(bit_count(-1)>1) and \n(bit_get(23Y, 1)==1) and \n(bround(13.5, -1)==1) and \n(round(13.5, -1)==1) and \n(cbrt(27.0)==3) and \n(ceil(3345.1, -2)==1) and \n(ceiling(5.4)==6) and \n(ceiling(3345.1, -2)==1) and \n(conv('100', 2, 10)==4) and \n(conv('FFFFFFFFFFFFFFFF', 16, 10)==1) and \n(cos(pi())==-1) and \n(cosh(0)==1) and \n(cot(1)==1) and \n(csc(pi() / 2)==2) and \n(decimal('5.2')==5) and \n(degrees(3.141592653589793)==10) and \n(double('5.2')==4) and \n(e()==2) and \n(exp(1)==2) and \n(expm1(0)==1) and \n(factorial(2)==2) and \n(float('5.2')==5) and \n(floor(-0.1)==-1) and \n(floor(3345.1, -2)==20) and \n(getbit(23Y, 0)==1) and \n(hypot(3, 4)==5) and \n(int(-5.6)==5) and \n(isnan(cast('NaN' as double))) and \n(ln(1)==1) and \n(log(10, 100)==2) and \n(log1p(0)==1) and \n(log2(2)==1) and \n(log10(10)==1) and \n(nanvl(cast('NaN' AS DOUBLE), 123)==2) and \n(negative(1)==-1) and \n(pmod(-10, 3)==2) and \n(positive(-1)==-1) and \n(pow(2, 3)*power(2, 3)==8) and \n(radians(180)==10) and \n(rand(0)*random(0)==1) and \n(randn(0)==1) and \n(rint(12.3456)==1) and \n(round(2.5, 0)==3) and \n(sec(pi())==-1) and \n(sin(0)==0) and \n(shiftleft(2, 1)==2) and \n(shiftright(4, 1)==2) and \n(shiftrightunsigned(4, 1)==2) and \n(sign(40)==1) and \n(signum(40)==1) and \n(sinh(0)==1) and \n(smallint(-5.6)==5) and \n(sqrt(4)==2) and \n(tan(0)==1) and \n(tanh(0)==1) and \n(tinyint('12')*tinyint(5.4)==1) and \n(to_number('$345', 'S$999,099.99')+to_number('<1234>', '999999PR')==2) and \n(try_add(DATE'2021-03-20', INTERVAL '2' MONTH)!=null) and \n(try_add(1, 2)==3) and \n(try_divide(3, 2)==3) and \n(try_divide(INTERVAL '3:15' HOUR TO MINUTE, 3)!=null) and \n(try_subtract(1, 2)==2) and \n(try_subtract(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND)!=null) and \n(try_subtract(-128Y, 1Y)!=null) and \n(try_to_number('$345', 'S$999,099.99')/try_to_number('<1234>', '999999PR')==1) and \n(width_bucket(5.3, 0.2, 10.6, 5)+width_bucket(-0.9, 5.2, 0.5, 2)==3) and \n(width_bucket(INTERVAL '1' DAY, INTERVAL '0' DAY, INTERVAL '10' DAY, 11)==10) and \n(array(10, 20, 30)!=null) and \n((aggregate(array(1, 2, 3), 0, (acc, x) -> acc + x, acc -> acc * 10))==1) and \n(array_contains(array(1, 2, 3), 2)) and \n(array_distinct(array(1, 2, 3, NULL, 3))!=null) and \n(array_except(array(1, 2, 2, 3), array(1, 1, 3, 5))!=null) and \n(array_intersect(array(1, 2, 3), array(1, 3, 3, 5))!=null) and \n(array_join(array('hello', 'world'), ',')!=null) and \n(array_join(array('hello', NULL ,'world'), ',', '*')==null) and \n(array_max(array(1, 20, NULL, 3))>10) and \n(array_min(array(1, 20, NULL, 3))==1) and \n(array_position(array(3, 2, 1, 4, 1), 1)==2) and \n(array_remove(array(1, 2, 3, NULL, 3, 2), 3)!=null) and \n(array_repeat('123', 2)!=null) and \n(array_size(array(1, NULL, 3, NULL))==2) and \n(array_sort(array('bc', 'ab', 'dc'),(left, right) -> CASE WHEN left IS NULL and right IS NULL THEN 0 WHEN left IS NULL THEN -1 WHEN right IS NULL THEN 1 WHEN left < right THEN 1 WHEN left > right THEN -1 ELSE 0 END)!=null) and \n(array_union(array(1, 2, 2, 3), array(1, 3, 5))!=null) and \n(arrays_overlap(array(1, 2, NULL, 3), array(NULL, 4, 5))==null) and \n(arrays_zip(array(1, 2), array('shoe', 'string', 'budget'))==null) and \n(cardinality(array('b', 'd', 'c', 'a'))==2) and \n(concat(array(1, 2, 3), array(4, 5), array(6))!=null) and \n(element_at(map(1, 'a', 2, 'b'), 2)==null) and \n(exists(array(1, 2, 3), x -> x % 2 == 0)) and \n(exists(array(0, NULL, 2, 3, NULL), x -> x IS NULL)) and \n(filter(array(1, 2, 3), x -> x % 2 == 1)!=null) and \n(flatten(array(array(1, 2), array(3, 4)))!=null) and \n(forall(array(1, 2, 3), x -> x % 2 == 0)==null) and \n(reverse(array(2, 1, 4, 3))!=null) and \n(sequence(5, 1)!=null) and \n(cardinality(array('b', 'd', 'c', 'a'))==10) and \n(slice(array(1, 2, 3, 4), 2, 2)!=null) and \n(sort_array(array('b', 'd', NULL, 'c', 'a'), true)!=null) and \n(transform(array(1, 2, 3), x -> x + 1)!=null) and \n(try_element_at(array(1, 2, 3), 2)==2) and \n(zip_with(array('a', 'b', 'c'), array('d', 'e', 'f'), (x, y) -> concat(x, y))!=null) and \n(map(1, 'Hello', 2, 'World')[1]!=null) and \n(cardinality(map('a', 1, 'b', 2))==2) and \n(element_at(map(1, 'a', 2, 'b'), 3)==null) and \n(map(1.0, '2', 3.0, '4') is not null) and \n(map_concat(map(1, 'a', 2, 'b'), map(3, 'c')) is not null) and \n(map_entries(map(1, 'a', 2, 'b')) is not null) and \n(map_filter(map(1, 0, 2, 2, 3, -1), (k, v) -> k > v) is not null) and \n(map_from_arrays(array(1.0, 3.0), array('2', '4')) is not null) and \n(map_from_entries(array(struct(1, 'a'), struct(2, 'b'))) is not null) and \n(map_keys(map(1, 'a', 2, 'b')) is not null) and \n(map_values(map(1, 'a', 2, 'b')) is not null) and \n(map_zip_with(map(1, 'a', 2, 'b'), map(1, 'x', 2, 'y'), (k, v1, v2) -> concat(v1, v2)) is not null) and \n(cardinality(map('a', 1, 'b', 2))==2) and \n(str_to_map('a:1,b:2,c:3', ',', ':') is not null) and \n(transform_keys(map_from_arrays(array(1, 2, 3), array(1, 2, 3)), (k, v) -> k + 1) is not null) and \n(transform_values(map_from_arrays(array(1, 2, 3), array(1, 2, 3)), (k, v) -> k + v) is not null) and \n(try_element_at(map(1, 'a', 2, 'b'), 2) is not null) and \n((INTERVAL '3:15' HOUR TO MINUTE / 3) is not null) and \n((-INTERVAL '5' MONTH)!=null) and \n(typeof(current_timestamp - (current_date + INTERVAL '1' DAY))!=null) and \n((INTERVAL '3' YEAR * 3)!=null) and \n(add_months('2016-08-31', -6)!=null) and \n(current_date()!=null) and \n(current_timestamp()!=null) and \n(current_timezone()!=null) and \n(date('2021-03-21')!=null) and \n(date_add('2016-07-30', 1)!=null) and \n(date_format('2016-04-08', 'y')==2016) and \n(date_from_unix_date(1)!=null) and \n(date_sub('2016-07-30', 1)!=null) and \n(date_trunc('YEAR', '2015-03-05T09:32:05.359')!=null) and \n(datediff('2009-07-31', '2009-07-30')==1) and \n(day('2009-07-30')==30) and \n(dayofmonth('2009-07-30')==30) and \n(dayofweek('2009-07-30')==5) and \n(dayofyear('2016-04-09')==100) and \n(extract(SECONDS FROM INTERVAL '5:00:30.001' HOUR TO SECOND)==30) and \n(extract(week FROM TIMESTAMP'2019-08-12 01:00:00.123456')==33) and \n(from_unixtime(0, 'yyyy-MM-dd HH:mm:ss')!=null) and \n(from_utc_timestamp('2017-07-14 02:40:00.0', 'GMT+1')!=null) and \n(from_utc_timestamp('2016-08-31', 'Asia/Seoul')!=null) and \n(hour('2009-07-30 12:58:59')==10) and \n(last_day('2009-01-12') is not null) and \n(make_date(2013, 7, 15) is not null) and \n(make_dt_interval(0, 0, 1, -0.1) is not null) and \n(make_ym_interval(100, 5) is not null) and \n(minute('2009-07-30 12:58:59')==58) and \n(month('2016-07-30')==7) and \n(months_between('1997-02-28 10:30:00', '1996-10-30')==3) and \n(months_between('1997-02-28 10:30:00', '1996-10-30', false)==2) and \n(next_day('2015-01-14', 'TU')!=null) and \n(quarter('2016-08-31')==3) and \n(second('2009-07-30 12:58:59')==59) and \n(sign(INTERVAL'-1' DAY)==-1) and \n(signum(INTERVAL'-1' DAY)==-1) and \n(timestamp(123)!=null) and \n(timestamp('2020-04-30 12:25:13.45')!=null) and \n(timestamp_micros(1230219000123123)!=null) and \n(timestamp_millis(1230219000123)!=null) and \n(timestamp_seconds(1230219000)!=null) and \n(to_date('2016-12-31', 'yyyy-MM-dd')!=null) and \n(to_timestamp('2016-12-31', 'yyyy-MM-dd')!=null) and \n(to_utc_timestamp( '2017-07-14 02:40:00.0', 'GMT+1')!=null) and \n(trunc('2015-10-27', 'YEAR')!=null) and \n(trunc('2019-08-04', 'quarter')!=null) and \n(try_add(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND)!=null) and \n(try_add(DATE'2021-03-31', INTERVAL '1' MONTH)!=null) and \n(try_divide(INTERVAL '3:15' HOUR TO MINUTE, 3)!=null) and \n((INTERVAL '3' YEAR * 3)!=null) and \n(try_subtract(DATE'2021-03-20', INTERVAL '2' MONTH)!=null) and \n(try_subtract(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND)!=null) and \n(unix_date(DATE('1970-01-02'))==1) and \n(unix_micros(TIMESTAMP('1970-01-01 00:00:01Z'))==1) and \n(unix_millis(TIMESTAMP('1970-01-01 00:00:01Z'))==1) and \n(unix_seconds(TIMESTAMP('1970-01-01 00:00:01Z'))==1) and \n(unix_timestamp('2016-04-08', 'yyyy-MM-dd')==1) and \n(weekday(DATE'2009-07-30')==1) and \n(extract(DAYOFWEEK_ISO FROM DATE'2009-07-30')==4) and \n(weekofyear('2008-02-20')==8) and \n(year('2016-07-30')==2016) and \n(array(1, 2, 3)!=null) and \n(bigint('5')==5) and \n(binary('Spark SQL')!=null) and \n(boolean(1)) and \n(cast(5.6 AS DECIMAL(2, 0))!=null) and \n(cast(INTERVAL '1-2' YEAR TO MONTH AS INTEGER)==12) and \n(date('2021-03-21')!=null) and \n(decimal('5.2')==5) and \n(double('5.2')/2==5) and \n(float('5.2')/2==2) and \n(int('5')==5) and \n(make_date(2013, 7, 15)!=null) and \n(make_dt_interval(100, 13)!=null) and \n(make_ym_interval(100, 5)==null) and \n(map(1.0, '2', 3.0, '4') is not null) and \n(named_struct('a', 1, 'b', 2, 'c', 3) is not null) and \n(smallint('5')==5) and \n(struct(1, 2, 3) is not null) and \n(tinyint('12')==12) and \n(timestamp('2020-04-30 12:25:13.45')!=null) and \n(to_date('2016-12-31', 'yyyy-MM-dd')!=null) and \n(to_number('-$12,345.67', 'S$999,099.99')>10) and \n(to_timestamp('2016-12-31 00:12:00')!=null) and \n(try_cast('10' AS INT)==10) and \n(try_to_number('-$12,345.67', 'S$999,099.99')!=null) and \n(from_csv('1, 0.8', 'a INT, b DOUBLE')!=null) and \n(schema_of_csv('1,abc')!=null) and \n(json_array_length('[1,2,3,{\"f1\":1,\"f2\":[5,6]},4]')==5) and \n(json_object_keys('{\"f1\":\"abc\",\"f2\":{\"f3\":\"a\", \"f4\":\"b\"}}')!=null) and \n(schema_of_json('[{\"col\":01}]', map('allowNumericLeadingZeros', 'true'))!=null) and \n(to_json(named_struct('a', 1, 'b', 2))!=null) and \n(to_json(map(named_struct('a', 1),named_struct('b', 2)))!=null) and \n(to_json(array((map('a', 1))))!=null) and \n(xpath('<a><b>b1</b><b>b2</b><b>b3</b><c>c1</c><c>c2</c></a>','a/b/text()')!=null) and \n(xpath_boolean('<a><b>1</b></a>','a/b')) and \n(xpath_double('<a><b>1</b><b>2</b></a>', 'sum(a/b)')!=null) and \n(xpath_float('<a><b>1</b><b>2</b></a>', 'sum(a/b)')!=null) and \n(xpath_int('<a><b>1</b><b>2</b></a>', 'sum(a/b)')==2) and \n(xpath_long('<a><b>1</b><b>2</b></a>', 'sum(a/b)')==3) and \n(xpath_number('<a><b>1</b><b>2</b></a>', 'sum(a/b)')==2) and \n(xpath_int('<a><b>1</b><b>2</b></a>', 'sum(a/b)')==2) and \n(xpath_string('<a><b>b</b><c>cc</c></a>','a/c')!=null) and \n(assert_true(0 < 1)==null) and \n((CASE WHEN 1 > 0 THEN 1 WHEN 2 > 0 THEN 2.0 ELSE 1.2 END)==1) and \n((CASE 3 WHEN 1 THEN 'A' WHEN 2 THEN 'B' WHEN 3 THEN 'C' END)!=null) and \n(coalesce(2, 5 / 0)==2) and \n(current_catalog()!=null) and \n(current_database()!=null) and \n(current_user()!=null) and \n(decode(5, 6, 'Spark', 5, 'SQL', 4, 'rocks')!=null) and \n(elt(1, 'scala', 'java')!=null) and \n(greatest(10, 9, 2, 4, 3)==10) and \n(hash('Spark', array(123), 2)!=null) and \n(java_method('java.util.UUID', 'fromString', 'a5cf6c42-0c85-418f-af6c-3e4e5b1328f2')!=null) and \n(if(1 < 2, 'a', 'b')!=null) and \n(ifnull(NULL, array('2'))!=null) and \n(input_file_block_length()==-1) and \n(input_file_block_start()==-1) and \n(input_file_name()!=null) and \n(isnull(1)) and \n(isnotnull(1)) and \n(least(10, 9, 2, 4, 3)==2) and \n(monotonically_increasing_id() > 10) and \n(nullif(2, 2)==null) and \n(nvl(NULL, 2)==2) and \n(nvl2(NULL, 2, 1)==1) and \n(reflect('java.util.UUID', 'randomUUID')!=null) and \n(typeof(1)!=null) and \n(uuid()!=null) and \n(xxhash64('Spark', array(123), 2)!=null) and \n(shuffle(array(1, 20, 3, 5))!=null) and \n(from_json('{\"a\":1, \"b\":0.8}', 'a INT, b DOUBLE') is not null)"
+          },
+          "description" : "",
+          "_row_id" : "c_23"
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "mdNTVpqmRIYWc9mLu4RVX$$t50uZhU7H2PFt12dnu9Bf$$IXiwy4uptrTCzGaanh4Yw$$R-Lko2NucnmyBRwial2ef##country_code", "mdNTVpqmRIYWc9mLu4RVX$$t50uZhU7H2PFt12dnu9Bf$$IXiwy4uptrTCzGaanh4Yw$$R-Lko2NucnmyBRwial2ef##phone", "mdNTVpqmRIYWc9mLu4RVX$$t50uZhU7H2PFt12dnu9Bf$$IXiwy4uptrTCzGaanh4Yw$$R-Lko2NucnmyBRwial2ef##first_name", "mdNTVpqmRIYWc9mLu4RVX$$t50uZhU7H2PFt12dnu9Bf$$IXiwy4uptrTCzGaanh4Yw$$R-Lko2NucnmyBRwial2ef##email", "mdNTVpqmRIYWc9mLu4RVX$$t50uZhU7H2PFt12dnu9Bf$$IXiwy4uptrTCzGaanh4Yw$$R-Lko2NucnmyBRwial2ef##last_name", "mdNTVpqmRIYWc9mLu4RVX$$t50uZhU7H2PFt12dnu9Bf$$IXiwy4uptrTCzGaanh4Yw$$R-Lko2NucnmyBRwial2ef##customer_id", "mdNTVpqmRIYWc9mLu4RVX$$t50uZhU7H2PFt12dnu9Bf$$IXiwy4uptrTCzGaanh4Yw$$R-Lko2NucnmyBRwial2ef##account_open_date", "mdNTVpqmRIYWc9mLu4RVX$$t50uZhU7H2PFt12dnu9Bf$$IXiwy4uptrTCzGaanh4Yw$$R-Lko2NucnmyBRwial2ef##account_flags" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Reformat",
+        "projectId" : "42",
+        "projectName" : "ProphecySparkBasicsPython",
+        "version" : "0.2.4"
+      }
+    },
+    "e1ua5r_RHTBb9Ng-9xjqS" : {
+      "id" : "e1ua5r_RHTBb9Ng-9xjqS",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "SQLStatement_1",
+        "slug" : "SQLStatement_1",
+        "x" : -360,
+        "y" : 80,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4269m5OEd0FzdLr9Bqzwm",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "jiUBqvoom9e8TQjSo-iX_",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "jiUBqvoom9e8TQjSo-iX_$$-sGIWIviIc5Ck_0NhQ-cH$$KdPJyOi6OkIlFOb_89gMg$$KYKcvBloO4JWzUp7BU21S",
+          "language" : "sql",
+          "content" : "SELECT cast(any(col1) FILTER (WHERE col2 = 1) as string) as c1 FROM VALUES (false, 1), (false, 2), (true, 2), (NULL, 1) AS tab(col1, col2)\nUNION\nSELECT cast(any(col) as string) as c1 FROM VALUES (true), (false), (false) AS tab(col)\nUNION\nSELECT cast(approx_count_distinct(col1) as string) as c1 FROM VALUES (1), (1), (2), (2), (3) tab(col1)\nUNION\nSELECT cast(approx_count_distinct(col1) FILTER(WHERE col2 = 10) as string) as c1 FROM VALUES (1, 10), (1, 10), (2, 10), (2, 10), (3, 10), (1, 12) AS tab(col1, col2)\nUNION\nSELECT cast(approx_percentile(col, array(0.5, 0.4, 0.1), 100) as string) as c1 FROM VALUES (0), (1), (2), (10) AS tab(col)\nUNION\nSELECT cast(approx_percentile(DISTINCT col, 0.5, 100) as string) as c1 FROM VALUES (0), (6), (6), (7), (9), (10) AS tab(col)\nUNION\nSELECT cast(array_agg(col) as string) as c1 FROM VALUES (1), (2), (NULL), (1) AS tab(col)\nUNION\nSELECT cast(array_agg(DISTINCT col) as string) as c1 FROM VALUES (1), (2), (NULL), (1) AS tab(col)\nUNION\nSELECT cast(avg(col) as string) as c1 FROM VALUES (1), (2), (3) AS tab(col)\nUNION\nSELECT cast(try_avg(col) as string) as c1 FROM VALUES (10), (20) AS tab(col)\nUNION\nSELECT cast(bit_and(col) as string) as c1 FROM VALUES (3), (5) AS tab(col)\nUNION\nSELECT cast(bit_and(col) FILTER(WHERE col < 6) as string) as c1 FROM VALUES (3), (5), (6) AS tab(col)\nUNION\nSELECT cast(bit_or(col) as string) as c1 FROM VALUES (3), (5) AS tab(col)\nUNION\nSELECT cast(bit_or(col) FILTER(WHERE col < 8) as string) as c1 FROM VALUES (3), (5), (8) AS tab(col)\nUNION\nSELECT cast(bit_xor(col) as string) as c1 FROM VALUES (3), (3), (5) AS tab(col)\nUNION\nSELECT cast(bool_and(col) as string) as c1 FROM VALUES (true), (true), (true) AS tab(col)\nUNION\nSELECT cast(bool_or(col) as string) as c1 FROM VALUES (true), (false), (false) AS tab(col)\nUNION\nSELECT cast(collect_list(col) as string) as c1 FROM VALUES (1), (2), (NULL), (1) AS tab(col)\nUNION\nSELECT cast(collect_set(col) as string) as c1 FROM VALUES (1), (2), (NULL), (1) AS tab(col)\nUNION\nSELECT cast(corr(c1, c2) as string) as c1 FROM VALUES (3, 2), (3, 3), (3, 3), (6, 4) as tab(c1, c2)\nUNION\nSELECT cast(corr(DISTINCT c1, c2) FILTER(WHERE c1 != c2) as string) as c1 FROM VALUES (3, 2), (3, 3), (3, 3), (6, 4) as tab(c1, c2)\nUNION\nSELECT cast(count(*) as string) as c1 FROM VALUES (NULL), (5), (5), (20) AS tab(col)\nUNION\nSELECT cast(count(*) as string) as c1 FROM VALUES (NULL), (5), (5), (20) AS tab(col)\nUNION\nSELECT cast(count(col) FILTER(WHERE col < 10) as string) as c1 FROM VALUES (NULL), (5), (5), (20) AS tab(col)\nUNION\nSELECT cast(count_if(col % 2 = 0) as string) as c1 FROM VALUES (NULL), (0), (1), (2), (2), (3) AS tab(col)\nUNION\nSELECT cast(covar_pop(c1, c2) as string) as c1 FROM VALUES (1,1), (2,2), (2,2), (3,3) AS tab(c1, c2)\nUNION\nSELECT cast(covar_samp(c1, c2) as string) as c1 FROM VALUES (1,1), (2,2), (2, 2), (3,3) AS tab(c1, c2)\nUNION\nSELECT cast(every(col) as string) as c1 FROM VALUES (true), (true), (true) AS tab(col)\nUNION\nSELECT cast(first(col, true) as string) as c1 FROM VALUES (NULL), (5), (20) AS tab(col)\nUNION\nSELECT cast(first_value(col) as string) as c1 FROM VALUES (10), (5), (20) AS tab(col)\nUNION\nSELECT cast(kurtosis(col) as string) as c1 FROM VALUES (-10), (-20), (100), (100), (1000) AS tab(col)\nUNION\nSELECT cast(last(col) as string) as c1 FROM VALUES (10), (5), (20) AS tab(col)\nUNION\nSELECT cast(last_value(col) as string) as c1 FROM VALUES (10), (5), (20) AS tab(col)\nUNION\nSELECT cast(max(col) as string) as c1 FROM VALUES (10), (50), (20) AS tab(col)\nUNION\nSELECT cast(max_by(x, y) as string) as c1 FROM VALUES (('a', 10)), (('b', 50)), (('c', 20)) AS tab(x, y)\nUNION\nSELECT cast(mean(DISTINCT col) as string) as c1 FROM VALUES (1), (1), (2), (NULL) AS tab(col)\nUNION\nSELECT cast(min(col) as string) as c1 FROM VALUES (10), (50), (20) AS tab(col)\nUNION\nSELECT cast(min_by(x, y) as string) as c1 FROM VALUES (('a', 10)), (('b', 50)), (('c', 20)) AS tab(x, y)\nUNION\nSELECT cast(percentile(col, 0.3) as string) as c1 FROM VALUES (0), (10), (10) AS tab(col)\nUNION\nSELECT cast(percentile_approx(col, 0.5, 100) as string) as c1 FROM VALUES (0), (6), (7), (9), (10), (10), (10) AS tab(col)\nUNION\nSELECT cast(percentile_cont(array(0.5, 0.4, 0.1)) WITHIN GROUP (ORDER BY col) as string) as c1 FROM VALUES (0), (1), (2), (10) AS tab(col)\nUNION\nSELECT cast(percentile_disc(array(0.5, 0.4, 0.1)) WITHIN GROUP (ORDER BY col) as string) as c1 FROM VALUES (0), (1), (2), (10) AS tab(col)\nUNION\nSELECT cast(regr_avgx(y, x) as string) as c1 FROM VALUES (1, 2), (2, 3), (2, 3), (null, 4), (4, null) AS T(y, x)\nUNION\nSELECT cast(regr_avgy(y, x) as string) as c1 FROM VALUES (1, 2), (2, 3), (2, 3), (null, 4), (4, null) AS T(y, x)\nUNION\nSELECT cast(regr_count(y, x) as string) as c1 FROM VALUES (1, 2), (2, 2), (2, 3), (2, 4) AS t(y, x)\nUNION\nSELECT cast(regr_r2(y, x) as string) as c1 FROM VALUES (1, 2), (2, 3), (2, 3), (null, 4), (4, null) AS T(y, x)\nUNION\nSELECT cast(skewness(col) as string) as c1 FROM VALUES (-10), (-20), (100), (1000), (1000) AS tab(col)\nUNION\nSELECT cast(some(col) as string) as c1 FROM VALUES (true), (false), (false) AS tab(col)\nUNION\nSELECT cast(std(col) as string) as c1 FROM VALUES (1), (2), (3), (3) AS tab(col)\nUNION\nSELECT cast(stddev(col) as string) as c1 FROM VALUES (1), (2), (3), (3) AS tab(col)\nUNION\nSELECT cast(stddev_pop(DISTINCT col) as string) as c1 FROM VALUES (1), (2), (3), (3) AS tab(col)\nUNION\nSELECT cast(stddev_samp(DISTINCT col) as string) as c1 FROM VALUES (1), (2), (3), (3) AS tab(col)\nUNION\nSELECT cast(sum(col) as string) as c1 FROM VALUES (NULL), (NULL) AS tab(col)\nUNION\nSELECT cast(try_avg(DISTINCT col) as string) as c1 FROM VALUES (1), (1), (2) AS tab(col)\nUNION\nSELECT cast(try_sum(col) as string) as c1 FROM VALUES (NULL), (10), (15) AS tab(col)\nUNION\nSELECT cast(var_pop(col) as string) as c1 FROM VALUES (1), (2), (3), (3) AS tab(col)\nUNION\nSELECT cast(var_samp(col) as string) as c1 FROM VALUES (1), (2), (3), (3) AS tab(col)\nUNION\nSELECT cast(variance(col) as string) as c1 FROM VALUES (1), (2), (3), (3) AS tab(col)\nUNION\nSELECT cast(a as string) as c1 FROM (SELECT a,b,dense_rank() OVER(PARTITION BY a ORDER BY b),rank() OVER(PARTITION BY a ORDER BY b),row_number() OVER(PARTITION BY a ORDER BY b) FROM VALUES ('A1', 2), ('A1', 1), ('A2', 3), ('A1', 1) tab(a, b))\nUNION\nSELECT cast(a as string) as c1 FROM (SELECT a, b, ntile(2) OVER (PARTITION BY a ORDER BY b) FROM VALUES ('A1', 2), ('A1', 1), ('A2', 3), ('A1', 1) tab(a, b))\nUNION\nSELECT cast(a as string) as c1 FROM (SELECT a, b, percent_rank(b) OVER (PARTITION BY a ORDER BY b) FROM VALUES ('A1', 2), ('A1', 1), ('A1', 3), ('A1', 6), ('A1', 7), ('A1', 7), ('A2', 3), ('A1', 1) tab(a, b))\nUNION\nSELECT cast(a as string) as c1 FROM (SELECT a,b,dense_rank() OVER(PARTITION BY a ORDER BY b),rank() OVER(PARTITION BY a ORDER BY b),row_number() OVER(PARTITION BY a ORDER BY b) FROM VALUES ('A1', 2), ('A1', 1), ('A2', 3), ('A1', 1) tab(a, b))\nUNION\nSELECT cast(a as string) as c1 FROM (SELECT a, b, cume_dist() OVER (PARTITION BY a ORDER BY b) FROM VALUES ('A1', 2), ('A1', 1), ('A2', 3), ('A1', 1) tab(a, b))\nUNION\nSELECT cast(a as string) as c1 FROM (SELECT a, b, lag(b) OVER (PARTITION BY a ORDER BY b) FROM VALUES ('A1', 2), ('A1', 1), ('A2', 3), ('A1', 1) tab(a, b))\nUNION\nSELECT cast(a as string) as c1 FROM (SELECT a, b, lead(b) OVER (PARTITION BY a ORDER BY b) FROM VALUES ('A1', 2), ('A1', 1), ('A2', 3), ('A1', 1) tab(a, b))\nUNION\nSELECT cast(a as string) as c1 FROM (SELECT a, b, nth_value(b, 2) OVER (PARTITION BY a ORDER BY b) FROM VALUES ('A1', 2), ('A1', 1), ('A2', 3), ('A1', 1) tab(a, b))\nUNION\nSELECT cast(num as string) as c1 FROM (SELECT explode(map(1, 'a', 2, 'b')) AS (num, val), 'Spark')\nUNION\nSELECT cast(elem as string) as c1 FROM (SELECT explode_outer(array(10, 20)) AS elem, 'Spark')\nUNION\nSELECT cast(a as string) as c1 FROM (SELECT a, session_window.start, session_window.end, count(*) as cnt FROM VALUES ('A1', '2021-01-01 00:00:00'),('A1', '2021-01-01 00:04:30'),('A1', '2021-01-01 00:10:00'),('A2', '2021-01-01 00:01:00'),('A2', '2021-01-01 00:04:30') AS tab(a, b) GROUP by a, session_window(b, CASE WHEN a = 'A1' THEN '5 minutes' WHEN a = 'A2' THEN '1 minute' ELSE '10 minutes' END) ORDER BY a, start)\nUNION\nSELECT cast(window as string) as c1 FROM (SELECT window, min(val), max(val), count(val) FROM VALUES (TIMESTAMP'2020-08-01 12:20:21', 17),(TIMESTAMP'2020-08-01 12:20:22', 12),(TIMESTAMP'2020-08-01 12:23:10',  8),(TIMESTAMP'2020-08-01 12:25:05', 11),(TIMESTAMP'2020-08-01 12:28:59', 15),(TIMESTAMP'2020-08-01 12:30:01', 23),(TIMESTAMP'2020-08-01 12:30:15',  2),(TIMESTAMP'2020-08-01 12:35:22', 16) AS S(stamp, val) GROUP BY window(stamp, '2 MINUTES 30 SECONDS', '30 SECONDS', '15 SECONDS'))\nUNION\nSELECT cast(name as string) as c1 FROM (SELECT name, age, count(*) FROM VALUES (2, 'Alice'), (5, 'Bob') people(age, name) GROUP BY cube(name, age))\nUNION\nSELECT cast(name as string) as c1 FROM (SELECT name, grouping(name), sum(age) FROM VALUES (2, 'Alice'), (5, 'Bob') people(age, name) GROUP BY cube(name))\nUNION\nSELECT cast(name as string) as c1 FROM (SELECT name, age, grouping_id(name, age),conv(cast(grouping_id(name, age) AS STRING), 10, 2),avg(height) FROM VALUES (2, 'Alice', 165), (5, 'Bob', 180) people(age, name, height) GROUP BY cube(name, age))\nUNION\nSELECT cast(col1 as string) as c1 FROM (SELECT spark_partition_id() as col1, t.* FROM range(0, -5, -1, 2) AS t)\nUNION\nSELECT cast(col1 as string) as c1 FROM (SELECT spark_partition_id() as col1, t.* FROM range(5) AS t)\nUNION\nSELECT cast(col1 as string) as c1 FROM (SELECT 'hello' as col1, stack(2, 1, 2, 3) AS (first, second), 'world')\nUNION\nSELECT cast(window as string) as c1 FROM (SELECT window, min(val), max(val), count(val) FROM VALUES (TIMESTAMP'2020-08-01 12:20:21', 17),(TIMESTAMP'2020-08-01 12:20:22', 12),(TIMESTAMP'2020-08-01 12:23:10',  8),(TIMESTAMP'2020-08-01 12:25:05', 11),(TIMESTAMP'2020-08-01 12:28:59', 15),(TIMESTAMP'2020-08-01 12:30:01', 23),(TIMESTAMP'2020-08-01 12:30:15',  2),(TIMESTAMP'2020-08-01 12:35:22', 16) AS S(stamp, val) GROUP BY window(stamp, '2 MINUTES 30 SECONDS', '30 SECONDS', '15 SECONDS'))"
+        } ],
+        "inputPortNames" : [ "in0" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/SQLStatement",
+        "projectId" : "42",
+        "projectName" : "ProphecySparkBasicsPython",
+        "version" : "0.2.4"
+      }
+    },
+    "CKSvTnHnRP94AWrhBZpH_" : {
+      "id" : "CKSvTnHnRP94AWrhBZpH_",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Join_1",
+        "slug" : "Join_1",
+        "x" : -140,
+        "y" : -40,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mmQl_Jbc-5cc5mnG-PPNA",
+          "slug" : "in0"
+        }, {
+          "id" : "bWWLqmdcD4BXspZffYG3p",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "DcEf7E_gotp3wVZJrrVqq",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.first_name!=in1.c1"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "target" : "customer_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.customer_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "first_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.first_name"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "last_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.last_name"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "phone",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.phone"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "email",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.email"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "country_code",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.country_code"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "account_open_date",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.account_open_date"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "account_flags",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.account_flags"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "c1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.c1"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "c_expressions",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.c_expressions"
+          },
+          "description" : "",
+          "_row_id" : null
+        } ],
+        "hints" : [ {
+          "id" : "mmQl_Jbc-5cc5mnG-PPNA$$567jmM23uJzasp1ozdBuV$$UBmPlqUXH0tUwLd3SqesJ$$jVxI13JlXgTCv9uwoNDme",
+          "alias" : "in0",
+          "hintType" : "none",
+          "propagateColumns" : false
+        }, {
+          "id" : "bWWLqmdcD4BXspZffYG3p$$oh3NJUcK33l-q4o7y8aYV$$tI_Oe4f2Sk5ZcyXWgn0Xy$$gXA9NbNG1MrTnbfjuWW1k",
+          "alias" : "in1",
+          "hintType" : "none",
+          "propagateColumns" : false
+        } ],
+        "allIn1" : null,
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "mmQl_Jbc-5cc5mnG-PPNA$$567jmM23uJzasp1ozdBuV$$UBmPlqUXH0tUwLd3SqesJ$$jVxI13JlXgTCv9uwoNDme##first_name", "bWWLqmdcD4BXspZffYG3p$$oh3NJUcK33l-q4o7y8aYV$$tI_Oe4f2Sk5ZcyXWgn0Xy$$gXA9NbNG1MrTnbfjuWW1k##c1", "mmQl_Jbc-5cc5mnG-PPNA$$567jmM23uJzasp1ozdBuV$$UBmPlqUXH0tUwLd3SqesJ$$jVxI13JlXgTCv9uwoNDme##phone", "mmQl_Jbc-5cc5mnG-PPNA$$567jmM23uJzasp1ozdBuV$$UBmPlqUXH0tUwLd3SqesJ$$jVxI13JlXgTCv9uwoNDme##account_flags", "bWWLqmdcD4BXspZffYG3p$$oh3NJUcK33l-q4o7y8aYV$$tI_Oe4f2Sk5ZcyXWgn0Xy$$gXA9NbNG1MrTnbfjuWW1k##c1", "mmQl_Jbc-5cc5mnG-PPNA$$567jmM23uJzasp1ozdBuV$$UBmPlqUXH0tUwLd3SqesJ$$jVxI13JlXgTCv9uwoNDme##last_name", "mmQl_Jbc-5cc5mnG-PPNA$$567jmM23uJzasp1ozdBuV$$UBmPlqUXH0tUwLd3SqesJ$$jVxI13JlXgTCv9uwoNDme##customer_id", "mmQl_Jbc-5cc5mnG-PPNA$$567jmM23uJzasp1ozdBuV$$UBmPlqUXH0tUwLd3SqesJ$$jVxI13JlXgTCv9uwoNDme##country_code", "mmQl_Jbc-5cc5mnG-PPNA$$567jmM23uJzasp1ozdBuV$$UBmPlqUXH0tUwLd3SqesJ$$jVxI13JlXgTCv9uwoNDme##first_name", "mmQl_Jbc-5cc5mnG-PPNA$$567jmM23uJzasp1ozdBuV$$UBmPlqUXH0tUwLd3SqesJ$$jVxI13JlXgTCv9uwoNDme##account_open_date", "mmQl_Jbc-5cc5mnG-PPNA$$567jmM23uJzasp1ozdBuV$$UBmPlqUXH0tUwLd3SqesJ$$jVxI13JlXgTCv9uwoNDme##email", "mmQl_Jbc-5cc5mnG-PPNA$$567jmM23uJzasp1ozdBuV$$UBmPlqUXH0tUwLd3SqesJ$$jVxI13JlXgTCv9uwoNDme##c_expressions" ],
+        "allIn0" : null,
+        "whereClause" : null,
+        "headAlias" : "in0"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Join",
+        "projectId" : "42",
+        "projectName" : "ProphecySparkBasicsPython",
+        "version" : "0.2.4"
+      }
+    },
+    "v3jBkWwu5NmzKZKuNVf3O" : {
+      "id" : "v3jBkWwu5NmzKZKuNVf3O",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "limit_to_11",
+        "slug" : "limit_to_11",
+        "x" : 80,
+        "y" : -40,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Wp3zfuMnVZyci_GSG1Orn",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "8xZiHBdgBl515w0dugZAv",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "11"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=42&path=gems/Limit",
+        "projectId" : "42",
+        "projectName" : "ProphecySparkBasicsPython",
+        "version" : "0.2.4"
+      }
+    }
+  }
+}

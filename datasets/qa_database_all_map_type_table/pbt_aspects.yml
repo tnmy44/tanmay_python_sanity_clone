@@ -1,0 +1,78 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: c_int
+    type: integer
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: c_string
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: c_map_ts_int_int
+    type:
+      type: map
+      keyType: integer
+      valueType: integer
+      valueContainsNull: true
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: c_map_ts_string_string
+    type:
+      type: map
+      keyType: string
+      valueType: string
+      valueContainsNull: true
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: c_map_ts_timestamp_int
+    type:
+      type: map
+      keyType: timestamp
+      valueType: integer
+      valueContainsNull: true
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: c_map_complex
+    type:
+      type: map
+      keyType:
+        type: struct
+        fields:
+        - name: w1
+          type: string
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: w2
+          type: string
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+      valueType: string
+      valueContainsNull: true
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []

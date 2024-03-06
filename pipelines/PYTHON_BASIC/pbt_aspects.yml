@@ -1,0 +1,33 @@
+version: 1
+configurations:
+- newfabric
+- ebs_ssd
+- dev_11rt
+- dev1
+- dev
+- default
+- captain_livy
+- test-common-with-another
+dependencies:
+- type: workflow
+  id: JC24jgKeRQxtNfgEK14W1
+  name: pendulum==2.1.2
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: 0ErcfR3xPE_hUsafSdiF_
+  name: numerizer==0.2.3
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: nAKMXZYG6_1We4O2STtLu
+  name: numerizer==0.2.3
+  enabled: true
+  entity: Pipeline
+- type: workflow
+  id: 5FlfIIgUPezzYvao1wFzV
+  name: pendulum==2.1.2
+  enabled: true
+  entity: Pipeline
+pipelineVersion:
+  version: '2'

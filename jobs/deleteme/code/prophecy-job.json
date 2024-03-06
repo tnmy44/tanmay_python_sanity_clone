@@ -1,0 +1,457 @@
+{
+  "metainfo" : {
+    "type" : "Prophecy",
+    "fabricId" : "22",
+    "jobId" : "jobs/deleteme",
+    "name" : "Staging_Prophecy_Managed_AIRFLOW_Python",
+    "dagName" : "3JwEAqbhjbFudxhUAHvbEA_",
+    "schedule" : "0 0/1 * * *",
+    "enabled" : false,
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "retries" : 0,
+      "ignore_first_depends_on_past" : true,
+      "pool" : "hhFvJ5E5",
+      "do_xcom_push" : true
+    },
+    "availableFabrics" : [ {
+      "id" : "22",
+      "name" : "dev_airflow_prophecy_managed",
+      "trialStartDate" : 1695736560346
+    }, {
+      "id" : "25",
+      "name" : "dev_airflow_mwaa"
+    }, {
+      "id" : "1013",
+      "name" : "dev_airflow_253"
+    }, {
+      "id" : "24",
+      "name" : "dev_airflow"
+    }, {
+      "id" : "2393",
+      "name" : "dev_airflow_263"
+    }, {
+      "id" : "2418",
+      "name" : "dev_aiflow_open_source",
+      "artifactsLocation" : "/mnt/airflow/artifacts"
+    }, {
+      "id" : "2442",
+      "name" : "Automation_python_AirflowOpenSource",
+      "artifactsLocation" : "/mnt/airflow/test/artifacts"
+    }, {
+      "id" : "2447",
+      "name" : "sanity_airflow_os",
+      "artifactsLocation" : "/mnt/airflow/artifacts"
+    } ],
+    "endDate" : "2028-10-10",
+    "catchup" : true,
+    "startDate" : "2023-09-26",
+    "tags" : [ ],
+    "scheduleTimeZone" : "UTC",
+    "dagParams" : {
+      "instances" : {
+        "default" : {
+          "c3" : "false",
+          "c_object" : "{\"c_test\":\"dasd\",\"c_truck\":\"asd\"}",
+          "c1" : "[\"1\"]",
+          "2c" : "1",
+          "c" : "asd"
+        }
+      },
+      "params" : {
+        "c3" : {
+          "type" : "BooleanParam",
+          "properties" : {
+            "title" : "c3",
+            "value" : "false",
+            "canBeNull" : false
+          }
+        },
+        "c_object" : {
+          "type" : "ObjectParam",
+          "required" : [ "c_test", "c_truck" ],
+          "properties" : {
+            "title" : "c_object",
+            "value" : "{\"c_test\":\"dasd\",\"c_truck\":\"asd\"}",
+            "canBeNull" : false
+          }
+        },
+        "c1" : {
+          "type" : "ArrayParam",
+          "uniqueItems" : false,
+          "properties" : {
+            "title" : "c1",
+            "value" : "[\"1\"]",
+            "canBeNull" : false
+          }
+        },
+        "2c" : {
+          "type" : "NumericParam",
+          "properties" : {
+            "title" : "2c",
+            "value" : "1",
+            "canBeNull" : false
+          }
+        },
+        "c" : {
+          "type" : "StringParam",
+          "pattern" : "",
+          "properties" : {
+            "title" : "c",
+            "value" : "asd",
+            "canBeNull" : false
+          }
+        }
+      },
+      "selected" : "default"
+    },
+    "airflowFunctions" : [ {
+      "id" : "48/functions/airflowFunctions/squared_numbers",
+      "name" : "squared_numbers",
+      "code" : "def squared_numbers(number):\n    print('hello')\n    return (number*number)/d",
+      "initCode" : "d=10",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    }, {
+      "id" : "48/functions/airflowFunctions/join_2_strings",
+      "name" : "join_2_strings",
+      "code" : "def join_2_strings(d1, d2):\n    return f\"{d1}{separator}{d2}\"",
+      "initCode" : "separator=' '",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    }, {
+      "id" : "48/functions/airflowFunctions/delete_me",
+      "name" : "delete_me",
+      "code" : "def delete_me(d1, d2):\n    return f\"{d1}{separator}{d2}\"",
+      "initCode" : "separator=' '",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    }, {
+      "id" : "48/functions/airflowFunctions/load_resource",
+      "name" : "load_resource",
+      "code" : "def load_resource(dag_dir, dag_id, relative_filepath):\n    import os\n    import zipfile\n    import tempfile\n\n    res = \"\"\n    zip_file_found = None\n    for filename in os.listdir(dag_dir):\n        if filename.startswith(dag_id) and filename.endswith('.zip'):\n            zip_file_found = os.path.join(dag_dir, filename)\n            break\n\n    if not zip_file_found:\n        print(f\"Zip for dag: {dag_id} not found\")\n        return res\n\n    with tempfile.TemporaryDirectory() as tmpdirname:\n        with zipfile.ZipFile(zip_file_found, 'r') as zip_ref:\n            zip_ref.extractall(tmpdirname)\n\n\n        target_file_path = os.path.join(tmpdirname, dag_id.lower() , 'resources', relative_filepath)\n        if os.path.exists(target_file_path):\n            with open(target_file_path, 'r') as file:\n                res = file.read()\n        return res",
+      "initCode" : "",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    }, {
+      "id" : "48/functions/airflowFunctions/get_feed_config",
+      "name" : "get_feed_config",
+      "code" : "def get_feed_config(file_contents, search_keys):\n    for line in file_contents.splitlines():\n        # Split the line by commas and strip to remove leading/trailing whitespaces\n        fields = [field.strip() for field in line.split(',')]\n\n        # Check if there are enough fields\n        if len(fields) < 32:\n            continue\n\n        # Extract the first 5 fields as keys\n        keys = fields[:5]\n\n        # Check if the current keys match the search keys\n        if keys == search_keys:\n            # Extract and return the remaining 27 fields as values\n            return tuple(fields[5:])\n\n    # Return an empty tuple if the key is not found or if the value is empty\n    return ()",
+      "initCode" : "",
+      "projectId" : "48",
+      "projectName" : "Python_Sanity_Project"
+    } ],
+    "dynamicPipelineStatus" : {
+      "databricks" : false,
+      "dataproc" : false,
+      "emr" : false
+    }
+  },
+  "processes" : {
+    "ufCBW1XYjArTkcGYIYg04" : {
+      "id" : "ufCBW1XYjArTkcGYIYg04",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "SM_DISABLED_PYTHON_BASIC",
+        "slug" : "SM_DISABLED_PYTHON_BASIC",
+        "x" : 700,
+        "y" : 560
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9cSuuY8ypEb8HzKBfF3IU",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "HZUl7xj93xLSBSFJAyg1R",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "runJson" : null,
+        "databricksConnId" : "databricks_default",
+        "clusterSize" : "46/small_dev",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "c_string",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "test string"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "c_int",
+            "optional" : false,
+            "kind" : {
+              "type" : "int",
+              "value" : 1
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "Python_Sanity_Project" : [ "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "default", "captain_livy" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : {
+            "value" : "default",
+            "type" : "literal"
+          }
+        },
+        "taskId" : null,
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/EM_DISABLED_PYTHON_BASIC"
+        }
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "5CCfsjlJ0J-Oo5n43gs67" : {
+      "id" : "5CCfsjlJ0J-Oo5n43gs67",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "SM_IO_PYTHON_BASIC",
+        "slug" : "SM_IO_PYTHON_BASIC",
+        "x" : 280,
+        "y" : 60
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "8w1QnbsSuG2uwJV5Yb0RP",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "rWRTAAWhazvBV5FBBofNE",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "runJson" : null,
+        "databricksConnId" : "databricks_default",
+        "clusterSize" : "46/small_dev",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "c_string",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "IO_PYTHON_BASIC - DEFAULT"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "c_int",
+            "optional" : false,
+            "kind" : {
+              "type" : "int",
+              "value" : 1
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "Python_Sanity_Project" : [ "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "default", "captain_livy", "test-common-with-another" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : {
+            "value" : "default",
+            "type" : "literal"
+          }
+        },
+        "taskId" : null,
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/IO_PYTHON_BASIC"
+        }
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "cIAP9p_2Ot_jfsSFlnB6P" : {
+      "id" : "cIAP9p_2Ot_jfsSFlnB6P",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "PYTHON_BASIC_1",
+        "slug" : "PYTHON_BASIC_1",
+        "x" : 900,
+        "y" : 400
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "k58CQ8CkO3Nu7YBwjoolj",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "RpmPhaWE8DqQPFsTGRCzW",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "runJson" : null,
+        "databricksConnId" : "databricks_default",
+        "clusterSize" : "46/medium_multi_single_user",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "c_string",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "PYTHON_BASIC - DEFAULT"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "Subgraph_1",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "arr1",
+                "optional" : false,
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "test123",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "test123" : "check"
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "strt",
+                "optional" : false,
+                "kind" : {
+                  "type" : "string",
+                  "value" : "test123"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : true
+          }, {
+            "name" : "c_int",
+            "optional" : false,
+            "kind" : {
+              "type" : "int",
+              "value" : 1
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "c_struct",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "c_array1",
+                "optional" : false,
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "value" : [ "1", "2" ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "c_struct_another",
+                "optional" : false,
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "csa_boolean",
+                    "optional" : false,
+                    "kind" : {
+                      "type" : "boolean",
+                      "value" : true
+                    },
+                    "isReferenced" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "c_string",
+                "optional" : false,
+                "kind" : {
+                  "type" : "string",
+                  "value" : "asd"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "sfs",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "  max-height: 50px;\nsdfsdf\nsdfsdffsdsdfds fds fsd fsd fsdfsdfsdfsdfdsfsdfsdfsdfsdfsdfdsfdsfdsfdsfdsfdsfdsfdsfsdfsdfsdfsdfsdfdsfdsfdsfdsfsdfdsfsdfsdfsdfdsfsdfsdfsdfsdfdsfsdfsdfsd\nfsdfsdfsd\nfsdfsdfsd  max-height: 50px;\nsdfsdf\nsdfsdffsd\nfsdfsdfsd\nfsdfsdfsd  max-height: 50px;\nsdfsdf\nsdfsdffsd\nfsdfsdfsd\nfsdfsdfsd\n\n\n"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "Python_Sanity_Project" : [ "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "default", "captain_livy", "test-common-with-another" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : {
+            "value" : "default",
+            "type" : "literal"
+          }
+        },
+        "taskId" : null,
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/PYTHON_BASIC"
+        }
+      },
+      "connections" : [ ],
+      "processes" : { }
+    }
+  },
+  "connections" : [ {
+    "id" : "4B5bPRuW8zWeIKKtBE7i6",
+    "source" : "5CCfsjlJ0J-Oo5n43gs67",
+    "target" : "ufCBW1XYjArTkcGYIYg04",
+    "sourcePort" : "rWRTAAWhazvBV5FBBofNE",
+    "targetPort" : "9cSuuY8ypEb8HzKBfF3IU"
+  }, {
+    "id" : "xLqvUFgVONHFZlOPQbIZj",
+    "source" : "ufCBW1XYjArTkcGYIYg04",
+    "target" : "cIAP9p_2Ot_jfsSFlnB6P",
+    "sourcePort" : "HZUl7xj93xLSBSFJAyg1R",
+    "targetPort" : "k58CQ8CkO3Nu7YBwjoolj"
+  } ]
+}
